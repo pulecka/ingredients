@@ -1,5 +1,25 @@
-<div class="container">
-
-<form-generator></form-generator>
-
+<div>
+  <h2 class="ui block header">New payment</h2>
+  <former name="myForm" ng-submit="ctrl.independentMethod()">
+      <div class="ui grid">
+            <div class="four wide column"></div>
+            <div class="twelve wide column">
+                <field type="text"
+                       name="someField"
+                       label="some test"
+                       model="someValue"
+                       validation="maxLength"
+                       placeholder="Toto je test"
+                       required="true">
+                </field>
+                <field type="number"
+                       name="someField"
+                       label="some test"
+                       validation="maxLength"
+                       placeholder="Toto je test"
+                       required="true">
+                </field>
+            </div>
+       </div>
+  </former>
 </div>

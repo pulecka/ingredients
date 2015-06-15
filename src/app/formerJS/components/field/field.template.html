@@ -1,0 +1,11 @@
+<div class="field" ng-class="{inline: inline, required: required, error: error}">
+  <label ng-if="label" for="{{name || id}}">{{label}}</label>
+  <input  id="{{name || id}}"
+          type="{{type}}"
+          ng-model="model"
+          name="{{name || id}}"
+          placeholder="{{placeholder}}"
+          validate = "{{validation}}" />
+  <div class="error">{{error}}</div>
+</div>
+

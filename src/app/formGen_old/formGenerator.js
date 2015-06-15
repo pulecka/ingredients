@@ -44,7 +44,7 @@ angular.module('formGenerator', [])
               return __result;
             })()
             : '';
-          
+
           var html =
             '<form novalidate '+ _controller +' name="'+ (src.name || 'Untitled') +'" id="'+ (src.name || 'Untitled') +'">' +
             '<h1 ng-if="config.title" >{{config.title}}</h1>' +
