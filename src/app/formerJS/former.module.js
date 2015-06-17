@@ -4,7 +4,7 @@
 
 (function(){
   'use strict';
-  angular.module('former.js', ['app.components', 'app.modules'])
+  angular.module('former.js', ['app.components', 'app.modules', 'ngMessages'])
     .directive('former', FormerDirective);
 
   function FormerDirective() {

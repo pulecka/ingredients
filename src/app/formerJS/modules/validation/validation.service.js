@@ -13,7 +13,7 @@
     var validators = {};
 
     return {
-      newValidator: function (name, validator) {
+      newValidator: function (name, validator, errorMessage) {
         validators[name] = validator;
       },
 

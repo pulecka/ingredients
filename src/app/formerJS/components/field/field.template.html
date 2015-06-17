@@ -6,6 +6,8 @@
           name="{{name || id}}"
           placeholder="{{placeholder}}"
           validate = "{{validation}}" />
-  <div class="error">{{error}}</div>
-</div>
+  <div ng-messages="errors">
+    <div ng-message="maxLength">{{}}</div>
+  </div>
 
+</div>

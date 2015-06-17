@@ -10,16 +10,17 @@
   Config.$inject = ['ValidationProvider'];
   function Config(ValidationProvider) {
 
-    ValidationProvider.newValidator('maxLength', maxLength);
+    ValidationProvider.newValidator('maxLength', maxLength, 'This is too long');
+    ValidationProvider.newValidator('minLength', minLength);
 
-    function maxLength(value) {
-      var max = 10;
-      value = value + '';
-      if (value.length > max) {
-        return false;
-      }else{
-        return value;
-      }
+    function maxLength(value, max) {
+      if (!value) return void 0;
+      return value.length <= max;
+    }
+
+    function minLength(value, min) {
+      if (!value) return void 0;
+      return value.length >= min;
     }
 
   }
