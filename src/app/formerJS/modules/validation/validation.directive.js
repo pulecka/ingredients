@@ -25,39 +25,30 @@
 
       angular.forEach(validationObject, function (rule, key) {
         ngModel.$validators[key] = function (value) {
-            return Validation[key](value, rule);
+            return Validation[key].definition(value, rule);
         }
       });
-
         // adds error object to scope of the field
         scope.errors = ngModel.$error;
-
+        scope.checkErrors= function () {
+          var obj = scope.errors;
+          if (obj == null) return false;
+          if (obj.length > 0)    return true;
+          if (obj.length === 0)  return false;
+          for (var key in obj) {
+            if (hasOwnProperty.call(obj, key)) return true;
+          }
+          return false;
+        }
+        scope.getErrorMessage = getErrorMessage;
 
       }
 
-
-
-      //ngModel.$parsers.push(function(value){
-      //
-      //  var return_value;
-      //
-      //  if(value) {
-      //    return_value = value;
-      //    view_value = return_value;
-      //    ngModel.$setValidity('is_valid', true);
-      //  }else{
-      //    return_value = view_value;
-      //    ngModel.$setViewValue(view_value);
-      //    ngModel.$render();
-      //    ngModel.$setValidity('is_valid', false);
-      //  }
-      //  return return_value;
-      //});
-
+      function getErrorMessage(key) {
+        return Validation[key].message;
+      }
 
     }
-
-
   }
 
 })();

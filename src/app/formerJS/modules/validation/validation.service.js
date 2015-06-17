@@ -9,12 +9,13 @@
 
   Validation.$inject = [];
   function Validation() {
-
     var validators = {};
-
     return {
       newValidator: function (name, validator, errorMessage) {
-        validators[name] = validator;
+        validators[name] = {
+          definition: validator,
+          message: errorMessage
+        }
       },
 
       $get:[function () {

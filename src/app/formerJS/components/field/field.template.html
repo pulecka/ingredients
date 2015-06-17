@@ -1,4 +1,4 @@
-<div class="field" ng-class="{inline: inline, required: required, error: error}">
+<div class="field" ng-class="{inline: inline, required: required, error: checkErrors()}">
   <label ng-if="label" for="{{name || id}}">{{label}}</label>
   <input  id="{{name || id}}"
           type="{{type}}"
@@ -6,8 +6,8 @@
           name="{{name || id}}"
           placeholder="{{placeholder}}"
           validate = "{{validation}}" />
-  <div ng-messages="errors">
-    <div ng-message="maxLength">{{}}</div>
+  <div class="fieldErrorMessages">
+    <div ng-repeat="(key,error) in errors track by $index">{{ overrideMessage || getErrorMessage(key) }}</div>
   </div>
 
 </div>

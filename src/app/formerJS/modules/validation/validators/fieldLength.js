@@ -10,8 +10,8 @@
   Config.$inject = ['ValidationProvider'];
   function Config(ValidationProvider) {
 
-    ValidationProvider.newValidator('maxLength', maxLength, 'This is too long');
-    ValidationProvider.newValidator('minLength', minLength);
+    ValidationProvider.newValidator('maxLength', maxLength, 'This is too long!!');
+    ValidationProvider.newValidator('minLength', minLength, 'Too short man!!');
 
     function maxLength(value, max) {
       if (!value) return void 0;
