@@ -4,8 +4,9 @@
           type="{{type}}"
           ng-model="model"
           name="{{name || id}}"
+          ng-disabled="disabled"
           placeholder="{{placeholder}}"
-          validate = "{{validation}}" />
+          validate = "{{validation}}"/>
   <div class="fieldErrorMessages">
     <div ng-repeat="(key,error) in errors track by $index">{{ overrideMessage || getErrorMessage(key) }}</div>
   </div>

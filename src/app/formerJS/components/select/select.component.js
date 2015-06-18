@@ -17,6 +17,7 @@
         viewAs: '@',
         searchable: '@?',
         placeholder: '@?',
+        // TODO sipka off/on
         template: '@?',
         default: '@?',
         model: '='

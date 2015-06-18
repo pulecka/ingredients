@@ -9,8 +9,7 @@
                        label="some test"
                        model="someValue"
                        validation="minLength:2 | maxLength:20"
-                       placeholder="Toto je test"
-                       required="true">
+                       placeholder="Toto je test">
                 </field>
                 <field type="number"
                        name="someField"
@@ -18,14 +17,15 @@
                        placeholder="Toto je test"
                        required="true">
                 </field>
-              <selector data="ctrl.sampleData"
-                        placeholder="Some placeholder"
-                        return-as="value"
-                        view-as="text"
-                        model="ctrl.someOutput"
-                        default="1"
-                        template="/app/main/select.sample.html">
-              </selector>
+                <selector data="ctrl.sampleData"
+                          placeholder="Some placeholder"
+                          return-as="value"
+                          view-as="text"
+                          model="ctrl.someOutput"
+                          default="1"
+                          template="/app/main/select.sample.html">
+                </selector>
+
             </div>
        </div>
   </former>

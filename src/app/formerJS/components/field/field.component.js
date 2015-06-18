@@ -22,7 +22,8 @@
         placeholder: '@?',
         inline: '@?',
         required: '@?',
-        validation: '@?'
+        validation: '@?',
+        disabled: '=?'
       }
     };
   }
