@@ -10,7 +10,7 @@
   function Field() {
     return{
       restrict: 'E',
-      templateUrl: '/app/formerJS/components/field/field.template.html',
+      templateUrl: '/app/modules/iForm/components/field/field.template.html',
       replace: true,
       scope:{
         model: '=?',

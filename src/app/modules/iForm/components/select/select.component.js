@@ -10,7 +10,7 @@
   function Selector() {
     return{
       restrict: 'E',
-      templateUrl: '/app/formerJS/components/select/select.template.html',
+      templateUrl: '/app/modules/iForm/components/select/select.template.html',
       scope:{
         data: '=',
         returnAs: '@',

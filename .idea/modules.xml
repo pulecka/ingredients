@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/formGenerator.iml" filepath="$PROJECT_DIR$/.idea/formGenerator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/iValid.iml" filepath="$PROJECT_DIR$/.idea/iValid.iml" />
     </modules>
   </component>
 </project>

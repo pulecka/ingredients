@@ -6,7 +6,7 @@
           name="{{name || id}}"
           ng-disabled="disabled"
           placeholder="{{placeholder}}"
-          validate = "{{validation}}"/>
+          i-valid = "{{validation}}"/>
   <div class="fieldErrorMessages">
     <div ng-repeat="(key,error) in errors track by $index">{{ overrideMessage || getErrorMessage(key) }}</div>
   </div>

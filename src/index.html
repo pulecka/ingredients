@@ -1,5 +1,5 @@
 <!doctype html>
-<html ng-app="formGenerator">
+<html ng-app="ingredients.js">
   <head>
     <meta charset="utf-8">
     <title>formGenerator</title>
@@ -27,7 +27,38 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <div ui-view></div>
+    <div ng-controller="sampleCtrl as ctrl">
+      <h2 class="ui block header">New payment</h2>
+      <i-form name="myForm" ng-submit="ctrl.independentMethod()">
+        <div class="ui grid">
+          <div class="four wide column"></div>
+          <div class="eight wide column">
+            <field type="text"
+                   name="someField"
+                   label="some test"
+                   model="someValue"
+                   validation="minLength:2 | maxLength:20"
+                   placeholder="Toto je test">
+            </field>
+            <field type="number"
+                   name="someField"
+                   label="some test"
+                   placeholder="Toto je test"
+                   required="true">
+            </field>
+            <selector data="ctrl.sampleData"
+                      placeholder="Some placeholder"
+                      return-as="value"
+                      view-as="text"
+                      model="ctrl.someOutput"
+                      default="1"
+                      template="/app/samples/select.sample.html">
+            </selector>
+
+          </div>
+        </div>
+      </i-form>
+    </div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>

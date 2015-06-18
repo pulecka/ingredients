@@ -4,14 +4,14 @@
 
 (function(){
   'use strict';
-  angular.module('validation.module')
+  angular.module('iValid.module')
     .config(Config);
 
-  Config.$inject = ['ValidationProvider'];
-  function Config(ValidationProvider) {
+  Config.$inject = ['iValidProvider'];
+  function Config(iValidProvider) {
 
-    ValidationProvider.newValidator('maxLength', maxLength, 'This is too long!!');
-    ValidationProvider.newValidator('minLength', minLength, 'Too short man!!');
+    iValidProvider.newValidator('maxLength', maxLength, 'This is too long!!');
+    iValidProvider.newValidator('minLength', minLength, 'Too short man!!');
 
     function maxLength(value, max) {
       if (!value) return void 0;

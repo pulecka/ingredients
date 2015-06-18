@@ -4,11 +4,11 @@
 
 (function(){
   'use strict';
-  angular.module('validation.module', [])
-    .provider('Validation', Validation);
+  angular.module('iValid.module', [])
+    .provider('iValid', iValid);
 
-  Validation.$inject = [];
-  function Validation() {
+  iValid.$inject = [];
+  function iValid() {
     var validators = {};
     return {
       newValidator: function (name, validator, errorMessage) {

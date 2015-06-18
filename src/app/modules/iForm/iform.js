@@ -1,13 +1,9 @@
-/**
- * Created by bionaut on 09/06/15.
- */
-
 (function(){
   'use strict';
-  angular.module('former.js', ['app.components', 'app.modules'])
-    .directive('former', FormerDirective);
+  angular.module('iForm.module', ['iForm.components'])
+    .directive('iForm', iForm);
 
-  function FormerDirective() {
+  function iForm() {
     return{
       restrict: 'E',
       scope: {
@@ -18,7 +14,7 @@
         output: '=?'         // TODO: fields (object) output
       },
       replace: true,
-      templateUrl: '/app/formerJS/former.template.html',
+      templateUrl: '/app/modules/iForm/iform.template.html',
       transclude: true
     }
   }

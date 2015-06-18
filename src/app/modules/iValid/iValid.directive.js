@@ -1,10 +1,10 @@
 (function(){
   'use strict';
-  angular.module('validation.module')
-    .directive('validate', Validate);
+  angular.module('iValid.module')
+    .directive('iValid', Validate);
 
-  Validate.$inject = ['Validation'];
-  function Validate(Validation) {
+  Validate.$inject = ['iValid'];
+  function Validate(iValid) {
     return{
       restrict: 'A',
       require: 'ngModel',
@@ -13,10 +13,10 @@
 
     function LinkFn(scope, element, attrs, ngModel) {
 
-      if (attrs.validate.length > 0) {
-        attrs.validate = attrs.validate.replace(/\s+/g, '');
+      if (attrs.iValid.length > 0) {
+        attrs.iValid = attrs.iValid.replace(/\s+/g, '');
 
-        var validationObject = attrs.validate
+        var validationObject = attrs.iValid
           .split('|').reduce(function(accumulator, val){
             var pair = val.trim().split(':');
             accumulator[pair[0]] = pair[1] || null;
@@ -25,7 +25,7 @@
 
       angular.forEach(validationObject, function (rule, key) {
         ngModel.$validators[key] = function (value) {
-            return Validation[key].definition(value, rule);
+            return iValid[key].definition(value, rule);
         }
       });
         // adds error object to scope of the field
@@ -45,7 +45,7 @@
       }
 
       function getErrorMessage(key) {
-        return Validation[key].message;
+        return iValid[key].message;
       }
 
     }
