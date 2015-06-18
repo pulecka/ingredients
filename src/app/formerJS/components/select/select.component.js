@@ -13,7 +13,8 @@
       templateUrl: '/app/formerJS/components/select/select.template.html',
       scope:{
         data: '=?',
-        selected: '=?'
+        model: '=?',
+        searchable: '@?'
       }
     }
   }
