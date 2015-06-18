@@ -4,5 +4,5 @@
 
 (function(){
   'use strict';
-  angular.module('app.components', ['field.component','number.component']);
+  angular.module('app.components', ['field.component','number.component', 'select.component']);
 })();

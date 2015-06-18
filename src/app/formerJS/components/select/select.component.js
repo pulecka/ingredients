@@ -12,10 +12,36 @@
       restrict: 'E',
       templateUrl: '/app/formerJS/components/select/select.template.html',
       scope:{
-        data: '=?',
-        model: '=?',
-        searchable: '@?'
+        data: '=',
+        returnAs: '@',
+        viewAs: '@',
+        searchable: '@?',
+        placeholder: '@?',
+        template: '@?',
+        default: '@?',
+        model: '='
+      },
+      link: LinkFn
+    };
+
+    function LinkFn(scope) {
+
+      var s = scope;
+
+      s.select = handleSelect;
+
+      if (s.default) {
+          if (s.default > 0 && s.default <= s.data.length)
+          s.selected = handleSelect(s.default);
+      }
+
+      function handleSelect(index) {
+        s.selected = s.data[index];
+        s.model = s.selected[s.returnAs];
+        s.searchQuery = s.selected[s.viewAs];
+        s.listToggle = false;
       }
     }
   }
+
 })();

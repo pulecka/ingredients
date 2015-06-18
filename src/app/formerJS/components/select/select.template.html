@@ -1,7 +1,17 @@
-<div class="j-selector">
-  <!-- search input -->
-  <!-- expand icon -->
-    <!-- list div w/ ng-show .. position: absolute-->
-      <!-- items wrapper .. position: relative -->
-        <!-- item w/ ng-repeat->data | filter: search-->
+<div class="j-select clearfix">
+
+  <div class="j-select-search">
+    <input type="text" ng-model="searchQuery" ng-change="listToggle = true" placeholder="{{placeholder}}"/>
+  </div>
+
+  <div class="j-select-toggle" ng-click="listToggle=!listToggle; searchQuery = '' " >
+    <i class="caret down icon large"></i>
+  </div>
+
+  <div class="j-select-list" ng-show="listToggle">
+    <div ng-if="template"  ng-include="template" class="j-select-item" ng-repeat="item in data | filter: searchQuery track by $index" ng-click="select($index)"></div>
+    <div  ng-if="!template" class="j-select-item" ng-repeat="item in data | filter: searchQuery" ng-click="select($index)">{{item.text}}</div>
+  </div>
+
+
 </div>

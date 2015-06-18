@@ -9,7 +9,7 @@
 
   NumberComponent.$inject = [];
   function NumberComponent() {
-    return{
+    return {
       restrict: 'E',
       templateUrl: '/app/formerJS/components/number/number.template.html',
       replace: true,
