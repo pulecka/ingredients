@@ -23,13 +23,15 @@
             return accumulator;
           }, {});
 
-      angular.forEach(validationObject, function (rule, key) {
-        ngModel.$validators[key] = function (value) {
-            return iValid[key].definition(value, rule);
-        }
-      });
+        angular.forEach(validationObject, function (rule, key) {
+          ngModel.$validators[key] = function (value) {
+              return iValid[key].definition(value, rule);
+          }
+        });
+
         // adds error object to scope of the field
         scope.errors = ngModel.$error;
+
         scope.checkErrors= function () {
           var obj = scope.errors;
           if (obj == null) return false;
@@ -39,7 +41,8 @@
             if (hasOwnProperty.call(obj, key)) return true;
           }
           return false;
-        }
+        };
+
         scope.getErrorMessage = getErrorMessage;
 
       }

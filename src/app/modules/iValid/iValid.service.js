@@ -9,7 +9,9 @@
 
   iValid.$inject = [];
   function iValid() {
+
     var validators = {};
+
     return {
       newValidator: function (name, validator, errorMessage) {
         validators[name] = {

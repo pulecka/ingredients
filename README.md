@@ -1,1 +1,2 @@
-# ingredients
+# angular-ingredients.js
+Work in progress - docs are coming...

@@ -1,0 +1,10 @@
+<!doctype html><html ng-app="ingredients.js"><head><meta charset="utf-8"><title>angular-ingredients</title><meta name="description" content=""><meta name="viewport" content="width=device-width"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.12.3/semantic.min.css"><link rel="stylesheet" href="styles/vendor.css"><link rel="stylesheet" href="styles/app.css"></head><body><!--[if lt IE 10]>
+ <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+ <![endif]--><div ng-controller="sampleCtrl as ctrl"><h2 class="ui block header">New payment</h2><i-form name="myForm" ng-submit="ctrl.independentMethod()"><div class="ui grid"><div class="four wide column"></div><div class="eight wide column"><field type="text" name="someField" label="some test" model="someValue" validation="minLength:2 | maxLength:20" placeholder="Toto je test"></field><field type="number" name="someField" label="some test" placeholder="Toto je test" required="true"></field><selector data="ctrl.sampleData" placeholder="Some placeholder" return-as="value" view-as="text" model="ctrl.someOutput" default="1" template="/app/samples/select.sample.html"></selector></div></div></i-form></div><script>
+      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+      e.src='//www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+      ga('create','UA-XXXXX-X');ga('send','pageview');
+    </script><script src="scripts/vendor.js"></script><script src="scripts/app.js"></script></body></html>
