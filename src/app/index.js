@@ -1,12 +1,13 @@
 (function(){
   'use strict';
 
-  angular.module('ingredients.js',
-    [ 'ngAnimate',
-      'ngCookies',
-      'ngTouch',
+  angular.module('angular-ingredients.js',
+    [
+      // vendor
       'ngSanitize',
+      'ui.router',
 
+      // core
       'ingredients.modules'
     ])
 

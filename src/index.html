@@ -1,5 +1,5 @@
 <!doctype html>
-<html ng-app="ingredients.js">
+<html ng-app="angular-ingredients.js">
   <head>
     <meta charset="utf-8">
     <title>angular-ingredients</title>
@@ -33,27 +33,27 @@
         <div class="ui grid">
           <div class="four wide column"></div>
           <div class="eight wide column">
-            <field type="text"
+            <i-field type="text"
                    name="someField"
                    label="some test"
                    model="someValue"
                    validation="minLength:2 | maxLength:20"
                    placeholder="Toto je test">
-            </field>
-            <field type="number"
+            </i-field>
+            <i-field type="number"
                    name="someField"
                    label="some test"
                    placeholder="Toto je test"
                    required="true">
-            </field>
-            <selector data="ctrl.sampleData"
+            </i-field>
+            <i-select data="ctrl.sampleData"
                       placeholder="Some placeholder"
                       return-as="value"
                       view-as="text"
                       model="ctrl.someOutput"
                       default="1"
                       template="/app/samples/select.sample.html">
-            </selector>
+            </i-select>
 
           </div>
         </div>

@@ -1,6 +1,6 @@
 (function(){
   'use strict';
-  angular.module('ingredients.js')
+  angular.module('angular-ingredients.js')
     .controller('sampleCtrl', sampleCtrl);
 
   function sampleCtrl() {

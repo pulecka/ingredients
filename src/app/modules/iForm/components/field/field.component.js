@@ -4,13 +4,13 @@
 (function(){
   'use strict';
   angular.module('field.component', [])
-    .directive('field', Field)
+    .directive('iField', iField)
 
-  Field.$inject=[];
-  function Field() {
+  iField.$inject=[];
+  function iField() {
     return{
       restrict: 'E',
-      templateUrl: '/app/modules/iForm/components/field/field.template.html',
+      templateUrl: 'app/modules/iForm/components/field/field.template.html',
       replace: true,
       scope:{
         model: '=?',

@@ -11,7 +11,7 @@
   function NumberComponent() {
     return {
       restrict: 'E',
-      templateUrl: '/app/modules/iForm/components/number/number.template.html',
+      templateUrl: 'app/modules/iForm/components/number/number.template.html',
       replace: true,
       transclude: true
     }

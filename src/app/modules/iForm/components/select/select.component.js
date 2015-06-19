@@ -5,12 +5,12 @@
 (function(){
   'use strict';
   angular.module('select.component', [])
-    .directive('selector', Selector);
+    .directive('iSelect', iSelect);
 
-  function Selector() {
+  function iSelect() {
     return{
       restrict: 'E',
-      templateUrl: '/app/modules/iForm/components/select/select.template.html',
+      templateUrl: 'app/modules/iForm/components/select/select.template.html',
       scope:{
         data: '=',
         returnAs: '@',

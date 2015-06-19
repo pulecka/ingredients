@@ -14,7 +14,7 @@
         output: '=?'         // TODO: fields (object) output
       },
       replace: true,
-      templateUrl: '/app/modules/iForm/iform.template.html',
+      templateUrl: 'app/modules/iForm/iform.template.html',
       transclude: true
     }
   }

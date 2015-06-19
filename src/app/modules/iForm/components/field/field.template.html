@@ -1,7 +1,7 @@
 <div class="field" ng-class="{inline: inline, required: required, error: checkErrors()}">
   <label ng-if="label" for="{{name || id}}" ng-bind="label"></label>
   <input  id="{{name || id}}"
-          type="{{type}}"
+          type="{{type || 'text'}}"
           ng-model="model"
           name="{{name || id}}"
           ng-disabled="disabled"
