@@ -4,5 +4,5 @@ bower_components/
 .tmp/
 .DS_Store
 .idea/
-**/.idea/workspace.xml
-**/.idea/tasks.xml
+.idea/workspace.xml
+.idea/tasks.xml
