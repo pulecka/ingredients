@@ -4,7 +4,7 @@
 (function(){
   'use strict';
   angular.module('field.component', [])
-    .directive('iField', iField)
+    .directive('iField', iField);
 
   iField.$inject=[];
   function iField() {
@@ -17,15 +17,24 @@
         type: '@?',
         name: '@?',
         id: '@?',
-        label: '@?',
         constraint: '@?',
         placeholder: '@?',
-        inline: '@?',
         required: '@?',
         validation: '@?',
-        disabled: '=?'
-      }
+        disabled: '=?',
+
+        //...........//
+        label: '@?',
+        inline: '@?'
+      },
+      link: LinkFn
     };
+
+
+  function LinkFn(s,e,a) {
+    // code
+  }
+
   }
 
 })();

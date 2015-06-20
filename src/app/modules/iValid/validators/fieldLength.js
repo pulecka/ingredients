@@ -10,16 +10,18 @@
   Config.$inject = ['iValidProvider'];
   function Config(iValidProvider) {
 
-    iValidProvider.newValidator('maxLength', maxLength, 'This is too long!!');
-    iValidProvider.newValidator('minLength', minLength, 'Too short man!!');
+    iValidProvider.newValidator('maxLength', maxLength, 'This is too long!');
+    iValidProvider.newValidator('minLength', minLength, 'Too short!');
 
     function maxLength(value, max) {
       if (!value) return void 0;
+      value = value.toString();
       return value.length <= max;
     }
 
     function minLength(value, min) {
       if (!value) return void 0;
+      value = value.toString();
       return value.length >= min;
     }
 

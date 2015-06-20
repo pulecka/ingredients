@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.12.3/semantic.min.css"/>
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.12.3/semantic.min.css"/>-->
 
     <!-- build:css({.tmp/serve,src}) styles/vendor.css -->
     <link rel="stylesheet" href="app/vendor.css">
@@ -28,47 +28,31 @@
     <![endif]-->
 
     <div ng-controller="sampleCtrl as ctrl">
-      <h2 class="ui block header">New payment</h2>
-      <i-form name="myForm" ng-submit="ctrl.independentMethod()">
+      <h2 class="ui block header">Sample</h2>
+      <i-form name="myForm">
         <div class="ui grid">
           <div class="four wide column"></div>
           <div class="eight wide column">
-            <i-field type="text"
-                   name="someField"
-                   label="some test"
-                   model="someValue"
-                   validation="minLength:2 | maxLength:20"
-                   placeholder="Toto je test">
+            <i-field name="firstField"
+                     label="This is 1st field"
+                     model="someModel"
+                     validation="minLength:2 | maxLength:20"
+                     placeholder="Toto je test">
             </i-field>
-            <i-field type="number"
-                   name="someField"
-                   label="some test"
-                   placeholder="Toto je test"
-                   required="true">
-            </i-field>
-            <i-select data="ctrl.sampleData"
-                      placeholder="Some placeholder"
-                      return-as="value"
-                      view-as="text"
-                      model="ctrl.someOutput"
-                      default="1"
-                      template="/app/samples/select.sample.html">
-            </i-select>
+
+            <!--<i-select data="ctrl.sampleData"-->
+                      <!--placeholder="Some placeholder"-->
+                      <!--return-as="value"-->
+                      <!--view-as="text"-->
+                      <!--model="ctrl.someOutput"-->
+                      <!--default="1"-->
+                      <!--template="/app/samples/select.sample.html">-->
+            <!--</i-select>-->
 
           </div>
         </div>
       </i-form>
     </div>
-
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-    <script>
-      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-      e.src='//www.google-analytics.com/analytics.js';
-      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-      ga('create','UA-XXXXX-X');ga('send','pageview');
-    </script>
 
     <!-- build:js(src) scripts/vendor.js -->
     <!-- bower:js -->
