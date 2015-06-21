@@ -1,0 +1,21 @@
+<div class="dh-file-upload clearfix">
+  <div class="preview" ng-if="!multifile && result">
+    <img ng-src="{{result}}" />
+  </div>
+  <div class="previewWrapper" ng-if="multifile !== undefined">
+    <div class="preview" ng-click="removeFile($index)" ng-repeat="preview in result track by $index">
+      <img ng-src="{{preview}}" />
+    </div>
+  </div>
+  <label class="fileInput fc-plus-circle"><input class="hidden" type="file" />Drop and drop
+    <div class="uploadMessage message" ng-show="uploadedSuccessfully">
+      Uploaded OK
+    </div>
+    <div class="uploadError message" ng-show="uploadError">
+      Upload Failed
+    </div>
+  </label>
+  <div class="filesCount" ng-if="multifile && result">
+    {{result.length}}
+  </div>
+</div>
