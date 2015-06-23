@@ -1,5 +1,11 @@
 .i-row
-  position: top left
-  width 100px
-  height 100px
-  background-color red
+  column(1)
+  height: rowHeight
+  .i-row-label
+    column(1/5)
+    line-height rowHeight
+    text-align center
+  .i-row-content
+    column(1)
+    &.labeled
+      column(4/5)

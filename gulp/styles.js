@@ -3,6 +3,10 @@
 var gulp = require('gulp');
 var browserSync = require('browser-sync');
 
+var jeet = require('jeet');
+var axis = require('axis');
+var rupture = require('rupture');
+
 var $ = require('gulp-load-plugins')();
 
 var wiredep = require('wiredep').stream;
@@ -40,8 +44,10 @@ module.exports = function(options) {
       .pipe(wiredep(options.wiredep))
       .pipe(vendorFilter.restore())
       .pipe($.sourcemaps.init())
-      .pipe($.stylus()).on('error', options.errorHandler('Stylus'))
-      .pipe($.autoprefixer()).on('error', options.errorHandler('Autoprefixer'))
+      .pipe($.stylus({
+        use: [jeet(), axis(), rupture()]
+      })).on('error', options.errorHandler('Stylus'))
+      //.pipe($.autoprefixer()).on('error', options.errorHandler('Autoprefixer'))
       .pipe($.sourcemaps.write())
       .pipe(gulp.dest(options.tmp + '/serve/app/'))
       .pipe(browserSync.reload({ stream: true }));

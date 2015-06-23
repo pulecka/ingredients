@@ -1,6 +1,8 @@
-<div class="field" ng-class="{inline: inline, required: required, error: checkErrors()}">
-  <label ng-if="label" for="{{name || id}}" ng-bind="label"></label>
-  <input  id="{{name || id}}"
+<div style="width:{{size-1}}%" class="i-field" ng-class="{required: required, error: checkErrors()}">
+  <label ng-if="label" class="i-field-label" for="{{name || id}}" ng-bind="label"></label>
+  <input  class="i-field-input"
+          ng-class="{nolabel: !label}"
+          id="{{name || id}}"
           type="{{type || 'text'}}"
           ng-model="model"
           name="{{name || id}}"

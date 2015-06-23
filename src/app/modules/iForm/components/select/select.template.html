@@ -10,7 +10,7 @@
 
   <div class="i-select-list" ng-show="listToggle">
     <div  ng-if="template"  ng-include="template" class="i-select-item" ng-repeat="item in data | filter: searchQuery track by $index" ng-click="select($index)"></div>
-    <div  ng-if="!template" class="i-select-item" ng-repeat="item in data | filter: searchQuery" ng-click="select($index)" ng-bind="item[viewAs]"></div>
+    <div  ng-if="!template" class="i-select-item" ng-repeat="item in data | filter: searchQuery track by $index" ng-click="select($index)" ng-bind="item[viewAs]"></div>
   </div>
 
 </div>

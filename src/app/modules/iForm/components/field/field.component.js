@@ -20,21 +20,15 @@
         constraint: '@?',
         placeholder: '@?',
         required: '@?',
+        size: '@?',
         validation: '@?',
         disabled: '=?',
+        // TODO i-am-disabled :), i-show, i-hide....
 
-        //...........//
         label: '@?',
         inline: '@?'
-      },
-      link: LinkFn
+      }
     };
-
-
-  function LinkFn(s,e,a) {
-    // code
-  }
-
   }
 
 })();
