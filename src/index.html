@@ -7,8 +7,6 @@
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.12.3/semantic.min.css"/>-->
-
     <!-- build:css({.tmp/serve,src}) styles/vendor.css -->
     <link rel="stylesheet" href="app/vendor.css">
     <!-- bower:css -->
@@ -29,7 +27,11 @@
 
     <div ng-controller="sampleCtrl as ctrl">
       <h2 class="ui block header">Sample</h2>
+
       <i-form name="myForm">
+
+        <i-row></i-row>
+
         <div class="ui grid">
           <div class="four wide column"></div>
           <div class="eight wide column">
@@ -40,14 +42,16 @@
                      placeholder="Toto je test">
             </i-field>
 
-            <!--<i-select data="ctrl.sampleData"-->
-                      <!--placeholder="Some placeholder"-->
-                      <!--return-as="value"-->
-                      <!--view-as="text"-->
-                      <!--model="ctrl.someOutput"-->
-                      <!--default="1"-->
-                      <!--template="/app/samples/select.sample.html">-->
-            <!--</i-select>-->
+            <!--<i-file model="someResult"></i-file>-->
+
+            <i-select data="ctrl.sampleData"
+                      placeholder="Some placeholder"
+                      return-as="value"
+                      view-as="text"
+                      model="ctrl.someOutput"
+                      default="1"
+                      template="app/samples/select.sample.html">
+            </i-select>
 
           </div>
         </div>

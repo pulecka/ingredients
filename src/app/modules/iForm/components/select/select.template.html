@@ -1,16 +1,16 @@
-<div class="j-select clearfix">
+<div class="i-select clearfix">
 
-  <div class="j-select-search">
+  <div class="i-select-search">
     <input type="text" ng-model="searchQuery" ng-change="listToggle = true" placeholder="{{placeholder}}"/>
   </div>
 
-  <div class="j-select-toggle" ng-click="listToggle=!listToggle; searchQuery = '' " >
+  <div class="i-select-toggle" ng-click="listToggle=!listToggle; searchQuery = '' " >
     <i class="caret down icon large"></i>
   </div>
 
-  <div class="j-select-list" ng-show="listToggle">
-    <div  ng-if="template"  ng-include="template" class="j-select-item" ng-repeat="item in data | filter: searchQuery track by $index" ng-click="select($index)"></div>
-    <div  ng-if="!template" class="j-select-item" ng-repeat="item in data | filter: searchQuery" ng-click="select($index)" ng-bind="item[viewAs]"></div>
+  <div class="i-select-list" ng-show="listToggle">
+    <div  ng-if="template"  ng-include="template" class="i-select-item" ng-repeat="item in data | filter: searchQuery track by $index" ng-click="select($index)"></div>
+    <div  ng-if="!template" class="i-select-item" ng-repeat="item in data | filter: searchQuery" ng-click="select($index)" ng-bind="item[viewAs]"></div>
   </div>
 
 </div>

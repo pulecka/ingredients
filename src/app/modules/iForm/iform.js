@@ -7,11 +7,11 @@
     return{
       restrict: 'E',
       scope: {
-        name: '@?',
-        submit: '&?',
-        constraints: '@?',   // TODO: think more about it
-        config: '@?',        // TODO: think of format
-        output: '=?'         // TODO: fields (object) output
+        name: '@?'
+        //submit: '&?',
+        //constraints: '@?',   // TODO: think more about it
+        //config: '@?',        // TODO: think of format
+        //output: '=?'         // TODO: fields (object) output
       },
       replace: true,
       templateUrl: 'app/modules/iForm/iform.template.html',

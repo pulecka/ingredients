@@ -11,14 +11,11 @@ angular.module('iFile.module', [])
       restricts: 'AE',
       scope: {
         model: '=?',
-        kind: '@?',
-        multifile: '@?',
-        name: '@?',
-        index: '@?'
+        multifile: '@?'
       },
       templateUrl: 'app/modules/iFile/iFile.template.html',
       replace: true,
-      link: linkF
+      link: linkFn
     };
 
     function linkFn(s, e, a) {
