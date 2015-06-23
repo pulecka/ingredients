@@ -1,34 +1,40 @@
 .i-select
-  position relative
-  width 100%
-  height 40px
-  border 1px solid silver
-  border-radius 2px
+  span(1, 1/100)
+  cf()
+  margin-top fieldLabelHeight
+  height fieldHeight
   box-sizing border-box
   .i-select-search
-    position: relative
-    height 100%
-    width 80%
-    box-sizing border-box
-    float left
+    span(5/6)
+    cf()
+    input
+      span(1)
+      box-sizing border-box
+      line-height fieldHeight
+      border none
+      outline 1px solid silver
+      margin 0
+      padding 0
   .i-select-toggle
-    box-sizing border-box
-    line-height 40px
-    width 20%
+    span(1/6)
+    cf()
+    line-height fieldHeight
     text-align center
-    float left
+    outline 1px solid silver
     cursor pointer
+    margin 0
+    padding 0
     &:hover
       color #cccccc
+    &:active
+      background-color white
   .i-select-list
-    position: absolute
-    top 100%
-    width 100%
-    min-height 40px
-    border 1px solid silver
+    span(5/6)
+    cf()
+    outline 1px solid silver
+    background-color white
     .i-select-item
-      min-height 40px
-      line-height 40px
+      span(1)
       background-color white
       margin-bottom 2px
       &:hover

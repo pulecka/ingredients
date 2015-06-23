@@ -1,11 +1,11 @@
-<div class="i-select clearfix">
+<div class="i-select">
 
   <div class="i-select-search">
     <input type="text" ng-model="searchQuery" ng-change="listToggle = true" placeholder="{{placeholder}}"/>
   </div>
 
   <div class="i-select-toggle" ng-click="listToggle=!listToggle; searchQuery = '' " >
-    <i class="caret down icon large"></i>
+    <div class="i-select-toggle-icon">...</div>
   </div>
 
   <div class="i-select-list" ng-show="listToggle">

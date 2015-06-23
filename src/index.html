@@ -32,13 +32,6 @@
 
         <i-row label="some">
 
-          <!--<i-field name="firstField"-->
-                   <!--label="This is 1st field"-->
-                   <!--model="someModel"-->
-                   <!--validation="minLength:2 | maxLength:20"-->
-                   <!--placeholder="Toto je test">-->
-          <!--</i-field>-->
-
           <i-field name="secondField"
                    model="someModel2"
                    size="20"
@@ -58,18 +51,21 @@
                    size="60"
                    placeholder="Toto je test 2">
           </i-field>
+           <!--<i-file model="someResult"></i-file>-->
 
-          <!--<i-select data="ctrl.sampleData"-->
-                    <!--placeholder="Some placeholder"-->
-                    <!--return-as="value"-->
-                    <!--view-as="text"-->
-                    <!--model="ctrl.someOutput"-->
-                    <!--default="1"-->
-                    <!--template="app/samples/select.sample.html">-->
-          <!--</i-select>-->
 
-          <!--<i-file model="someResult"></i-file>-->
+        </i-row>
 
+        <i-row label="another label">
+
+          <i-select data="ctrl.sampleData"
+            placeholder="Some placeholder"
+            return-as="value"
+            view-as="text"
+            model="someOutput"
+            default="1">
+
+          </i-select>
         </i-row>
 
       </i-form>
