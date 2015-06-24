@@ -7,8 +7,8 @@
     return{
       restrict: 'E',
       scope: {
-        name: '@?'
-        //submit: '&?',
+        name: '@?',
+        submit: '=?'
         //constraints: '@?',   // TODO: think more about it
         //config: '@?',        // TODO: think of format
         //output: '=?'         // TODO: fields (object) output

@@ -28,7 +28,8 @@
     <div ng-controller="sampleCtrl as ctrl">
       <h2 class="ui block header">Sample</h2>
 
-      <i-form name="myForm">
+      <i-form name="myForm" submit="ctrl.handleSubmit">
+
 
         <i-row label="some">
 
@@ -66,7 +67,8 @@
             default="1">
 
           </i-select>
-        </i-row>
+
+      <button type="submit">submit</button>>submit</button>
 
       </i-form>
     </div>

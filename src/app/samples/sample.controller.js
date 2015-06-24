@@ -6,6 +6,10 @@
   function sampleCtrl() {
     var ctrl = this;
 
+    ctrl.handleSubmit = function () {
+      alert('submited')
+    };
+
     ctrl.sampleData = [
       {
         text: 'some text here',
