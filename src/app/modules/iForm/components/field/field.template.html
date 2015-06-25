@@ -1,4 +1,4 @@
-<div style="width:{{size-1}}%" class="i-field" ng-class="{required: required, error: checkErrors()}">
+<div style="width:{{(size || 100)-1}}%" class="i-field" ng-class="{required: required, error: checkErrors()}">
   <label ng-if="label" ng-class="{inline: inline}"  class="i-field-label" for="{{name || id}}" ng-bind="label"></label>
   <input  class="i-field-input"
           ng-class="{nolabel: !label, inline: inline}"

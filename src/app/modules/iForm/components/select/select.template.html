@@ -1,4 +1,4 @@
-<div class="i-select">
+<div class="i-select" style="width:{{ (size || 100)-1 }}%" ng-if="!native">
 
   <div class="i-select-search">
     <input type="text" ng-model="searchQuery" ng-change="listToggle = true" placeholder="{{placeholder}}"/>
@@ -14,3 +14,7 @@
   </div>
 
 </div>
+
+<select ng-if="native" style="width:{{ (size || 100)-1 }}%" class="i-select" ng-model="model">
+  <option value="option.value" ng-repeat="option in data" ng-bind="option.text"></option>
+</select>

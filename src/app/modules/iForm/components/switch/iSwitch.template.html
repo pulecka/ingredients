@@ -1,0 +1,8 @@
+<div ng-init="model = model || default || null" class="i-switch" style="width:{{ (size || 100)-1 }}%">
+  <div ng-repeat="option in options track by $index"
+       class="i-switch-option"
+       ng-bind="option.label || option"
+       ng-click="iswch.handleClick(option)"
+       ng-class="{active: model === (option.value || option)}"
+       style="width: {{100/options.length}}%"></div>
+</div>
