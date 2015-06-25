@@ -30,7 +30,7 @@
 
       <i-form name="myForm" submit="ctrl.handleSubmit">
 
-        <i-row label="some">
+        <i-row label="<i-field>">
 
           <i-field name="secondField"
                    model="someModel2"
@@ -39,14 +39,15 @@
           </i-field>
 
           <i-field name="secondField"
-                   label="Test label"
+                   label="Top label"
                    model="someModel2"
                    size="20"
                    placeholder="Toto je test 2">
           </i-field>
 
           <i-field name="secondField"
-                   label="Test label"
+                   label="Inline label"
+                   inline="true"
                    model="someModel2"
                    size="60"
                    placeholder="Toto je test 2">
@@ -56,19 +57,26 @@
 
         </i-row>
 
-        <i-row label="another label">
+        <i-row label="<i-select>">
 
           <i-select data="ctrl.sampleData"
-            placeholder="Some placeholder"
-            return-as="value"
-            view-as="text"
-            model="someOutput"
-            default="1">
+                    placeholder="Some placeholder"
+                    return-as="value"
+                    view-as="text"
+                    model="someOutput"
+                    default="1">
           </i-select>
 
         </i-row>
 
-      <button type="submit">submit</button>>submit</button>
+        <i-row label="<i-step>">
+          <i-step ng-controller="stepSample as ctrl">
+            <i-step-template src="app/samples/step1.sample.html"></i-step-template>
+            <i-step-template src="app/samples/step2.sample.html"></i-step-template>
+          </i-step>
+        </i-row>
+
+      <button type="submit">submit</button>
 
       </i-form>
     </div>

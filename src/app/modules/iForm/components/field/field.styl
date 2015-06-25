@@ -7,8 +7,10 @@
     line-height fieldLabelHeight
     padding 0
     margin 0
-    &.right
-      label()
+    &.inline
+      span(1/5)
+      margin-top fieldLabelHeight*1.5
+      text-align center
   .i-field-input
     column(1)
     box-sizing border-box
@@ -16,4 +18,6 @@
     line-height fieldHeight
     &.nolabel
       margin-top fieldLabelHeight
-
+    &.inline
+      span(4/5)
+      margin-top fieldLabelHeight

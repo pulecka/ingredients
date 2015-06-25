@@ -1,7 +1,7 @@
 <div style="width:{{size-1}}%" class="i-field" ng-class="{required: required, error: checkErrors()}">
-  <label ng-if="label" class="i-field-label" for="{{name || id}}" ng-bind="label"></label>
+  <label ng-if="label" ng-class="{inline: inline}"  class="i-field-label" for="{{name || id}}" ng-bind="label"></label>
   <input  class="i-field-input"
-          ng-class="{nolabel: !label}"
+          ng-class="{nolabel: !label, inline: inline}"
           id="{{name || id}}"
           type="{{type || 'text'}}"
           ng-model="model"
