@@ -1,4 +1,4 @@
-<div ng-init="model = model || options[default].value || null" class="i-switch" style="width:{{ (size || 100)-1 }}%">
+<div ng-init="model = model || options[default].value || options[default] || null" class="i-switch" style="width:{{ (size || 100)-1 }}%">
   <div ng-repeat="option in options track by $index"
        class="i-switch-option"
        ng-bind="option.label || option"
