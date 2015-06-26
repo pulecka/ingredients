@@ -3,6 +3,6 @@
        class="i-switch-option"
        ng-bind="option.label || option"
        ng-click="iswch.handleClick(option, $index)"
-       ng-class="{active: model === (option.value || option)}"
+       ng-class="{active: model === (option.value || $index)}"
        style="width: {{100/options.length}}%"></div>
 </div>

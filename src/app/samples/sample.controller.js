@@ -6,6 +6,11 @@
   function sampleCtrl() {
     var ctrl = this;
 
+    //ctrl.switchOptions = [
+    //  'some #1',
+    //  'some else #2'
+    //];
+
     ctrl.switchOptions = [
       {
         label: 'option #1',
