@@ -15,7 +15,8 @@
       scope:{
         options: '=?',
         size: '@?',
-        model: '=?'
+        model: '=?',
+        default: '@?'
       },
       controller: iSwitchController,
       controllerAs: 'iswch'
@@ -28,15 +29,8 @@
 
     iswch.handleClick = handleClick;
 
-    // DEMO :)
-    //$scope.model = 1;
-    //$interval(function () {
-    //  $scope.model  = ($scope.model < 3) ? $scope.model+1 : 1;
-    //}, 5000)
-    //DEMO
-
-    function handleClick(option) {
-      $scope.model = option.value || option;
+    function handleClick(option, index) {
+      $scope.model = option.value || index;
     }
   }
 

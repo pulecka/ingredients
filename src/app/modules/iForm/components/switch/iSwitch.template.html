@@ -2,7 +2,7 @@
   <div ng-repeat="option in options track by $index"
        class="i-switch-option"
        ng-bind="option.label || option"
-       ng-click="iswch.handleClick(option)"
+       ng-click="iswch.handleClick(option, $index)"
        ng-class="{active: model === (option.value || option)}"
        style="width: {{100/options.length}}%"></div>
 </div>
