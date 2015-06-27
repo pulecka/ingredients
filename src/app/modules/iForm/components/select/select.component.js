@@ -8,7 +8,7 @@
     .directive('iSelect', iSelect);
 
   function iSelect() {
-    return{
+    var directive = {
       restrict: 'E',
       templateUrl: 'app/modules/iForm/components/select/select.template.html',
       scope:{
@@ -24,27 +24,34 @@
         default: '@?',
         model: '='
       },
-      link: LinkFn
+      controller: iSelectController,
+      controllerAs: 'iSelect'
     };
 
-    function LinkFn(scope) {
+    iSelectController.$inject = ['$scope'];
+    function iSelectController($scope) {
 
-      var s = scope;
+      var iSelect = this;
 
-      s.select = handleSelect;
+      var s = $scope;
+
+      iSelect.select = handleSelect;
 
       if (s.default) {
-          if (s.default > 0 && s.default <= s.data.length)
-          s.selected = handleSelect(s.default);
+        if (s.default >= 0 && s.default <= s.data.length-1)
+          iSelect.selected = handleSelect(s.default);
       }
 
       function handleSelect(index) {
-        s.selected = s.data[index];
-        s.model = s.selected[s.returnAs];
-        s.searchQuery = s.selected[s.viewAs];
-        s.listToggle = false;
+        iSelect.selected = s.data[index];
+        s.model = iSelect.selected[s.returnAs];
+        iSelect.searchQuery = iSelect.selected[s.viewAs];
+        iSelect.listToggle = false;
       }
     }
+
+    return directive;
+
   }
 
 })();

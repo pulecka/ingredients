@@ -1,20 +1,21 @@
 <div class="i-select" style="width:{{ (size || 100) }}%" ng-if="!native">
 
   <div class="i-select-search">
-    <input type="text" ng-model="searchQuery" ng-change="listToggle = true" placeholder="{{placeholder}}"/>
+    <input type="text" ng-model="iSelect.searchQuery" ng-change="iSelect.listToggle = true" placeholder="{{placeholder}}"/>
   </div>
-  <div class="i-select-toggle" ng-click="listToggle=!listToggle; searchQuery = '' ">
+  <div class="i-select-toggle" ng-click="iSelect.listToggle=!iSelect.listToggle; iSelect.searchQuery = '' ">
       <div class="ion-arrow-down-b i-select-toggle-icon"></div>
   </div>
-  
 
-  <div class="i-select-list" ng-show="listToggle">
-    <div  ng-if="template"  ng-include="template" class="i-select-item" ng-repeat="item in data | filter: searchQuery track by $index" ng-click="select($index)"></div>
-    <div  ng-if="!template" class="i-select-item" ng-repeat="item in data | filter: searchQuery track by $index" ng-click="select($index)" ng-bind="item[viewAs]"></div>
+
+  <div class="i-select-list" ng-show="iSelect.listToggle">
+    <div  ng-if="template"  ng-include="template" class="i-select-item" ng-repeat="item in data | filter: iSelect.searchQuery track by $index" ng-click="iSelect.select($index)"></div>
+    <div  ng-if="!template" class="i-select-item" ng-repeat="item in data | filter: iSelect.searchQuery track by $index" ng-click="iSelect.select($index)" ng-bind="item[viewAs]">test</div>
   </div>
 
 </div>
 
-<select ng-if="native" style="width:{{ (size || 100) }}%" class="i-select-native" ng-model="model">
-  <option value="option.value" ng-repeat="option in data" ng-bind="option.text"></option>
+
+<select ng-if="native" style="width:{{ (size || 100) }}%" class="i-select" ng-model="model">
+  <option value="option[returnAs]" ng-repeat="option in data" ng-bind="option[viewAs]"></option>
 </select>
