@@ -1,16 +1,21 @@
+edit()
++bellow(bp)
+  stack()
 .i-text
-  span(1, 1/100)
+  span(1)
   cf()
+  overflow hidden  
   .i-text-label
     column(1)
-    font-size fieldLabelHeight
+    font-size fontLabelHeight    
     line-height fieldLabelHeight
     padding 0
     margin 0
-    color #868582
+    color fieldLabelColor
+    font-weight bold
     &.inline
       span(1/5)
-      margin-top fieldLabelHeight*1.5
+      margin-top fieldLabelHeight*1.3
       text-align center
   .i-text-output
     column(1)
@@ -18,9 +23,12 @@
     box-sizing border-box
     padding-left 5px
     height fieldHeight
-    line-height fieldHeight
+    line-height fieldHeight    
+    border 2px solid fieldBorderColor
+    owerflow hidden
     &.nolabel
       margin-top fieldLabelHeight
     &.inline
-      span(4/5)
+      col(5/7)
       margin-top fieldLabelHeight
+      overflow hidden

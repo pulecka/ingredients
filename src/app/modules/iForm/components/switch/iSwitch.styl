@@ -1,15 +1,20 @@
+/*edit()*/
 .i-switch
-  span(1, 1/100)
+  span(1)
   cf()
   height rowHeight
   .i-switch-option
+    span(1)
     relative top left
+    box-sizing border-box
     float left
     height fieldHeight
     margin-top fieldLabelHeight
     box-shadow 0 0 2px 0 silver
     text-align center
-    line-height fieldHeight
+    line-height fieldHeight    
+    border 2px solid fieldBorderColor
+    margin-right -1px
     &:hover
       background-color #cccccc
       cursor pointer
