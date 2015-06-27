@@ -6,6 +6,8 @@ var $ = require('gulp-load-plugins')({
   pattern: ['gulp-*', 'main-bower-files', 'uglify-save-license', 'del']
 });
 
+var concatCss = require('gulp-concat-css');
+
 module.exports = function(options) {
   gulp.task('partials', function () {
     return gulp.src([
@@ -48,6 +50,7 @@ module.exports = function(options) {
       .pipe(jsFilter.restore())
       .pipe(cssFilter)
       .pipe($.csso())
+      .pipe(concatCss('styles/ingredients.min.css'))
       .pipe(cssFilter.restore())
       .pipe(assets.restore())
       .pipe($.useref())
