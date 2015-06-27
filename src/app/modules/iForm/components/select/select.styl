@@ -1,20 +1,16 @@
-.i-select-native
-  span(1)
-  cf()
-  margin-top fieldLabelHeight
-  height fieldHeight
-  box-sizing border-box
-  border 2px solid fieldBorderColor
+//.i-select-native
+//  span(1)
+//  cf()
+//  margin-top fieldLabelHeight
+//  height fieldHeight
+//  box-sizing border-box
+//  border 2px solid fieldBorderColor
+
 .i-select
   span(1)
   cf()
   margin-top fieldLabelHeight
-
-  // TODO
   min-height fieldHeight
-  // TODO
-
-
   box-sizing border-box
   .i-select-search
     span(1)
@@ -28,11 +24,11 @@
       margin 0
       padding 0
       padding-left 5px
+      padding-right fieldHeight
+
   .i-select-toggle
-    span(1)
-    cf()
-    position absolute
-    right 8px
+    relative top left
+    float right
     box-sizing border-box
     width fieldHeight
     height fieldHeight
@@ -43,6 +39,7 @@
     cursor pointer
     margin 0
     padding 0
+    margin-top fieldHeight * -1
     &:hover
       color #cccccc
     &:active
