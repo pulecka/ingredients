@@ -6,6 +6,7 @@
       // vendor
       'ngSanitize',
       'ui.router',
+      'ngAnimate',
 
       // core
       'ingredients.modules'

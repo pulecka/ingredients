@@ -20,6 +20,7 @@
         constraint: '@?',
         placeholder: '@?',
         required: '@?',
+        regex: '@?',
         size: '@?',
         validation: '@?',
         disabled: '=?',

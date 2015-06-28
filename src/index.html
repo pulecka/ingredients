@@ -28,7 +28,36 @@
 <div ng-controller="sampleCtrl as ctrl">
   <h2 class="ui block header">Sample</h2>
 
-  <i-form name="myForm" submit="ctrl.handleSubmit">
+  <form name="demoForm" ng-submit="ctrl.handleSubmit()" novalidate>
+
+    <i-row label="Errors">
+
+      <i-field name="secondField"
+               model="ctrl.testModel"
+               size="20"
+               validation="maxLength:10|minLength:3"
+               type="number"
+               required="true"
+               placeholder="I'll catch your errors!">
+      </i-field>
+      <i-field name="otherField"
+               model="ctrl.testModel2"
+               size="20"
+               required="true"
+               label="regex= '^[0-9]*$' "
+               regex="^[0-9]*$"
+               placeholder="I'll catch your errors!">
+      </i-field>
+
+      <i-row>
+        <button class="i-button small" ng-disabled="demoForm.$invalid" type="submit">submit</button>
+      </i-row>
+
+    </i-row>
+
+  </form>
+
+  <form name="myForm" ng-submit="ctrl.handleSubmit">
 
     <i-row label="<i-field>">
 
@@ -63,6 +92,15 @@
                 placeholder="Some placeholder"
                 return-as="value"
                 view-as="text"
+                size="50"
+                model="someOutput"
+                default="1">
+      </i-select>
+      <i-select data="ctrl.sampleData"
+                placeholder="Some placeholder"
+                return-as="value"
+                view-as="text"
+                size="50"
                 model="someOutput"
                 default="1">
       </i-select>
@@ -105,7 +143,7 @@
 
     <button type="submit">submit</button>
 
-  </i-form>
+  </form>
 </div>
 
 <!-- build:js(src) scripts/vendor.js -->

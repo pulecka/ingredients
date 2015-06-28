@@ -8,7 +8,31 @@ rowHeight             = 70px
 fieldBorderColor = #DBDBDB
 fieldLabelColor = #5A5A5A
 rbYellowColor = #FCFF00
+rbBlueColor = #2F89E5
+errorColor = #ff594d
 
-// breakpoints TODO repair
+// breakpoints TODO rupture
 bp = 705px //breakpoint
-labelFamilyFont = "Monospace"
+
+button.i-button
+  min-width 150px
+  font-weight 800
+  color white
+  border none
+  line-height fieldHeight
+  background-color rbBlueColor
+  &:active
+    background-color darken(rbBlueColor, 10)
+  &:hover
+    background-color lighten(rbBlueColor, 10)
+    cursor pointer
+  &.fill
+    width 100%
+  &.small
+    min-width 100px
+    line-height fieldHeight*0.5
+  &:disabled
+    background-color lighten(rbBlueColor, 30)
+    cursor: not-allowed
+
+

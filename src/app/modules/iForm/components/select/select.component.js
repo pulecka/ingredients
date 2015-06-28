@@ -16,7 +16,6 @@
         returnAs: '@',
         viewAs: '@',
         searchable: '@?',
-        native: '@?',
         placeholder: '@?',
         size: '@?',
         // TODO sipka off/on

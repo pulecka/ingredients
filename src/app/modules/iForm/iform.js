@@ -3,19 +3,36 @@
   angular.module('iForm.module', ['iForm.components'])
     .directive('iForm', iForm);
 
-  function iForm() {
-    return{
+  iForm.$inject = ['$compile'];
+  function iForm($compile) {
+    return {
       restrict: 'E',
-      scope: {
-        name: '@?',
-        submit: '=?'
-        //constraints: '@?',   // TODO: think more about it
-        //config: '@?',        // TODO: think of format
-        //output: '=?'         // TODO: fields (object) output
-      },
-      replace: true,
-      templateUrl: 'app/modules/iForm/iform.template.html',
+      scope: {},
+      replace:true,
+      //templateUrl: 'app/modules/iForm/iform.template.html',
       transclude: true
-    }
+      //compile: compileFn,
+      //link: linkFn
+    };
+
+    //function compileFn() {
+    //    return {
+    //      pre: function preLink(scope, iElement, iAttrs, controller) {
+    //        var formElement = '<form class="i-form" name="'+ scope.name +'" ' + 'id="'+ scope.name +'" novalidate ng-submit="'+ scope.submit +'"></form>';
+    //
+    //        var html = $compile(formElement)(scope);
+    //        iElement.replaceWith(html);
+    //
+    //      }
+    //    }
+    //  }
+
+
+    //function linkFn(s,e,a,c,transcludeFn) {
+    //  transcludeFn(function (clone, scope) {
+    //    e.append($compile(clone)(s));
+    //  })
+    //}
   }
+
 })();

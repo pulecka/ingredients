@@ -16,7 +16,7 @@
       line-height fieldLabelHeight+rowHeight
       text-align center
   .i-field-input
-    column(9/10)
+    span(9/10)
     box-sizing border-box
     border 3px solid fieldBorderColor
     padding-left 5px
@@ -27,3 +27,16 @@
     &.inline
       span(4/5)
       margin-top fieldLabelHeight
+    &.ng-invalid.ng-dirty
+      background-color errorColor
+      color white
+  .fieldErrorMessage
+    transition all ease .4s
+    &.ng-enter
+      opacity 0
+    &.ng-enter.ng-enter-active
+      opacity 1
+    &.ng-leave
+      opacity 1
+    &.ng-leave.ng-leave-active
+      opacity 0

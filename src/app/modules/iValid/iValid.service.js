@@ -11,6 +11,7 @@
   function iValid() {
 
     var validators = {};
+    var formatters = {};
 
     return {
       newValidator: function (name, validator, errorMessage) {
@@ -19,9 +20,18 @@
           message: errorMessage
         }
       },
+      newFormatter: function (name, formmater) {
+        formatters[name] = {
+          definition: validator,
+          message: errorMessage
+        }
+      },
 
       $get:[function () {
-        return validators;
+        return {
+          validators: validators,
+          formatters: formatters
+        }
       }]
     };
   }

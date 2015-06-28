@@ -1,11 +1,3 @@
-//.i-select-native
-//  span(1)
-//  cf()
-//  margin-top fieldLabelHeight
-//  height fieldHeight
-//  box-sizing border-box
-//  border 2px solid fieldBorderColor
-
 .i-select
   span(1)
   cf()
@@ -33,7 +25,6 @@
     height fieldHeight
     line-height fieldHeight
     text-align center
-    border 3px solid fieldBorderColor
     border-left 3px solid fieldBorderColor
     cursor pointer
     margin 0
@@ -42,18 +33,15 @@
     &:hover
       color black
       background-color rbYellowColor
-      border 3px solid rbYellowColor
       transition .3s
     &:active
       background-color rbYellowColor
   .i-select-list
-    span(1)
-    outline 5px solid green
-    position absolute
+    position relative
     margin-top fieldHeight
     border 1px solid fieldBorderColor
     background-color white
-    .i-select-item   
+    .i-select-item
       line-height fieldHeight
       padding-left 5px
       background-color white

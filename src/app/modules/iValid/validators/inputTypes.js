@@ -15,5 +15,7 @@
     iValidProvider.newValidator('date', null, 'This is not a valid date');
     iValidProvider.newValidator('url', null, 'This is not a valid url');
 
+    iValidProvider.newValidator('required', null, 'This field is required!');
+
   }
 })();
