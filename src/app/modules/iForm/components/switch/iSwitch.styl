@@ -12,15 +12,18 @@
     box-shadow 0 0 2px 0 silver
     text-align center
     line-height fieldHeight
-    border 2px solid fieldBorderColor
+    border 3px solid fieldBorderColor
     margin-right -1px
     &:hover
-      background-color #cccccc
+      background-color rbYellowColor
+      border 3px solid rbYellowColor
       cursor pointer
+      transition .3s
     &:active
-      background-color yellow
+      background-color rbYellowColor
       color: #000
+      border 3px solid darken(rbYellowColor, 10)
     &.active
-      background-color yellow
+      background-color rbYellowColor
       color: #000
-
+      border 3px solid lighten(rbYellowColor, 10)

@@ -10,7 +10,7 @@
   span(1)
   cf()
   margin-top fieldLabelHeight
-  min-height fieldHeight
+  height fieldHeight
   box-sizing border-box
   .i-select-search
     span(1)
@@ -18,7 +18,7 @@
     input
       span(1)
       box-sizing border-box
-      border 2px solid fieldBorderColor
+      border 3px solid fieldBorderColor
       height fieldHeight
       line-height fieldHeight
       margin 0
@@ -27,33 +27,37 @@
       padding-right fieldHeight
 
   .i-select-toggle
-    relative top left
     float right
     box-sizing border-box
     width fieldHeight
     height fieldHeight
     line-height fieldHeight
     text-align center
-    border 2px solid fieldBorderColor
-    border-left 2px solid fieldBorderColor
+    border 3px solid fieldBorderColor
+    border-left 3px solid fieldBorderColor
     cursor pointer
     margin 0
     padding 0
     margin-top fieldHeight * -1
     &:hover
-      color #cccccc
+      color black
+      background-color rbYellowColor
+      border 3px solid rbYellowColor
+      transition .3s
     &:active
-      background-color white
+      background-color rbYellowColor
   .i-select-list
     span(1)
-    cf()
-    outline 2px solid silver
+    outline 5px solid green
+    position absolute
+    margin-top fieldHeight
+    border 1px solid fieldBorderColor
     background-color white
-    .i-select-item
-      span(1)
+    .i-select-item   
+      line-height fieldHeight
+      padding-left 5px
       background-color white
       margin-bottom 2px
-      z-index 200
       &:hover
         background-color #cccccc
         cursor pointer

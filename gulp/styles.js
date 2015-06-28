@@ -45,7 +45,7 @@ module.exports = function(options) {
       .pipe(vendorFilter.restore())
       .pipe($.sourcemaps.init())
       .pipe($.stylus({
-        use: [jeet(), axis(), rupture()]
+        use: [jeet(), rupture()]
       })).on('error', options.errorHandler('Stylus'))
       //.pipe($.autoprefixer()).on('error', options.errorHandler('Autoprefixer'))
       .pipe($.sourcemaps.write())
