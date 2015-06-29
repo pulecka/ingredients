@@ -538,7 +538,7 @@ button.i-button:disabled {
 }
 
 .i-select .i-select-list {
-  position: relative;
+  position: absolute;
   margin-top: 50px;
   border: 1px solid #dbdbdb;
   background-color: #fff;
@@ -549,6 +549,7 @@ button.i-button:disabled {
   padding-left: 5px;
   background-color: #fff;
   margin-bottom: 2px;
+  white-space:nowrap;
 }
 
 .i-select .i-select-list .i-select-item:hover {
