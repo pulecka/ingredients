@@ -5,7 +5,7 @@
   height fieldHeight
   box-sizing border-box
   .i-select-search
-    span(1)
+    span(9/10)
     cf()
     input
       span(1)
@@ -37,11 +37,13 @@
     &:active
       background-color rbYellowColor
   .i-select-list
-    position relative
+    z-index 100
+    position absolute
     margin-top fieldHeight
     border 1px solid fieldBorderColor
     background-color white
     .i-select-item
+      white-space nowrap
       line-height fieldHeight
       padding-left 5px
       background-color white
