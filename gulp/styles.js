@@ -4,7 +4,6 @@ var gulp = require('gulp');
 var browserSync = require('browser-sync');
 
 var jeet = require('jeet');
-var axis = require('axis');
 var rupture = require('rupture');
 
 var $ = require('gulp-load-plugins')();

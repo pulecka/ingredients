@@ -19,12 +19,10 @@
         id: '@?',
         constraint: '@?',
         placeholder: '@?',
-        required: '@?',
         regex: '@?',
         size: '@?',
         validation: '@?',
         disabled: '=?',
-        // TODO i-am-disabled :), i-show, i-hide....
 
         label: '@?',
         inline: '@?'

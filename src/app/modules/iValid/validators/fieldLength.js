@@ -12,6 +12,7 @@
 
     iValidProvider.newValidator('maxLength', maxLength, 'This is too long!');
     iValidProvider.newValidator('minLength', minLength, 'Too short!');
+    iValidProvider.newValidator('required', required, 'This field is required!');
 
     function maxLength(value, max) {
       if (!value) return void 0;
@@ -23,6 +24,12 @@
       if (!value) return void 0;
       value = value.toString();
       return value.length >= min;
+    }
+
+    function required(value) {
+      if (!value) return false;
+      value = value.toString();
+      return value.length > 0;
     }
 
   }

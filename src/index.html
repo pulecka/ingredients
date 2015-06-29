@@ -32,118 +32,126 @@
 
     <i-row label="Errors">
 
-      <i-field name="secondField"
+      <i-field name="secondFieldssss"
                model="ctrl.testModel"
                size="20"
-               validation="maxLength:10|minLength:3"
-               type="number"
-               required="true"
-               placeholder="I'll catch your errors!">
+               label="Required"
+               validation="required|minLength:10"
+               placeholder="This is required">
       </i-field>
-      <i-field name="otherField"
+
+      <i-field name="otherFieldsss"
                model="ctrl.testModel2"
                size="20"
-               required="true"
-               label="regex= '^[0-9]*$' "
                regex="^[0-9]*$"
-               placeholder="I'll catch your errors!">
+               validation="minLength:10"
+               label="regex= '^[0-9]*$'  &  required"
+               placeholder="This is required (only numbers)">
       </i-field>
 
-      <i-row>
-        <button class="i-button small" ng-disabled="demoForm.$invalid" type="submit">submit</button>
+    </i-row>
+
+      <i-row label="submit">
+        <button class="i-button" ng-disabled="!demoForm.$valid" type="submit">submit</button>
       </i-row>
 
-    </i-row>
 
   </form>
 
-  <form name="myForm" ng-submit="ctrl.handleSubmit">
+  <!--<form name="myForm" ng-submit="ctrl.handleSubmit">-->
 
-    <i-row label="<i-field>">
+    <!--<i-row label="<i-field>">-->
 
-      <i-field name="secondField"
-               model="ctrl.someModel2"
-               size="20"
-               placeholder="Toto je test 1">
-      </i-field>
+      <!--<i-field name="secondField"-->
+               <!--model="ctrl.someModel2"-->
+               <!--size="20"-->
+               <!--placeholder="Toto je test 1">-->
+      <!--</i-field>-->
 
-      <i-field name="secondField"
-               label="Top label"
-               model="ctrl.someModel2"
-               size="20"
-               placeholder="Toto je test 2">
-      </i-field>
+      <!--<i-field name="secondField"-->
+               <!--label="Top label"-->
+               <!--model="ctrl.someModel2"-->
+               <!--size="20"-->
+               <!--placeholder="Toto je test 2">-->
+      <!--</i-field>-->
 
-      <i-field name="secondField"
-               label="Inline label"
-               model="ctrl.someModel2"
-               inline="true"
-               size="60"
-               placeholder="Toto je test 3">
-      </i-field>
-      <!--<i-file model="someResult"></i-file>-->
+      <!--<i-field name="secondField"-->
+               <!--label="Inline label"-->
+               <!--model="ctrl.someModel2"-->
+               <!--inline="true"-->
+               <!--size="60"-->
+               <!--placeholder="Toto je test 3">-->
+      <!--</i-field>-->
 
+      <!--<i-field name="secondField"-->
+               <!--label="Inline label"-->
+               <!--model="ctrl.someModel2"-->
+               <!--size="100"-->
+               <!--placeholder="Toto je test 3">-->
+      <!--</i-field>-->
+      <!--&lt;!&ndash;<i-file model="someResult"></i-file>&ndash;&gt;-->
 
-    </i-row>
-
-    <i-row label="<i-select>">
-
-      <i-select data="ctrl.sampleData"
-                placeholder="Some placeholder"
-                return-as="value"
-                view-as="text"
-                size="50"
-                model="someOutput"
-                default="1">
-      </i-select>
-      <i-select data="ctrl.sampleData"
-                placeholder="Some placeholder"
-                return-as="value"
-                view-as="text"
-                size="50"
-                model="someOutput"
-                default="1">
-      </i-select>
-
-    </i-row>
-
-    <i-row label="<i-select> (native)">
-
-      <i-select data="ctrl.sampleData"
-                placeholder="Some placeholder"
-                return-as="value"
-                native="true"
-                view-as="text"
-                model="someOutput"
-                default="1">
-      </i-select>
-
-    </i-row>
-
-    <i-row label="<i-text>">
-      <i-text model="ctrl.someModel2" label="Top label" size="20"></i-text>
-      <i-text model="ctrl.someModel2" label="Inline" size="30" inline="true"></i-text>
-      <i-text model="ctrl.someModel2" size="50"></i-text>
-    </i-row>
-
-    <!--<i-row label="<i-step>">-->
-
-    <!--<i-step>-->
-    <!--<i-step-template src="app/samples/step1.sample.html"></i-step-template>-->
-    <!--<i-step-template src="app/samples/step2.sample.html"></i-step-template>-->
-    <!--</i-step>-->
 
     <!--</i-row>-->
 
-    <i-row label="<i-switch>">
-      <i-switch options="ctrl.switchOptions" model="ctrl.someSwitch" size="50" default="1"></i-switch>
-      <i-switch options="ctrl.someModel2" model="ctrl.someSwitch" size="50"></i-switch>
-    </i-row>
+    <!--<i-row label="<i-select>">-->
+
+      <!--<i-select data="ctrl.sampleData"-->
+                <!--placeholder="Some placeholder"-->
+                <!--return-as="value"-->
+                <!--view-as="text"-->
+                <!--size="50"-->
+                <!--model="someOutput"-->
+                <!--default="1">-->
+      <!--</i-select>-->
+      <!--<i-select data="ctrl.sampleData"-->
+                <!--placeholder="Some placeholder"-->
+                <!--return-as="value"-->
+                <!--view-as="text"-->
+                <!--size="50"-->
+                <!--model="someOutput"-->
+                <!--default="1">-->
+      <!--</i-select>-->
+
+    <!--</i-row>-->
+
+    <!--<i-row label="<i-select> (native)">-->
+
+      <!--<i-select data="ctrl.sampleData"-->
+                <!--placeholder="Some placeholder"-->
+                <!--return-as="value"-->
+                <!--native="true"-->
+                <!--view-as="text"-->
+                <!--model="someOutput"-->
+                <!--default="1">-->
+      <!--</i-select>-->
+
+    <!--</i-row>-->
+
+    <!--<i-row label="<i-text>">-->
+      <!--<i-text model="ctrl.someModel2" label="Top label" size="20"></i-text>-->
+      <!--<i-text model="ctrl.someModel2" label="Inline" size="30" inline="true"></i-text>-->
+      <!--<i-text model="ctrl.someModel2" size="50"></i-text>-->
+    <!--</i-row>-->
+
+    <!--&lt;!&ndash;<i-row label="<i-step>">&ndash;&gt;-->
+
+    <!--&lt;!&ndash;<i-step>&ndash;&gt;-->
+    <!--&lt;!&ndash;<i-step-template src="app/samples/step1.sample.html"></i-step-template>&ndash;&gt;-->
+    <!--&lt;!&ndash;<i-step-template src="app/samples/step2.sample.html"></i-step-template>&ndash;&gt;-->
+    <!--&lt;!&ndash;</i-step>&ndash;&gt;-->
+
+    <!--&lt;!&ndash;</i-row>&ndash;&gt;-->
+
+    <!--<i-row label="<i-switch>">-->
+      <!--<i-switch options="ctrl.switchOptions" model="ctrl.someSwitch" size="50" default="1"></i-switch>-->
+      <!--<i-switch options="ctrl.someModel2" model="ctrl.someSwitch" size="50"></i-switch>-->
+    <!--</i-row>-->
 
 
-    <button type="submit">submit</button>
+    <!--<button type="submit">submit</button>-->
 
-  </form>
+  <!--</form>-->
 </div>
 
 <!-- build:js(src) scripts/vendor.js -->
