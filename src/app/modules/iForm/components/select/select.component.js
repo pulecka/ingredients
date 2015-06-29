@@ -31,10 +31,11 @@
     function iSelectController($scope) {
 
       var iSelect = this;
-
       var s = $scope;
 
       iSelect.select = handleSelect;
+
+      dataTypeConverse(s);
 
       if (s.default) {
         if (s.default >= 0 && s.default <= s.data.length-1)
@@ -46,6 +47,17 @@
         s.model = iSelect.selected[s.returnAs];
         iSelect.searchQuery = iSelect.selected[s.viewAs];
         iSelect.listToggle = false;
+      }
+
+      function dataTypeConverse(s) {
+        if (typeof s.data == 'object') {
+          var objectToArray = [];
+          for (var key in s.data) {
+            s.data[key]['iKey'] = key;
+            objectToArray.push(s.data[key]);
+          }
+          s.data = objectToArray;
+        }
       }
     }
 
