@@ -1,17 +1,18 @@
 <div style="width:{{(size || 100)}}%" class="i-field" ng-class="{required: required, error: checkErrors()}">
-  <label ng-if="label" ng-class="{inline: inline, required: required}"  class="i-field-label" for="{{name || id}}" ng-bind="label"></label>
+  <label ng-if="label" ng-class="{inline: inline, required: required}"  class="i-field-label" for="{{id || name}}" ng-bind="label"></label>
   <input  class="i-field-input"
           ng-class="{nolabel: !label, inline: inline, required: required}"
-          id="{{name || id}}"
+          id="{{id || name}}"
           type="{{type || 'text'}}"
           ng-model="model"
           name="{{name || id}}"
           ng-disabled="disabled"
           placeholder="{{placeholder}}"
           ng-pattern="regex"
+          ng-required="isrequired"
           i-format="{{format}}"
           i-valid = "{{validation}}"/>
-  <div class="fieldErrorMessages">
+  <div class="fieldErrorMessages" ng-show="isDirty">
     <div class="fieldErrorMessage" ng-repeat="(key,error) in errors track by $index">{{ overrideMessage || getErrorMessage(key) }}</div>
   </div>
 </div>

@@ -227,10 +227,6 @@ button.i-button:disabled {
   clear: both;
 }
 
-.i-field .i-field-label:last-child {
-  margin-right: 0%;
-}
-
 .i-field .i-field-label.inline {
   *zoom: 1;
   float: left;
@@ -258,7 +254,7 @@ button.i-button:disabled {
   float: left;
   clear: none;
   text-align: inherit;
-  width: 90%;
+  width: 100%;
   margin-left: 0%;
   margin-right: 0%;
   box-sizing: border-box;
@@ -633,7 +629,6 @@ button.i-button:disabled {
   margin-left: 0%;
   margin-right: 0%;
   *zoom: 1;
-  overflow: hidden;
 }
 
 .i-text:before,
@@ -706,11 +701,11 @@ button.i-button:disabled {
   width: 100%;
   margin-left: 0%;
   margin-right: 3%;
+  box-shadow: 0 0 2px 0 silver;
   box-sizing: border-box;
   padding-left: 5px;
   height: 50px;
   line-height: 50px;
-  border: 3px solid #dbdbdb;
   owerflow: hidden;
 }
 

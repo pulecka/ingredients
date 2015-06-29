@@ -32,28 +32,29 @@
 
     <i-row label="Errors">
 
-      <i-field name="secondField"
+      <i-field name="secondFieldssss"
                model="ctrl.testModel"
                size="20"
-               validation="maxLength:10|minLength:3"
-               type="number"
-               required="true"
-               placeholder="I'll catch your errors!">
+               label="Required"
+               validation="required|minLength:10"
+               placeholder="This is required">
       </i-field>
-      <i-field name="otherField"
+
+      <i-field name="otherFieldsss"
                model="ctrl.testModel2"
                size="20"
-               required="true"
-               label="regex= '^[0-9]*$' "
                regex="^[0-9]*$"
-               placeholder="I'll catch your errors!">
+               validation="minLength:10"
+               label="regex= '^[0-9]*$'  &  required"
+               placeholder="This is required (only numbers)">
       </i-field>
 
-      <i-row>
-        <button class="i-button small" ng-disabled="demoForm.$invalid" type="submit">submit</button>
+    </i-row>
+
+      <i-row label="submit">
+        <button class="i-button" ng-disabled="!demoForm.$valid" type="submit">submit</button>
       </i-row>
 
-    </i-row>
 
   </form>
 
@@ -79,6 +80,13 @@
                model="ctrl.someModel2"
                inline="true"
                size="60"
+               placeholder="Toto je test 3">
+      </i-field>
+
+      <i-field name="secondField"
+               label="Inline label"
+               model="ctrl.someModel2"
+               size="100"
                placeholder="Toto je test 3">
       </i-field>
       <!--<i-file model="someResult"></i-file>-->
@@ -126,14 +134,14 @@
       <i-text model="ctrl.someModel2" size="50"></i-text>
     </i-row>
 
-    <!--<i-row label="<i-step>">-->
+    <i-row label="<i-step>">
 
-    <!--<i-step>-->
-    <!--<i-step-template src="app/samples/step1.sample.html"></i-step-template>-->
-    <!--<i-step-template src="app/samples/step2.sample.html"></i-step-template>-->
-    <!--</i-step>-->
+    <i-step>
+      <i-step-template src="app/samples/step1.sample.html"></i-step-template>
+      <i-step-template src="app/samples/step2.sample.html"></i-step-template>
+    </i-step>
 
-    <!--</i-row>-->
+    </i-row>
 
     <i-row label="<i-switch>">
       <i-switch options="ctrl.switchOptions" model="ctrl.someSwitch" size="50" default="1"></i-switch>
