@@ -93,38 +93,6 @@ body {
   box-shadow: 0 0 5px -1px #616161;
 }
 
-button.i-button {
-  min-width: 150px;
-  font-weight: 800;
-  color: #fff;
-  border: none;
-  line-height: 50px;
-  background-color: #2f89e5;
-}
-
-button.i-button:active {
-  background-color: #1970c8;
-}
-
-button.i-button:hover {
-  background-color: #5ca3eb;
-  cursor: pointer;
-}
-
-button.i-button.fill {
-  width: 100%;
-}
-
-button.i-button.small {
-  min-width: 100px;
-  line-height: 25px;
-}
-
-button.i-button:disabled {
-  background-color: #b7d6f6;
-  cursor: not-allowed;
-}
-
 .i-modal {
   position: fixed;
   top: 0;
@@ -177,6 +145,38 @@ button.i-button:disabled {
 .i-modal .i-content .i-close:hover i {
   animation: pulse 1s linear;
   color: #000;
+}
+
+button.i-button {
+  min-width: 150px;
+  font-weight: 800;
+  color: #fff;
+  border: none;
+  line-height: 50px;
+  background-color: #2f89e5;
+}
+
+button.i-button:active {
+  background-color: #1970c8;
+}
+
+button.i-button:hover {
+  background-color: #5ca3eb;
+  cursor: pointer;
+}
+
+button.i-button.fill {
+  width: 100%;
+}
+
+button.i-button.small {
+  min-width: 100px;
+  line-height: 25px;
+}
+
+button.i-button:disabled {
+  background-color: #b7d6f6;
+  cursor: not-allowed;
 }
 
 .i-field {
@@ -301,7 +301,8 @@ button.i-button:disabled {
   clear: both;
 }
 
-.i-field .i-field-input.ng-invalid.ng-dirty {
+.i-field .i-field-input.ng-invalid.ng-dirty,
+.i-field .i-field-input.ng-invalid-required.ng-dirty {
   background-color: #ff594d;
   color: #fff;
 }
@@ -534,6 +535,7 @@ button.i-button:disabled {
 }
 
 .i-select .i-select-list {
+  z-index: 100;
   position: absolute;
   margin-top: 50px;
   border: 1px solid #dbdbdb;
@@ -541,11 +543,11 @@ button.i-button:disabled {
 }
 
 .i-select .i-select-list .i-select-item {
+  white-space: nowrap;
   line-height: 50px;
   padding-left: 5px;
   background-color: #fff;
   margin-bottom: 2px;
-  white-space:nowrap;
 }
 
 .i-select .i-select-list .i-select-item:hover {
@@ -702,7 +704,6 @@ button.i-button:disabled {
   width: 100%;
   margin-left: 0%;
   margin-right: 3%;
-  box-shadow: 0 0 2px 0 silver;
   box-sizing: border-box;
   padding-left: 5px;
   height: 50px;
