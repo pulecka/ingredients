@@ -7,6 +7,7 @@
       'ngSanitize',
       'ui.router',
       'ngAnimate',
+      'ui.mask',
 
       // core
       'ingredients.modules'
