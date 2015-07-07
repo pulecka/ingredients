@@ -7,32 +7,30 @@
   function iForm($compile) {
     return {
       restrict: 'E',
-      scope: {},
-      replace:true,
-      //templateUrl: 'app/modules/iForm/iform.template.html',
-      transclude: true
-      //compile: compileFn,
-      //link: linkFn
+      transclude: true,
+      link: linkFn
     };
 
-    //function compileFn() {
-    //    return {
-    //      pre: function preLink(scope, iElement, iAttrs, controller) {
-    //        var formElement = '<form class="i-form" name="'+ scope.name +'" ' + 'id="'+ scope.name +'" novalidate ng-submit="'+ scope.submit +'"></form>';
-    //
-    //        var html = $compile(formElement)(scope);
-    //        iElement.replaceWith(html);
-    //
-    //      }
-    //    }
-    //  }
 
+    function linkFn(s,e,a,c, $transcludeFn) {
+      var submit = (a.submit) ? ' ng-submit="'+ a.submit + '"' : '';
 
-    //function linkFn(s,e,a,c,transcludeFn) {
-    //  transcludeFn(function (clone, scope) {
-    //    e.append($compile(clone)(s));
-    //  })
-    //}
+      var formElement =
+        '<form class="i-form"' +
+               'name="'+ (a.name || a.id) +'"'+
+               'id="'+ (a.name || a.id) +'" novalidate' +
+               submit +
+              // TODO: other features will be here
+        '></form>';
+
+      var html = $compile(formElement)(s);
+
+      $transcludeFn(s, function (clone) {
+        html.append(clone);
+        e.replaceWith(html);
+      });
+
+    }
   }
 
 })();

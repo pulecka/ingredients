@@ -28,10 +28,8 @@
 <div ng-controller="sampleCtrl as ctrl">
   <h2 class="ui block header">Sample</h2>
 
-  <form name="demoForm" ng-submit="ctrl.handleSubmit()" novalidate>
-
+  <i-form name="demoForm">
     <i-row label="Errors">
-
       <i-field name="secondFieldssss"
                model="ctrl.testModel"
                size="20"
@@ -39,7 +37,6 @@
                mask="9999-9999-999"
                placeholder="____-____-___">
       </i-field>
-
       <i-field name="otherFieldsss"
                model="ctrl.testModel2"
                size="20"
@@ -48,17 +45,14 @@
                label="regex= '^[0-9]*$'  &  required"
                placeholder="This is required (only numbers)">
       </i-field>
-
     </i-row>
 
-      <i-row label="submit">
-        <button class="i-button" ng-disabled="!demoForm.$valid" type="submit">submit</button>
-      </i-row>
+    <i-row label="submit">
+      <button class="i-button" ng-disabled="!demoForm.$valid" type="submit">submit</button>
+    </i-row>
+  </i-form>
 
-
-  </form>
-
-  <form name="myForm" ng-submit="ctrl.handleSubmit">
+  <i-form name="myForm" submit="ctrl.handleSubmit()">
 
     <i-row label="<i-field>">
 
@@ -151,7 +145,7 @@
 
     <button type="submit">submit</button>
 
-  </form>
+  </i-form>
 </div>
 
 <!-- build:js(src) scripts/vendor.js -->
