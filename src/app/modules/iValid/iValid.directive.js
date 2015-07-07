@@ -2,13 +2,13 @@
   'use strict';
   angular.module('iValid.module')
     .directive('iValid', iValidate)
-    //.directive('iFormat', iFormat)
+    .directive('iFormat', iFormat);
 
   iValidate.$inject = ['iValid', 'iUtils'];
   function iValidate(iValid, iUtils) {
     return{
       restrict: 'A',
-      require: 'ngModel',
+      require: '?ngModel',
       link: LinkFn
     };
 
@@ -21,7 +21,7 @@
 
         angular.forEach(validationObject, function (rule, key) {
           ngModel.$validators[key] = function (value) {
-              return iValid.validators[key].definition(value, rule);
+            return iValid.validators[key].definition(value, rule);
           };
 
 
@@ -59,46 +59,53 @@
     }
   }
 
-  //iFormat.$inject = ['iValid', 'iUtils'];
-  //function iFormat(iValid, iUtils) {
-  //  return{
-  //    restrict: 'A',
-  //    require: 'ngModel',
-  //    link: LinkFn
-  //  };
-  //
-  //  function LinkFn(scope, element, attrs, ngModel) {
-  //
-  //    if (attrs.iFormat.length > 0) {
-  //      attrs.iFormat = attrs.iFormat.replace(/\s+/g, '');
-  //
-  //      var validationObject = iUtils.string2Object(attrs.iFormat);
-  //
-  //      angular.forEach(validationObject, function (rule, key) {
-  //
-  //        var view_value;
-  //        ngModel.$parsers.push(function(value){
-  //
-  //          var return_value;
-  //
-  //          if(value.length > 5){
-  //            return_value = view_value;
-  //            ngModel.$setViewValue(view_value);
-  //            ngModel.$render();
-  //            ngModel.$setValidity('is_valid', false);
-  //          } else {
-  //            return_value = value;
-  //            view_value = return_value;
-  //            ngModel.$setValidity('is_valid', true);
-  //          }
-  //
-  //          return return_value;
-  //        });
-  //
-  //      });
-  //
-  //    }
-  //  }
-  //}
+  iFormat.$inject = ['iValid', 'iUtils'];
+  function iFormat(iValid, iUtils) {
+    return{
+      restrict: 'A',
+      require: '?ngModel',
+      link: LinkFn
+    };
+
+    function LinkFn(scope, element, attrs, ngModel) {
+
+      if (attrs.iFormat.length > 0) {
+        attrs.iFormat = attrs.iFormat.replace(/\s+/g, '');
+
+        var formatterObject = iUtils.string2Object(attrs.iFormat);
+
+        angular.forEach(formatterObject, function (param, key) {
+
+          var view_value;
+
+          function formatFn(value){
+            var return_value;
+
+            if (iValid.formatters[key] === undefined) {return console.info('Unknown formatter: ' + key)}
+
+            if(iValid.formatters[key].definition(value, param)){
+
+              // if OK
+              return_value = value;
+              view_value = return_value;
+              ngModel.$setValidity(key, true);
+            } else {
+
+              //if NOT ok
+              return_value = view_value;
+              ngModel.$setViewValue(view_value);
+              ngModel.$render();
+              ngModel.$setValidity(key, true);
+            }
+            return return_value;
+          }
+
+          ngModel.$formatters.push(formatFn);
+          ngModel.$parsers.push(formatFn);
+
+        });
+      }
+    }
+  }
 
 })();

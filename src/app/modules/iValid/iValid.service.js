@@ -20,10 +20,9 @@
           message: errorMessage
         }
       },
-      newFormatter: function (name, formmater) {
+      newFormatter: function (name, formatter) {
         formatters[name] = {
-          definition: validator,
-          message: errorMessage
+          definition: formatter
         }
       },
 

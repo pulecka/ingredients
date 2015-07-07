@@ -7,7 +7,6 @@
   function iField($compile) {
     return{
       restrict: 'E',
-      //templateUrl: 'app/modules/iForm/components/field/field.template.html',
       replace: true,
       scope:{
         model: '=?',
@@ -19,6 +18,7 @@
         placeholder: '@?',
         regex: '@?',
         size: '@?',
+        format: '@?',
         validation: '@?',
         disabled: '=?',
         label: '@?',
@@ -55,8 +55,8 @@
                         ' placeholder="{{placeholder}}"'+
                         ' ng-pattern="regex"'+
                         ' ng-required="isrequired"'+
-                        'i-format="{{format}}"'+
-                        'i-valid = "{{validation}}" />'+
+                        ' i-format="{{format}}"'+
+                        ' i-valid = "{{validation}}" />'+
                 '<div class="fieldErrorMessages" ng-show="isDirty">'+
                     '<div class="fieldErrorMessage" ng-repeat="(key,error) in errors track by $index">{{ overrideMessage || getErrorMessage(key) }}</div>'+
                 '</div>'+
