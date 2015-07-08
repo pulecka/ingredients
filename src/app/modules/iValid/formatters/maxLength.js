@@ -9,9 +9,13 @@
     iValidProvider.newFormatter('maxLength', maxLength);
 
     function maxLength(value, max) {
-      if (!value) return false;
+      if (value == undefined) {
+        return false;
+      }
+
       value = value.toString();
-      return value.length <= max;
+
+      return (value.length <= max);
     }
 
   }

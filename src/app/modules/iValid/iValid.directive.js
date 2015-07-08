@@ -83,12 +83,18 @@
 
             if (iValid.formatters[key] === undefined) {return console.info('Unknown formatter: ' + key)}
 
+            console.log('if(iValid.formatters[key].definition(value, param))');
+            console.log(iValid.formatters[key].definition(value, param));
+            console.log(iValid.formatters[key]);
+
             if(iValid.formatters[key].definition(value, param)){
 
               // if OK
               return_value = value;
               view_value = return_value;
               ngModel.$setValidity(key, true);
+              console.log('formater ok');
+              console.log(key);
             } else {
 
               //if NOT ok
