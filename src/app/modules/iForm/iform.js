@@ -20,7 +20,6 @@
                'name="'+ (a.name || a.id) +'"'+
                'id="'+ (a.name || a.id) +'" novalidate' +
                submit +
-              // TODO: other features will be here
         '></form>';
 
       var html = $compile(formElement)(s);
