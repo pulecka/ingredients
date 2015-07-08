@@ -27,7 +27,7 @@
 
         });
 
-        scope.$watch('errors', function (n) {
+        scope.$watch('errors', function () {
           scope.errors = ngModel.$error;
           scope.isDirty = ngModel.$dirty;
         },true);

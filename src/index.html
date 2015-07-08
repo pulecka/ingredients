@@ -28,16 +28,17 @@
 <div ng-controller="sampleCtrl as ctrl">
   <h2 class="ui block header">Sample</h2>
 
-  <i-form name="demoForm" submit="ctrl.externalSubmit">
+  <i-form name="demoForm" submit="ctrl.handleSubmit(demoForm)">
     <i-row label="Errors">
       <i-field name="firstField"
-               model="firstField"
+               model="ctrl.firstField"
                size="20"
                required="true"
+               validate="maxLength:5"
                label="Masked input">
       </i-field>
       <i-field name="secondField"
-               model="secondField"
+               model="ctrl.secondField"
                size="20"
                validate="minLength:3"
                format="maxLength:10"

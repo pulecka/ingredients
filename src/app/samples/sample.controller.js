@@ -6,10 +6,6 @@
   function sampleCtrl() {
     var ctrl = this;
 
-    //ctrl.switchOptions = [
-    //  'some #1',
-    //  'some else #2'
-    //];
 
     ctrl.switchOptions = [
       {
@@ -26,8 +22,8 @@
       }
     ];
 
-    ctrl.handleSubmit = function () {
-      alert('submited')
+    ctrl.handleSubmit = function (form) {
+      console.log(form);
     };
 
     ctrl.sampleData = [

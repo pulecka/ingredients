@@ -8,7 +8,7 @@
     return{
       restrict: 'E',
       replace: true,
-      scope: {},
+      scope: true,
       compile: compileFn
     };
 
@@ -16,7 +16,7 @@
     function compileFn() {
       return {
         pre:
-          function (scope, iElement, attrs, formCtrl) {
+          function (scope, iElement, attrs) {
 
             var a = attrs;
 
@@ -60,7 +60,7 @@
                   iValid +
                   required +
                 '/>' +
-                '<div class="fieldErrorMessages">' +
+                '<div class="fieldErrorMessages" ng-show="isDirty || formCtrl.submitted">' +
                     '<div class="fieldErrorMessage" ng-repeat="(key,error) in errors track by $index">{{ overrideMessage || getErrorMessage(key) }}</div>'+
                 '</div>'+
               '</div>';
