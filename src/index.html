@@ -28,21 +28,19 @@
 <div ng-controller="sampleCtrl as ctrl">
   <h2 class="ui block header">Sample</h2>
 
-  <i-form name="demoForm">
+  <i-form name="demoForm" submit="ctrl.externalSubmit">
     <i-row label="Errors">
-      <i-field name="secondFieldssss"
-               model="ctrl.testModel"
+      <i-field name="firstField"
+               model="firstField"
                size="20"
-               label="Masked input"
-               mask="9999-9999-999"
-               placeholder="____-____-___">
+               required="true"
+               label="Masked input">
       </i-field>
-      <i-field name="otherFieldsss"
-               model="ctrl.testModel2"
+      <i-field name="secondField"
+               model="secondField"
                size="20"
-               regex="^[0-9]*$"
-               validation="minLength:10|required"
-               label="regex= '^[0-9]*$'  &  required"
+               validate="minLength:3"
+               format="maxLength:10"
                placeholder="This is required (only numbers)">
       </i-field>
     </i-row>
@@ -52,6 +50,7 @@
     </i-row>
   </i-form>
 
+<!--
   <i-form name="myForm" submit="ctrl.handleSubmit()">
 
     <i-row label="<i-field>">
@@ -83,7 +82,7 @@
                size="100"
                placeholder="Toto je test 3">
       </i-field>
-      <!--<i-file model="someResult"></i-file>-->
+      &lt;!&ndash;<i-file model="someResult"></i-file>&ndash;&gt;
 
 
     </i-row>
@@ -146,6 +145,7 @@
     <button type="submit">submit</button>
 
   </i-form>
+-->
 </div>
 
 <!-- build:js(src) scripts/vendor.js -->

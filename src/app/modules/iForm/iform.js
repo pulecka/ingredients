@@ -7,13 +7,16 @@
   function iForm($compile) {
     return {
       restrict: 'E',
+      scope:{},
       transclude: true,
-      link: linkFn
+      link: linkFn,
+      controller: 'FormController',
+      controllerAs: 'formCtrl'
     };
 
 
     function linkFn(s,e,a,c, $transcludeFn) {
-      var submit = (a.submit) ? ' ng-submit="'+ a.submit + '"' : '';
+      var submit = (a.submit) ? ' ng-submit="formCtrl.handleSubmit('+ a.name +', '+ a.submit +')"' : '';
 
       var formElement =
         '<form class="i-form"' +

@@ -8,7 +8,7 @@
     return{
       restrict: 'E',
       replace: true,
-      scope: true,
+      scope: {},
       compile: compileFn
     };
 
@@ -16,7 +16,7 @@
     function compileFn() {
       return {
         pre:
-          function postLink(scope, iElement, attrs) {
+          function (scope, iElement, attrs, formCtrl) {
 
             var a = attrs;
 
@@ -35,11 +35,11 @@
             var placeholder = (a.placeholder) ? ' placeholder="'+ a.placeholder +'"' : '';
             var regex = (a.regex) ? ' pattern="'+ a.regex +'"' : '';
 
-            //var required = (a.isrequired) ? ' ng-required="'+ a.isrequired +'"' : '';
+            var required = (a.required) ? ' required="true"' : '';
 
             // custom directives
-            var iFormat = (a.format) ? ' i-format="{{format}}"' : '';
-            var iValid = (a.validate) ? ' i-valid = "{{validation}}"' : '';
+            var iFormat = (a.format) ? ' i-format="'+ a.format+'"' : '';
+            var iValid = (a.validate) ? ' i-valid = "'+ a.validate + '"' : '';
 
 
             var html =
@@ -58,14 +58,16 @@
                   regex +
                   iFormat +
                   iValid +
+                  required +
                 '/>' +
-                '<div class="fieldErrorMessages" ng-show="isDirty">'+
+                '<div class="fieldErrorMessages">' +
                     '<div class="fieldErrorMessage" ng-repeat="(key,error) in errors track by $index">{{ overrideMessage || getErrorMessage(key) }}</div>'+
                 '</div>'+
               '</div>';
 
-            var compiledHtml = $compile(html)(scope);
-            iElement.replaceWith(compiledHtml);
+            var elementToInject = angular.element(html);
+            iElement.replaceWith(elementToInject);
+            $compile(elementToInject)(scope);
           }
       };
     }

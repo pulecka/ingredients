@@ -38,7 +38,7 @@
       dataTypeConverse(s);
 
       if (s.default) {
-        if (s.default >= 0 && s.default <= s.data.length-1)
+        if (s.data && s.default >= 0 && s.default <= s.data.length-1)
           iSelect.selected = handleSelect(s.default);
       }
 
