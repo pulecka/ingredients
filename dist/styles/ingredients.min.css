@@ -93,6 +93,38 @@ body {
   box-shadow: 0 0 5px -1px #616161;
 }
 
+button.i-button {
+  min-width: 150px;
+  font-weight: 800;
+  color: #fff;
+  border: none;
+  line-height: 50px;
+  background-color: #2f89e5;
+}
+
+button.i-button:active {
+  background-color: #1970c8;
+}
+
+button.i-button:hover {
+  background-color: #5ca3eb;
+  cursor: pointer;
+}
+
+button.i-button.fill {
+  width: 100%;
+}
+
+button.i-button.small {
+  min-width: 100px;
+  line-height: 25px;
+}
+
+button.i-button:disabled {
+  background-color: #b7d6f6;
+  cursor: not-allowed;
+}
+
 .i-modal {
   position: fixed;
   top: 0;
@@ -145,38 +177,6 @@ body {
 .i-modal .i-content .i-close:hover i {
   animation: pulse 1s linear;
   color: #000;
-}
-
-button.i-button {
-  min-width: 150px;
-  font-weight: 800;
-  color: #fff;
-  border: none;
-  line-height: 50px;
-  background-color: #2f89e5;
-}
-
-button.i-button:active {
-  background-color: #1970c8;
-}
-
-button.i-button:hover {
-  background-color: #5ca3eb;
-  cursor: pointer;
-}
-
-button.i-button.fill {
-  width: 100%;
-}
-
-button.i-button.small {
-  min-width: 100px;
-  line-height: 25px;
-}
-
-button.i-button:disabled {
-  background-color: #b7d6f6;
-  cursor: not-allowed;
 }
 
 .i-field {
