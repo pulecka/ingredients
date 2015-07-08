@@ -23,9 +23,9 @@
             var size = ' style="width:'+ a.size+'%"';
 
             var debounce = (a.debounce) ? ' ng-model-options="{debounce: '+ a.debounce +'}"': '';
-            var fieldClasses = ' class="i-field" ng-class="{required: required, error: checkErrors()}"';
-            var inputClasses = ' class="i-field-input" ng-class="{nolabel: !label, inline: inline, required: required}"';
-            var labelClasses = ' ng-class="{inline: inline, required: required}" class="i-field-label"';
+            var fieldClasses = ' class="i-field" ng-class="{error: checkErrors()}"';
+            var inputClasses = ' class="i-field-input' +( (a.inline) ? ' inline' : '') +( (a.label) ? '' : ' nolabel') + '"';
+            var labelClasses = ' class="i-field-label' +( (a.inline) ? ' inline' : '') +( (a.required) ? ' required' : '') + '"';
             var ui_mask = (a.mask) ? ' ui-mask="' + a.mask + '"':'';
             var inputName = (a.name) ? ' name="' + a.name + '"': '';
             var disabled = (a.disabled) ? ' ng-disabled="'+ a.disabled + '"' : '';
@@ -37,6 +37,8 @@
 
             var required = (a.required) ? ' required="true"' : '';
 
+            var label = (a.label) ? '<label ' + labelClasses + ' for="'+ id +'">'+a.label+'</label>' : '';
+
             // custom directives
             var iFormat = (a.format) ? ' i-format="'+ a.format+'"' : '';
             var iValid = (a.validate) ? ' i-valid = "'+ a.validate + '"' : '';
@@ -44,7 +46,7 @@
 
             var html =
               '<div' + size + fieldClasses + '>' +
-                '<label ng-if="label"' + labelClasses + 'for="'+ id +'" ng-bind="label"></label>'+
+                label +
                 '<input' +
                   inputClasses +
                   id +
