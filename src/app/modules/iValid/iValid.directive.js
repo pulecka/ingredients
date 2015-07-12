@@ -23,8 +23,6 @@
           ngModel.$validators[key] = function (value) {
             return iValid.validators[key].definition(value, rule);
           };
-
-
         });
 
         scope.$watch('errors', function () {

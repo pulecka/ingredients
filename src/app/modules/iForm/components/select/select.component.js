@@ -18,7 +18,6 @@
         searchable: '@?',
         placeholder: '@?',
         size: '@?',
-        // TODO sipka off/on
         template: '@?',
         default: '@?',
         model: '='
@@ -33,23 +32,40 @@
       var iSelect = this;
       var s = $scope;
 
+      // methods
       iSelect.select = handleSelect;
 
-      dataTypeConverse(s);
+      // convert source data
+      dataTypeConverse();
 
-      if (s.default) {
-        if (s.data && s.default >= 0 && s.default <= s.data.length-1)
-          iSelect.selected = handleSelect(s.default);
+      // set default value
+      setDefault();
+
+      // watch data property for changes
+      s.$watch('data', handleRefresh);
+
+
+      function handleRefresh(nVal) {
+        //dataTypeConverse(); !!!!!
+        setDefault();
+      }
+
+      function setDefault() {
+        if (s.default) {
+          if (s.data && s.default >= 0 && s.default <= s.data.length-1)
+            iSelect.selected = handleSelect(s.default);
+        }
       }
 
       function handleSelect(index) {
         iSelect.selected = s.data[index];
-        s.model = iSelect.selected[s.returnAs];
+        s.model = (s.returnAs === '$index') ? index : iSelect.selected[s.returnAs];
         iSelect.searchQuery = iSelect.selected[s.viewAs];
         iSelect.listToggle = false;
       }
 
-      function dataTypeConverse(s) {
+
+      function dataTypeConverse() {
         if (typeof s.data == 'object') {
           var objectToArray = [];
           for (var key in s.data) {

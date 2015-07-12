@@ -3,7 +3,8 @@
   angular.module('angular-ingredients.js')
     .controller('sampleCtrl', sampleCtrl);
 
-  function sampleCtrl() {
+  sampleCtrl.$inject = ['$timeout'];
+  function sampleCtrl($timeout) {
     var ctrl = this;
 
 
@@ -36,5 +37,25 @@
         value: 11
       }
     ];
+
+    $timeout(function () {
+      ctrl.sampleData = [
+        {
+          text: 'uplne nove nieco',
+          value: 22
+        },
+        {
+          text: 'to iste tu',
+          value: 11
+        },
+        {
+          text: 'aaaaa tu',
+          value: 122
+        }
+
+      ];
+
+    }, 5000)
+
   }
 })();

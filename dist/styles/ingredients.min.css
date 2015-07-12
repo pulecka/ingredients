@@ -28,6 +28,38 @@ body {
   font-family: Lato;
 }
 
+button.i-button {
+  min-width: 150px;
+  font-weight: 800;
+  color: #fff;
+  border: none;
+  line-height: 50px;
+  background-color: #2f89e5;
+}
+
+button.i-button:active {
+  background-color: #1970c8;
+}
+
+button.i-button:hover {
+  background-color: #5ca3eb;
+  cursor: pointer;
+}
+
+button.i-button.fill {
+  width: 100%;
+}
+
+button.i-button.small {
+  min-width: 100px;
+  line-height: 25px;
+}
+
+button.i-button:disabled {
+  background-color: #b7d6f6;
+  cursor: not-allowed;
+}
+
 .i-file-upload {
   position: relative;
   width: 100%;
@@ -91,38 +123,6 @@ body {
   text-align: center;
   color: #fff;
   box-shadow: 0 0 5px -1px #616161;
-}
-
-button.i-button {
-  min-width: 150px;
-  font-weight: 800;
-  color: #fff;
-  border: none;
-  line-height: 50px;
-  background-color: #2f89e5;
-}
-
-button.i-button:active {
-  background-color: #1970c8;
-}
-
-button.i-button:hover {
-  background-color: #5ca3eb;
-  cursor: pointer;
-}
-
-button.i-button.fill {
-  width: 100%;
-}
-
-button.i-button.small {
-  min-width: 100px;
-  line-height: 25px;
-}
-
-button.i-button:disabled {
-  background-color: #b7d6f6;
-  cursor: not-allowed;
 }
 
 .i-modal {
@@ -331,7 +331,7 @@ button.i-button:disabled {
   width: 100%;
   *zoom: 1;
   min-height: 70px;
-  margin: 0;
+  margin: 10px 0;
   padding: 0;
   box-sizing: border-box;
 }
@@ -464,7 +464,7 @@ button.i-button:disabled {
   float: left;
   clear: none;
   text-align: inherit;
-  width: 90%;
+  width: 100%;
   margin-left: 0%;
   margin-right: 0%;
   *zoom: 1;

@@ -35,7 +35,7 @@ module.exports = function(options) {
     };
 
     var htmlFilter = $.filter('*.html');
-    var jsFilter = $.filter('**/*.js');
+    var jsFilter = $.filter(['**/*.js', '!/app/samples/*.js']);
     var cssFilter = $.filter('**/*.css');
     var assets;
 
