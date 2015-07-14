@@ -52,14 +52,20 @@
 
     <i-select data="ctrl.sampleData"
               placeholder="Some placeholder"
-              return-as="$index"
+              return-as="value"
               view-as="text"
               model="someOutput"
+              size="50"
               default="1">
     </i-select>
-
-    <p>{{someOutput}}</p>
-
+    <i-select data="ctrl.sampleData"
+              placeholder="Some placeholder"
+              return-as="value"
+              view-as="text"
+              model="someOutput2"
+              size="50"
+              default="1">
+    </i-select>
   </i-form>
 
 </div>

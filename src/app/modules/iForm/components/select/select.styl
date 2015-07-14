@@ -4,6 +4,14 @@
   margin-top fieldLabelHeight
   height fieldHeight
   box-sizing border-box
+  .current-value
+    span(1)
+    cf()
+    height: fieldHeight
+    outline 1px solid silver
+    line-height fieldHeight
+    span
+      padding-left 20px
   .i-select-search
     span(1)
     cf()
@@ -17,7 +25,6 @@
       padding 0
       padding-left 5px
       padding-right fieldHeight
-
   .i-select-toggle
     float right
     box-sizing border-box
@@ -37,8 +44,6 @@
     &:active
       background-color rbYellowColor
   .i-select-list
-    z-index 100
-    position absolute
     margin-top fieldHeight
     border 1px solid fieldBorderColor
     background-color white

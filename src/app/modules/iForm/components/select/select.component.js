@@ -46,21 +46,20 @@
 
 
       function handleRefresh(nVal) {
-        //dataTypeConverse(); !!!!!
         setDefault();
       }
 
       function setDefault() {
         if (s.default) {
           if (s.data && s.default >= 0 && s.default <= s.data.length-1)
-            iSelect.selected = handleSelect(s.default);
+            handleSelect(s.default);
         }
       }
 
       function handleSelect(index) {
         iSelect.selected = s.data[index];
         s.model = (s.returnAs === '$index') ? index : iSelect.selected[s.returnAs];
-        iSelect.searchQuery = iSelect.selected[s.viewAs];
+        iSelect.searchQuery = (s.searchable) ? iSelect.selected[s.viewAs] : '';
         iSelect.listToggle = false;
       }
 
