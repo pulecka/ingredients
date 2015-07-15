@@ -55,6 +55,8 @@
 
       ];
 
+      ctrl.brutalModel = 22;
+
     }, 5000)
 
   }

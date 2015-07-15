@@ -44,8 +44,12 @@
       // watch data property for changes
       s.$watch('data', handleRefresh);
 
+      // watch model
+      s.$watch('model', handleModelChange);
 
-      function handleRefresh(nVal) {
+
+      function handleRefresh(nVal, oVal) {
+        if (nVal === oVal) return;
         setDefault();
       }
 
@@ -61,6 +65,15 @@
         s.model = (s.returnAs === '$index') ? index : iSelect.selected[s.returnAs];
         iSelect.searchQuery = (s.searchable) ? iSelect.selected[s.viewAs] : '';
         iSelect.listToggle = false;
+      }
+
+      function handleModelChange(nVal, oVal) {
+        if (nVal === oVal) return;
+        angular.forEach(s.data, function (value, index) {
+          if (value[s.returnAs] === nVal) {
+            handleSelect(index);
+          }
+        });
       }
 
 
