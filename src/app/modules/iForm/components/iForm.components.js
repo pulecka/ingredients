@@ -4,5 +4,7 @@
 
 (function(){
   'use strict';
-  angular.module('iForm.components', ['field.component', 'select.component', 'row.component', 'text.component', 'iSwitch.component']);
+  angular.module('iForm.components',
+    ['field.component', 'select.component', 'row.component',
+      'text.component', 'iSwitch.component', 'button.component']);
 })();
