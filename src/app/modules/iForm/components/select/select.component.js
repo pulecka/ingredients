@@ -47,7 +47,6 @@
       // watch model
       s.$watch('model', handleModelChange);
 
-
       function handleRefresh(nVal, oVal) {
         if (nVal === oVal) return;
         setDefault();
@@ -75,7 +74,6 @@
           }
         });
       }
-
 
       function dataTypeConverse() {
         if (typeof s.data == 'object') {
