@@ -81,7 +81,7 @@
       }
 
       function dataTypeConverse() {
-        if (s.data.length > -1) return;
+        if (s.data && s.data.length > -1) return;
         if (typeof s.data === 'object') {
           var _buffer = [];
           angular.forEach(s.data, function (value, key) {
