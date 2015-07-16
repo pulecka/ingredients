@@ -20,7 +20,8 @@
         size: '@?',
         template: '@?',
         default: '@?',
-        model: '='
+        model: '=',
+        change: '=?'
       },
       controller: iSelectController,
       controllerAs: 'iSelect'
@@ -70,6 +71,9 @@
         if (nVal === oVal) return;
         angular.forEach(s.data, function (value, index) {
           if (value[s.returnAs] === nVal) {
+            if (typeof s.change !== 'undefined') {
+              s.change();
+            }
             handleSelect(index);
           }
         });
