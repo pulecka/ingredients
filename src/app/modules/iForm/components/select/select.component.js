@@ -82,9 +82,10 @@
       function dataTypeConverse() {
         if (typeof s.data == 'object') {
           var objectToArray = [];
-          for (var key in s.data) {
-            s.data[key]['iKey'] = key;
-            objectToArray.push(s.data[key]);
+          var _buffer = angular.copy(s.data);
+          for (var key in _buffer) {
+            _buffer[key]['iKey'] = key;
+            objectToArray.push(_buffer[key]);
           }
           s.data = objectToArray;
         }
