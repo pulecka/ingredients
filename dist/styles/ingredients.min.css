@@ -577,7 +577,7 @@ button.i-button:active {
   margin-top: 50px;
   border: 1px solid #dbdbdb;
   background-color: #fff;
-  position: fixed;
+  position: absolute;
 }
 
 .i-select .i-select-list .i-select-item {
