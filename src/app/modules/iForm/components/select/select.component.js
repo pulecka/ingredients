@@ -50,6 +50,7 @@
 
       function handleRefresh(nVal, oVal) {
         if (nVal === oVal) return;
+        dataTypeConverse();
         setDefault();
       }
 
@@ -80,14 +81,15 @@
       }
 
       function dataTypeConverse() {
-        if (typeof s.data == 'object') {
-          var objectToArray = [];
-          var _buffer = angular.copy(s.data);
-          for (var key in _buffer) {
-            _buffer[key]['iKey'] = key;
-            objectToArray.push(_buffer[key]);
-          }
-          s.data = objectToArray;
+        if (s.data.length > -1) return;
+        if (typeof s.data === 'object') {
+          var _buffer = [];
+          angular.forEach(s.data, function (value, key) {
+            var _payload = value;
+            _payload.iKey = key;
+            _buffer.push(_payload)
+          });
+          s.data = _buffer;
         }
       }
     }
