@@ -147,6 +147,37 @@ body {
   color: #000;
 }
 
+.i-step {
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 100%;
+  margin-left: 0%;
+  margin-right: 3%;
+  *zoom: 1;
+  max-height: 100%;
+  outline: 1px solid red;
+}
+
+.i-step:before,
+.i-step:after {
+  display: table;
+}
+
+.i-step:last-child {
+  margin-right: 0%;
+}
+
+.i-step:before,
+.i-step:after {
+  content: '';
+  display: table;
+}
+
+.i-step:after {
+  clear: both;
+}
+
 button.i-button {
   min-width: 150px;
   font-weight: 800;

@@ -1,4 +1,4 @@
-<div class="i-select" style="width:{{size || 100}}%" ng-if="!native">
+<div  class="i-select" style="width:{{size || 100}}%" ng-if="!native">
   <div ng-hide="searchable" class="current-value" ng-click="iSelect.listToggle=!iSelect.listToggle"><span>{{iSelect.selected[viewAs]}}</span></div>
   <div ng-show="searchable" class="i-select-search">
     <input type="text" ng-model="iSelect.searchQuery" ng-change="iSelect.listToggle = true" placeholder="{{placeholder}}"/>

@@ -2,6 +2,13 @@
  * Created by bionaut on 14/06/15.
  */
 
+
+// TODO: show/hide arrow
+// TODO: show/hide label
+// TODO: inline label
+// TODO: better (auto) type conversion
+
+
 (function(){
   'use strict';
   angular.module('select.component', [])
@@ -73,7 +80,7 @@
         angular.forEach(s.data, function (value, index) {
           if (value[s.returnAs] === nVal) {
             if (typeof s.change !== 'undefined') {
-              s.change();
+              s.change(nVal);
             }
             handleSelect(index);
           }
@@ -81,7 +88,7 @@
       }
 
       function dataTypeConverse() {
-        if (s.data && s.data.length > -1) return;
+        if (s.data && s.data.length > 0) return;
         if (typeof s.data === 'object') {
           var _buffer = [];
           angular.forEach(s.data, function (value, key) {
