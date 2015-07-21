@@ -8,52 +8,52 @@
     var ctrl = this;
 
 
-    ctrl.switchOptions = [
-      {
-        label: 'option #1',
-        value: 1
-      },
-      {
-        label: 'option #2',
-        value: 2
-      },
-      {
-        label: 'option #3',
-        value: 3
-      }
-    ];
+    //ctrl.switchOptions = [
+    //  {
+    //    label: 'option #1',
+    //    value: 1
+    //  },
+    //  {
+    //    label: 'option #2',
+    //    value: 2
+    //  },
+    //  {
+    //    label: 'option #3',
+    //    value: 3
+    //  }
+    //];
 
     ctrl.handleSubmit = function (form) {
       console.log(form);
     };
 
-    ctrl.sampleData = ['test', 'blabla', 'somesung']
+    //ctrl.sampleData = ['test', 'blabla', 'somesung']
 
     //ctrl.sampleData = {
-    //  22: {
+    //  CZK: {
     //    text: 'uplne nove nieco',
     //    value: 22
     //  },
-    //  11: {
+    //  EUR: {
     //    text: 'to iste tu',
     //    value: 11
     //  },
-    //  122: {
+    //  LIB: {
     //    text: 'aaaaa tu',
     //    value: 122
     //  }
     //};
 
-    //ctrl.sampleData = [
-    //  {
-    //    text: 'some text here',
-    //    value: 22
-    //  },
-    //  {
-    //    text: 'another text',
-    //    value: 11
-    //  }
-    //];
+    ctrl.sampleData = [
+      {
+        text: 'some text here',
+        value: 22
+      },
+      {
+        text: 'another text',
+        value: 11
+      }
+    ];
 
     //$timeout(function () {
     //  ctrl.sampleData = {

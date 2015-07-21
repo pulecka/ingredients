@@ -1,4 +1,3 @@
-@import url("http://fonts.googleapis.com/css?family=Lato:300,400,700,900&subset=latin,latin-ext");
 .browsehappy {
   margin: .2em 0;
   background: #ccc;
@@ -22,10 +21,6 @@
 
 .fieldErrorMessages {
   color: red;
-}
-
-body {
-  font-family: Lato;
 }
 
 .i-file-upload {

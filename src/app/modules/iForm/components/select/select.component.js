@@ -34,8 +34,8 @@
       controllerAs: 'iSelect'
     };
 
-    iSelectController.$inject = ['$scope'];
-    function iSelectController($scope) {
+    iSelectController.$inject = ['$scope', '$timeout'];
+    function iSelectController($scope, $timeout) {
 
       var iSelect = this;
       var s = $scope;
@@ -47,7 +47,9 @@
       dataTypeConverse();
 
       // set default value
-      setDefault();
+      $timeout(function () {
+        setDefault();
+      });
 
       // watch data property for changes
       s.$watch('data', handleRefresh);
@@ -63,16 +65,21 @@
 
       function setDefault() {
         if (s.default) {
-          if (s.data && s.default >= 0 && s.default <= s.data.length-1)
+          if (s.data && s.isArray){
             handleSelect(s.default);
+          }
+          if (s.data && s.isObject){
+            handleSelect(s.default);
+          }
+
         }
       }
 
       function handleSelect(index) {
-        iSelect.selected = s.data[index];
-        s.model = (s.returnAs === '$index') ? index : iSelect.selected[s.returnAs];
-        iSelect.searchQuery = (s.searchable) ? iSelect.selected[s.viewAs] : '';
-        iSelect.listToggle = false;
+          iSelect.selected = s.data[index];
+          s.model = (s.returnAs === '$index') ? index : iSelect.selected[s.returnAs];
+          iSelect.searchQuery = (s.searchable) ? iSelect.selected[s.viewAs] : '';
+          iSelect.listToggle = false;
       }
 
       function handleModelChange(nVal, oVal) {
@@ -88,16 +95,15 @@
       }
 
       function dataTypeConverse() {
-        if (s.data && s.data.length > 0) return;
-        if (typeof s.data === 'object') {
-          var _buffer = [];
-          angular.forEach(s.data, function (value, key) {
-            var _payload = value;
-            _payload.iKey = key;
-            _buffer.push(_payload)
-          });
-          s.data = _buffer;
+        if (!s.data) return;
+        if(s.data.constructor === Array){
+          s.isArray = true;
+          s.isObject = false;
+        }else if (typeof s.data === 'object' && (s.data instanceof Array === false)){
+          s.isObject = true;
+          s.isArray = false;
         }
+
       }
     }
 

@@ -9,7 +9,22 @@
     </div>
 
     <div class="i-select-list" ng-show="iSelect.listToggle">
-      <div  ng-if="template"  ng-include="template" class="i-select-item" ng-repeat="item in data | filter: iSelect.searchQuery track by $index" ng-click="iSelect.select($index)"></div>
-      <div  ng-if="!template" class="i-select-item" ng-repeat="item in data | filter: iSelect.searchQuery track by $index" ng-click="iSelect.select($index)" ng-bind="item[viewAs]">test</div>
+
+    <!-- isArray-->
+      <div class="is-array" ng-if="isArray">
+        <div  ng-if="template"  ng-include="template" class="i-select-item" ng-repeat="item in data | filter: iSelect.searchQuery track by $index" ng-click="iSelect.select($index)"></div>
+        <div  ng-if="!template" class="i-select-item" ng-repeat="item in data | filter: iSelect.searchQuery track by $index" ng-click="iSelect.select($index)" ng-bind="item[viewAs]"></div>
+      </div>
+
+    <!-- isObject-->
+      <div class="is-object" ng-if="isObject">
+        <div ng-if="template">
+          <div ng-include="template" class="i-select-item" ng-repeat="(key, item) in data" ng-click="iSelect.select(key)"></div>
+        </div>
+        <div ng-if="!template">
+          <div class="i-select-item" ng-repeat="(key, item) in data" ng-click="iSelect.select(key)">{{item[viewAs]}}</div>
+        </div>
+      </div>
+
     </div>
 </div>
