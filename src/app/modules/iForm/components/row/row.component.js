@@ -11,7 +11,8 @@
       transclude: true,
       replace: true,
       scope:{
-        rowLabel: '@?label'
+        rowLabel: '@?label',
+        classes: '@?'
       },
       controller: iRowController,
       controllerAs: 'iRow'
