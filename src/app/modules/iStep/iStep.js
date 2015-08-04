@@ -3,17 +3,6 @@
  */
 (function(){
   'use strict';
-  angular.module('iStep.module', [])
-    .factory('iStepService', iStepService);
+  angular.module('iStep.module', []);
 
-  function iStepService() {
-    var steps = [];
-    var activeStep = steps[0] || '';
-
-    return{
-      steps: steps,
-      active: activeStep
-    };
-
-  }
 })();

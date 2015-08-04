@@ -1,5 +1,27 @@
 .i-step
-  column(1)
-  cf()
-  max-height 100%
+  span(1)
+  margin-top 20px
   outline: 1px solid red
+  cf()
+  .dots
+    position: relative
+    top 0
+    right 0
+    width 100%
+    height 50px
+    text-align: center
+    .dot
+      display inline-block
+      width 30px
+      height 30px
+      margin 10px 5px
+      background-color gainsboro
+      box-shadow 0 1px 4px -1px silver
+      border-radius 50%
+      transition background-color .1s ease
+      &:hover
+        background-color black
+        cursor: pointer
+      &.active, &:active
+        background-color yellow
+

@@ -7,15 +7,13 @@
   angular.module('iStep.module')
     .directive('iStepTemplate', iStepTemplate);
 
-  iStepTemplate.$inject = ['iStepService'];
-  function iStepTemplate(iStepService) {
+  iStepTemplate.$inject = [];
+  function iStepTemplate() {
     return{
       restrict: 'E',
       link: linkFn
     };
-
     function linkFn(s,e,a) {
-      //iStepService.steps.push();
       s.$parent.iStepCtrl.steps.push(a.src);
     }
 
