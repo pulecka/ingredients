@@ -14,19 +14,42 @@
       templateUrl: 'app/modules/iStep/iStep.template.html',
       transclude: true,
       controller: iStepController,
-      controllerAs: 'iStepCtrl'
+      controllerAs: 'iStepCtrl',
+      step: '=?'
     };
 
   }
 
-  iStepController.$inject = ['$timeout'];
-  function iStepController($timeout) {
+  iStepController.$inject = ['$scope'];
+  function iStepController($scope) {
     var iStepCtrl = this;
 
+    // variables
     iStepCtrl.steps = [];
-    $timeout(function () {
-      iStepCtrl.activeStep = iStepCtrl.steps[0] || '';
-    }, 1000)
 
+    //methods
+    iStepCtrl.goTo = goTo;
+    iStepCtrl.amIActive = amIActive;
+
+
+    // one way switch
+    $scope.$watch('step', function (n,o) {
+      if (o === n) return;
+      iStepCtrl.activeStep = $scope.step;
+    });
+
+    //activate first step
+    $scope.$watch('iStepCtrl.steps', function (n,o) {
+      iStepCtrl.activeStep = iStepCtrl.steps[0] || '';
+    });
+
+
+    function goTo(dot) {
+      iStepCtrl.activeStep = dot;
+    }
+
+    function amIActive(dot) {
+      return dot === iStepCtrl.activeStep;
+    }
   }
 })();

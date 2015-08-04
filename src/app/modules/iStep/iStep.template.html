@@ -1,4 +1,7 @@
 <div class="i-step" style="width:{{ (size || 100) }}%">
   <ng-include src="iStepCtrl.activeStep"></ng-include>
   <ng-transclude></ng-transclude>
+  <div class="dots">
+    <div class="dot" ng-repeat="dot in iStepCtrl.steps" ng-click="iStepCtrl.goTo(dot)" ng-class="{active: iStepCtrl.amIActive(dot)}"></div>
+  </div>
 </div>
