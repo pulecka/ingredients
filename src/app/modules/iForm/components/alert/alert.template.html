@@ -1,0 +1,4 @@
+<div class="i-alert i-alert-{{ alert.type }}">
+  <div ng-if="alert.title" class="i-alert-header">{{alert.title}}</div>
+  <div ng-repeat="message in alert.messages">{{message}}</div>
+</div>

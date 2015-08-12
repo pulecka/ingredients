@@ -25,6 +25,8 @@
           };
         });
 
+        ngModel.$label = attrs.label;
+
         scope.$watch('errors', function () {
           scope.errors = ngModel.$error;
           scope.isDirty = ngModel.$dirty;

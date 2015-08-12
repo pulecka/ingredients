@@ -195,6 +195,20 @@
   background-color: #ff0;
 }
 
+.i-alert {
+  margin: 1em;
+  padding: 1.2em;
+  color: red;
+  border: red solid 3px;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+.i-alert .i-alert-header {
+  margin-bottom: .5em;
+  font-weight: 700;
+}
+
 button.i-button {
   min-width: 150px;
   font-weight: 800;
@@ -219,7 +233,8 @@ button.i-button.small {
   line-height: 25px;
 }
 
-button.i-button:disabled {
+button.i-button:disabled,
+button.i-button.disabled {
   background-color: #b7d6f6;
   cursor: not-allowed;
 }
@@ -355,12 +370,6 @@ button.i-button:active {
   clear: both;
 }
 
-.i-field .i-field-input.ng-invalid.ng-dirty,
-.i-field .i-field-input.ng-invalid-required.ng-dirty {
-  background-color: #ff594d;
-  color: #fff;
-}
-
 .i-field .fieldErrorMessage {
   transition: all ease .4s;
 }
@@ -376,6 +385,11 @@ button.i-button:active {
 
 .i-field .fieldErrorMessage.ng-leave.ng-leave-active {
   opacity: 0;
+}
+
+.ng-submitted .i-field-input.ng-invalid,
+.ng-submitted .i-field-input.ng-invalid-required {
+  border-color: #ff594d;
 }
 
 .i-row {
