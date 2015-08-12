@@ -47,7 +47,13 @@
     margin-top fieldHeight
     border 1px solid fieldBorderColor
     background-color white
-    position: absolute
+    position relative
+    max-height 200px
+    width 100%
+    z-index 99999
+    .is-array
+      height 200px
+      overflow-y scroll
     .i-select-item
       white-space nowrap
       line-height fieldHeight

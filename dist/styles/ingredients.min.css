@@ -625,7 +625,15 @@ button.i-button:active {
   margin-top: 50px;
   border: 1px solid #dbdbdb;
   background-color: #fff;
-  position: absolute;
+  position: relative;
+  max-height: 200px;
+  width: 100%;
+  z-index: 99999;
+}
+
+.i-select .i-select-list .is-array {
+  height: 200px;
+  overflow-y: scroll;
 }
 
 .i-select .i-select-list .i-select-item {
