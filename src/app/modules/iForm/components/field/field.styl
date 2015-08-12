@@ -27,10 +27,6 @@
     &.inline
       span(4/5)
       margin-top fieldLabelHeight
-    &.ng-invalid.ng-dirty,
-    &.ng-invalid-required.ng-dirty
-      background-color errorColor
-      color white
   .fieldErrorMessage
     transition all ease .4s
     &.ng-enter
@@ -41,3 +37,8 @@
       opacity 1
     &.ng-leave.ng-leave-active
       opacity 0
+
+.ng-submitted
+  .i-field-input.ng-invalid,
+  .i-field-input.ng-invalid-required
+    border-color errorColor

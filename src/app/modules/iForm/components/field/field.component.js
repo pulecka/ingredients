@@ -30,6 +30,7 @@
             var inputName = (a.name) ? ' name="' + a.name + '"': '';
             var disabled = (a.disabled) ? ' ng-disabled="'+ a.disabled + '"' : '';
             var model = (a.model) ? ' ng-model="'+ a.model +'"' : '';
+            var labelAttr = (a.label) ? ' label="' + a.label + '"' : '';
             var kind = (a.type) ? ' type="' + a.type + '"' : 'type="text"';
             var id = (a.id) ? ' id="'+ a.id || a.name +'"' : '';
             var placeholder = (a.placeholder) ? ' placeholder="'+ a.placeholder +'"' : '';
@@ -52,6 +53,7 @@
                   id +
                   kind +
                   model +
+                  labelAttr +
                   debounce +
                   inputName+
                   ui_mask +
@@ -62,7 +64,7 @@
                   iValid +
                   required +
                 '/>' +
-                '<div class="fieldErrorMessages" ng-show="isDirty || formCtrl.submitted">' +
+                '<div class="fieldErrorMessages" ng-if="!formCtrl.globalErrors" ng-show="form.$submitted">' +
                     '<div class="fieldErrorMessage" ng-repeat="(key,error) in errors track by $index">{{ overrideMessage || getErrorMessage(key) }}</div>'+
                 '</div>'+
               '</div>';

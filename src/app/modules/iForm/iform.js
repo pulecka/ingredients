@@ -7,31 +7,46 @@
   function iForm($compile) {
     return {
       restrict: 'E',
-      scope:true,
+      scope: true,
       transclude: true,
       link: linkFn,
       controller: 'FormController',
-      controllerAs: 'formCtrl'
+      controllerAs: 'formCtrl',
+      bindToController: {
+        submit: '&',
+        globalErrors: '='
+      }
     };
 
 
     function linkFn(s,e,a,c, $transcludeFn) {
-      var submit = (a.submit) ? ' ng-submit="'+ a.submit +'"' : '';
-
+      var name = a.name || a.id;
       var formElement =
         '<form class="i-form"' +
-               'name="'+ (a.name || a.id) +'"'+
-               'id="'+ (a.name || a.id) +'" novalidate' +
-               submit +
-        '></form>';
+          'name="' + name + '"' +
+          'id="' + name + '" novalidate' +
+        '>' +
+          '<i-alert errors="form.$error" ng-if="formCtrl.globalErrors" ng-show="form.$submitted && !form.$valid"></i-alert>'  +
+        '</form>';
 
       var html = $compile(formElement)(s);
+      var form = s[name];
+      s.form = form;
+
+      html.on('submit', submitIfValid);
 
       $transcludeFn(s, function (clone) {
         html.append(clone);
         e.replaceWith(html);
       });
 
+      function submitIfValid(event) {
+        event.preventDefault();
+        c.submitted = true;
+        if (form.$valid) {
+          c.submit();
+        }
+      }
     }
   }
 

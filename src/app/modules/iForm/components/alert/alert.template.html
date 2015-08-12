@@ -1,0 +1,4 @@
+<div class="i-alert i-alert-{{ alert.type }}">
+  <div ng-if="alert.label" class="i-alert-header" ng-bind="alert.label"></div>
+  <div ng-repeat="error in alert.list">{{error.name}}: {{error.error}}</div>
+</div>
