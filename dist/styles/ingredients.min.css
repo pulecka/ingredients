@@ -248,150 +248,6 @@ button.i-button:active {
   margin-top: 20px;
 }
 
-.i-field {
-  float: left;
-  clear: none;
-  text-align: inherit;
-  width: 100%;
-  margin-left: 0%;
-  margin-right: 0%;
-  *zoom: 1;
-}
-
-.i-field:before,
-.i-field:after {
-  display: table;
-  content: '';
-  display: table;
-}
-
-.i-field:after {
-  clear: both;
-}
-
-.i-field .i-field-label {
-  *zoom: 1;
-  float: left;
-  clear: none;
-  text-align: inherit;
-  width: 100%;
-  box-sizing: border-box;
-  height: 20px;
-  line-height: 13px;
-  font-size: 13px;
-  font-weight: 700;
-  padding: 0;
-  margin: 0;
-  color: #5a5a5a;
-}
-
-.i-field .i-field-label:before {
-  content: '';
-  display: table;
-}
-
-.i-field .i-field-label:after {
-  content: '';
-  display: table;
-  clear: both;
-}
-
-.i-field .i-field-label.inline {
-  *zoom: 1;
-  float: left;
-  clear: none;
-  width: 20%;
-  margin-left: 0%;
-  margin-right: 0%;
-  line-height: 90px;
-  text-align: center;
-}
-
-.i-field .i-field-label.inline:before {
-  content: '';
-  display: table;
-}
-
-.i-field .i-field-label.inline:after {
-  content: '';
-  display: table;
-  clear: both;
-}
-
-.i-field .i-field-input {
-  *zoom: 1;
-  float: left;
-  clear: none;
-  text-align: inherit;
-  width: 100%;
-  margin-left: 0%;
-  margin-right: 0%;
-  box-sizing: border-box;
-  border: 3px solid #dbdbdb;
-  padding-left: 5px;
-  height: 50px;
-  line-height: 50px;
-}
-
-.i-field .i-field-input:before {
-  content: '';
-  display: table;
-}
-
-.i-field .i-field-input:after {
-  content: '';
-  display: table;
-  clear: both;
-}
-
-.i-field .i-field-input.nolabel {
-  margin-top: 20px;
-}
-
-.i-field .i-field-input.inline {
-  *zoom: 1;
-  float: left;
-  clear: none;
-  text-align: inherit;
-  width: 80%;
-  margin-left: 0%;
-  margin-right: 0%;
-  margin-top: 20px;
-}
-
-.i-field .i-field-input.inline:before {
-  content: '';
-  display: table;
-}
-
-.i-field .i-field-input.inline:after {
-  content: '';
-  display: table;
-  clear: both;
-}
-
-.i-field .fieldErrorMessage {
-  transition: all ease .4s;
-}
-
-.i-field .fieldErrorMessage.ng-enter {
-  opacity: 0;
-}
-
-.i-field .fieldErrorMessage.ng-enter.ng-enter-active,
-.i-field .fieldErrorMessage.ng-leave {
-  opacity: 1;
-}
-
-.i-field .fieldErrorMessage.ng-leave.ng-leave-active {
-  opacity: 0;
-}
-
-.ng-submitted .i-field-input.ng-invalid,
-.ng-submitted .i-field-input.ng-invalid-required {
-  border-color: #ff594d;
-}
-
 .i-row {
   float: left;
   clear: none;
@@ -722,6 +578,150 @@ button.i-button:active {
   background-color: #fcff00;
   color: #000;
   border: 3px solid #fdff33;
+}
+
+.i-field {
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 100%;
+  margin-left: 0%;
+  margin-right: 0%;
+  *zoom: 1;
+}
+
+.i-field:before,
+.i-field:after {
+  display: table;
+  content: '';
+  display: table;
+}
+
+.i-field:after {
+  clear: both;
+}
+
+.i-field .i-field-label {
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 100%;
+  box-sizing: border-box;
+  height: 20px;
+  line-height: 13px;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 0;
+  margin: 0;
+  color: #5a5a5a;
+}
+
+.i-field .i-field-label:before {
+  content: '';
+  display: table;
+}
+
+.i-field .i-field-label:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.i-field .i-field-label.inline {
+  *zoom: 1;
+  float: left;
+  clear: none;
+  width: 20%;
+  margin-left: 0%;
+  margin-right: 0%;
+  line-height: 90px;
+  text-align: center;
+}
+
+.i-field .i-field-label.inline:before {
+  content: '';
+  display: table;
+}
+
+.i-field .i-field-label.inline:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.i-field .i-field-input {
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 100%;
+  margin-left: 0%;
+  margin-right: 0%;
+  box-sizing: border-box;
+  border: 3px solid #dbdbdb;
+  padding-left: 5px;
+  height: 50px;
+  line-height: 50px;
+}
+
+.i-field .i-field-input:before {
+  content: '';
+  display: table;
+}
+
+.i-field .i-field-input:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.i-field .i-field-input.nolabel {
+  margin-top: 20px;
+}
+
+.i-field .i-field-input.inline {
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 80%;
+  margin-left: 0%;
+  margin-right: 0%;
+  margin-top: 20px;
+}
+
+.i-field .i-field-input.inline:before {
+  content: '';
+  display: table;
+}
+
+.i-field .i-field-input.inline:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.i-field .fieldErrorMessage {
+  transition: all ease .4s;
+}
+
+.i-field .fieldErrorMessage.ng-enter {
+  opacity: 0;
+}
+
+.i-field .fieldErrorMessage.ng-enter.ng-enter-active,
+.i-field .fieldErrorMessage.ng-leave {
+  opacity: 1;
+}
+
+.i-field .fieldErrorMessage.ng-leave.ng-leave-active {
+  opacity: 0;
+}
+
+.ng-submitted .i-field-input.ng-invalid,
+.ng-submitted .i-field-input.ng-invalid-required {
+  border-color: #ff594d;
 }
 
 .i-text {
