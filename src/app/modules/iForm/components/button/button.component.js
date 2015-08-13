@@ -24,6 +24,7 @@
           element.on('click', function(event) {
             if (scope.iDisabled) {
               event.preventDefault();
+              event.stopImmediatePropagation();
               form.$setSubmitted(true);
               scope.$evalAsync();
             }
