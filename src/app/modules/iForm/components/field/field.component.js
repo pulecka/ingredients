@@ -64,7 +64,7 @@
                   iValid +
                   required +
                 '/>' +
-                '<div class="fieldErrorMessages" ng-if="!formCtrl.globalErrors" ng-show="form.$submitted">' +
+                '<div class="fieldErrorMessages" ng-if="!form.$globalErrors" ng-show="form.$submitted">' +
                     '<div class="fieldErrorMessage" ng-repeat="(key,error) in errors track by $index">{{ overrideMessage || getErrorMessage(key) }}</div>'+
                 '</div>'+
               '</div>';

@@ -12,8 +12,8 @@
       transclude: true,
       scope:{
         type: '@',
-        label: '@?',
-        errors: '=',
+        title: '@?',
+        messages: '=',
         closeable: '@?'
       },
       controller: iAlertController,
@@ -25,22 +25,6 @@
   iAlertController.$inject = ['$scope', 'iValid'];
   function iAlertController($scope, iValid) {
     var alert = this;
-
-    $scope.$watch('alert.errors', function (e) {
-      if (!e) return;
-      alert.list = Object.keys(e).reduce(function (previous, key) {
-        var errors = e[key]
-          .map(function(a) {
-            var message = iValid.validators[key] ? iValid.validators[key].message : key;
-            return {
-              name: a.$label || a.$name,
-              error: message
-            }
-          });
-        return previous.concat(errors);
-      }, []);
-    }, true);
-
   }
 
 })();

@@ -9,14 +9,24 @@
       restrict: 'E',
       templateUrl: 'app/modules/iForm/components/button/button.template.html',
       replace: true,
+      require: '?^form',
       scope:{
         title:'@?',
         type: '@?',
         name: '@?',
-        disabled: '=?'
+        iDisabled: '=?'
       },
       controller: iButtonController,
-      controllerAs: 'iButton'
+      controllerAs: 'iButton',
+      link: function(scope, element, attrs, ngForm) {
+        element.on('click', function(event) {
+          if (scope.iDisabled) {
+            event.preventDefault();
+            ngForm.$setSubmitted(true);
+            scope.$evalAsync();
+          }
+        });
+      }
     };
   }
 

@@ -11,29 +11,24 @@
       transclude: true,
       link: linkFn,
       controller: 'FormController',
-      controllerAs: 'formCtrl',
-      bindToController: {
-        submit: '&',
-        globalErrors: '='
-      }
+      controllerAs: 'formCtrl'
     };
 
 
     function linkFn(s,e,a,c, $transcludeFn) {
+      var submit = (a.submit) ? ' ng-submit="'+ a.submit +'"' : '';
       var name = a.name || a.id;
       var formElement =
         '<form class="i-form"' +
           'name="' + name + '"' +
           'id="' + name + '" novalidate' +
+               submit +
         '>' +
-          '<i-alert errors="form.$error" ng-if="formCtrl.globalErrors" ng-show="form.$submitted && !form.$valid"></i-alert>'  +
         '</form>';
 
       var html = $compile(formElement)(s);
       var form = s[name];
       s.form = form;
-
-      html.on('submit', submitIfValid);
 
       $transcludeFn(s, function (clone) {
         html.append(clone);
@@ -41,6 +36,7 @@
       });
 
       function submitIfValid(event) {
+        console.log(event);
         event.preventDefault();
         c.submitted = true;
         if (form.$valid) {

@@ -28,7 +28,9 @@
 <div ng-controller="sampleCtrl as ctrl">
   <h2 class="ui block header">Sample</h2>
 
-  <i-form name="demoForm" submit="ctrl.handleSubmit(demoForm)" global-errors="true">
+  <i-form name="demoForm" submit="ctrl.handleSubmit(demoForm)">
+    <!-- <i-error form="demoForm"></i-error> -->
+
     <i-row label="Errors">
       <i-field name="firstField"
                model="ctrl.firstField"
@@ -47,7 +49,7 @@
     </i-row>
 
     <i-row label="submit">
-      <button class="i-button" type="submit">submit</button>
+      <i-button name="submit" title="Submit" type="submit" i-disabled="!demoForm.$valid"></i-button>
       <i-button name="someButton" title="New"></i-button>
     </i-row>
 
