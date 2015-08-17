@@ -5,18 +5,34 @@
 
   iButton.$inject = [];
   function iButton() {
-    return{
+    return {
+      priority: 1,
       restrict: 'E',
       templateUrl: 'app/modules/iForm/components/button/button.template.html',
       replace: true,
+      require: '?^^form',
       scope:{
         title:'@?',
         type: '@?',
         name: '@?',
-        disabled: '=?'
+        iDisabled: '=?'
       },
       controller: iButtonController,
-      controllerAs: 'iButton'
+      controllerAs: 'iButton',
+      link: {
+        pre: function(scope, element, attrs, form) {
+          element.on('click', function(event) {
+            if (scope.iDisabled) {
+              event.preventDefault();
+              event.stopImmediatePropagation();
+              if (form) {
+                form.$setSubmitted(true);
+                scope.$evalAsync();
+              }
+            }
+          });
+        }
+      }
     };
   }
 
