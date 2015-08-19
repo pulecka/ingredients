@@ -23,7 +23,7 @@
             var size = ' style="width:'+ a.size+'%"';
 
             var debounce = (a.debounce) ? ' ng-model-options="{debounce: '+ a.debounce +'}"': '';
-            var fieldClasses = ' class="i-field ' + (a.classes) ? a.classes : ' ' + ' " ng-class="{error: checkErrors()}"';
+            var fieldClasses = ' class="i-field ' + (a.classes || '') + ' " ng-class="{error: checkErrors()}"';
             var inputClasses = ' class="i-field-input' +( (a.inline) ? ' inline' : '') +( (a.label) ? '' : ' nolabel') + '"';
             var labelClasses = ' class="i-field-label' +( (a.inline) ? ' inline' : '') +( (a.required) ? ' required' : '') + '"';
             var ui_mask = (a.mask) ? ' ui-mask="' + a.mask + '"':'';

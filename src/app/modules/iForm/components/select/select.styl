@@ -1,6 +1,7 @@
 .i-select
   span(1)
   cf()
+  position: relative
   margin-top fieldLabelHeight
   height fieldHeight
   box-sizing border-box
@@ -44,23 +45,24 @@
     &:active
       background-color rbYellowColor
   .i-select-list
-    margin-top fieldHeight
-    border 1px solid fieldBorderColor
+    position: absolute
     background-color white
-    position relative
-    max-height 200px
-    width 100%
     z-index 99999
-    .is-array
-      height 200px
+    min-height 0
+    margin-top 10px
+    box-shadow 0 0 10px -3px silver
+    overflow-x hidden
+    overflow-y auto
+    .is-array, .is-object
+      min-height 0
       overflow-y scroll
-    .i-select-item
-      white-space nowrap
-      line-height fieldHeight
-      padding-left 5px
-      background-color white
-      margin-bottom 2px
-      &:hover
-        background-color #cccccc
-        cursor pointer
+      .i-select-item
+        white-space nowrap
+        line-height fieldHeight
+        padding-left 5px
+        background-color white
+        margin-bottom 2px
+        &:hover
+          background-color #cccccc
+          cursor pointer
 

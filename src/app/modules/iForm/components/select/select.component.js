@@ -34,14 +34,15 @@
       controllerAs: 'iSelect'
     };
 
-    iSelectController.$inject = ['$scope', '$timeout'];
-    function iSelectController($scope, $timeout) {
+    iSelectController.$inject = ['$scope', '$timeout', '$element'];
+    function iSelectController($scope, $timeout, $element) {
 
       var iSelect = this;
       var s = $scope;
 
       // methods
       iSelect.select = handleSelect;
+      iSelect.toggleList = toggleList;
 
       // convert source data
       dataTypeConverse();
@@ -76,7 +77,12 @@
       }
 
       function toggleList() {
-        // register
+        var width = $element[0].children[0].clientWidth;
+        var height = $element[0].children[0].clientHeight;
+        var target = $element[0].getElementsByClassName('i-select-list');
+        target[0].style.width = width + 'px';
+        target[0].style.top = height + 'px';
+        iSelect.listToggle = !iSelect.listToggle;
       }
 
       function handleSelect(index) {
