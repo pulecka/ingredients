@@ -388,7 +388,8 @@ button.i-button:active {
 }
 
 .ng-submitted .i-field-input.ng-invalid,
-.ng-submitted .i-field-input.ng-invalid-required {
+.ng-submitted .i-field-input.ng-invalid-required,
+.ng-submitted .i-field-input.ng-invalid-pattern {
   border-color: #ff594d;
 }
 
