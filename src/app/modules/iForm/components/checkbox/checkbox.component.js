@@ -26,7 +26,7 @@
             var model = (a.model) ? ' ng-model="'+ a.model +'"' : '';
             var id = (a.id) ? ' id="'+ a.id || a.name +'"' : '';
 
-            var label = (a.label) ? '<label for="'+ id +'">'+a.label+'</label>' : '';
+            var label = (a.label) ? '<label class="checkboxlabel" for="'+ id +'">'+a.label+'</label>' : '';
 
             var html =
               '<div' + fieldClasses + '>' +
