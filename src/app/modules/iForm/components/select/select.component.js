@@ -75,6 +75,10 @@
         }
       }
 
+      function toggleList() {
+        // register
+      }
+
       function handleSelect(index) {
           iSelect.selected = s.data[index];
           s.model = (s.returnAs === '$index') ? index : iSelect.selected[s.returnAs];

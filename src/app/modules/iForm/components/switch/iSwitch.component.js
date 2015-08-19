@@ -15,22 +15,30 @@
       scope:{
         options: '=?',
         size: '@?',
+        viewAs: '@?',
+        returnAs: '@?',
         model: '=?',
         default: '@?'
       },
       controller: iSwitchController,
-      controllerAs: 'iswch'
+      controllerAs: 'vm',
+      bindToController: true
     };
   }
 
-  iSwitchController.$inject = ['$scope', '$interval'];
-  function iSwitchController($scope, $interval) {
-    var iswch = this;
+  function iSwitchController() {
+    var vm = this;
 
-    iswch.handleClick = handleClick;
+    // methods
+    vm.handleClick = handleClick;
 
+    // make sure that default will return number not string
+    vm.default = (vm.default) ? parseInt(vm.default) : null;
+
+
+    // ///////////////////////////////////////////////////
     function handleClick(option, index) {
-      $scope.model = option.value || index;
+      vm.model = option[vm.returnAs] || option || index;
     }
   }
 

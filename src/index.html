@@ -58,6 +58,7 @@
               return-as="value"
               view-as="text"
               model="ctrl.brutalModel"
+              default="0"
               size="50">
     </i-select>
 
@@ -75,7 +76,7 @@
     <i-step-template src="app/samples/step2.sample.html"></i-step-template>
   </i-step>
 
-    <!--<i-switch options="ctrl.sampleData" model="ctrl.someModel33" default=1></i-switch>-->
+    <i-switch options="ctrl.sampleData" model="ctrl.someModel33" return-as="value" view-as="text" default="1"></i-switch>
 
   </i-form>
 
