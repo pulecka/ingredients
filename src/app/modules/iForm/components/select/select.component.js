@@ -82,8 +82,7 @@
           iSelect.listToggle = false;
       }
 
-      function handleModelChange(nVal, oVal) {
-        if (nVal === oVal) return;
+      function handleModelChange(nVal) {
         angular.forEach(s.data, function (value, index) {
           if (value[s.returnAs] === nVal) {
             if (typeof s.change !== 'undefined') {
