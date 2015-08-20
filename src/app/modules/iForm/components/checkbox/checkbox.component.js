@@ -20,13 +20,13 @@
 
             var a = attrs;
 
-            var fieldClasses = ' class="i-checkbox" ng-class="{error: checkErrors()}"';
+            var fieldClasses = ' ng-class="{error: checkErrors()}"';
             var inputName = (a.name) ? ' name="' + a.name + '"': '';
             var disabled = (a.disabled) ? ' ng-disabled="'+ a.disabled + '"' : '';
             var model = (a.model) ? ' ng-model="'+ a.model +'"' : '';
-            var id = (a.id) ? ' id="'+ a.id || a.name +'"' : '';
+            var id = (a.id) ? ' id="'+ a.id +'"' : ' id="' +  a.name + '"';
 
-            var label = (a.label) ? '<label class="checkboxlabel" for="'+ id +'">'+a.label+'</label>' : '';
+            var label = '<label class="checkboxlabel" for="'+ (a.id || a.name) +'">' + (a.label || '') + '</label>';
 
             var html =
               '<div' + fieldClasses + '>' +
