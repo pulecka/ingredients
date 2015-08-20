@@ -26,6 +26,8 @@
         size: '@?',
         template: '@?',
         default: '@?',
+        label: '@?',
+        inline: '@?',
         model: '=',
         change: '=?'
       },

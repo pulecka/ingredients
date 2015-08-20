@@ -195,20 +195,6 @@
   background-color: #ff0;
 }
 
-.i-alert {
-  margin: 1em;
-  padding: 1.2em;
-  color: red;
-  border: red solid 3px;
-  border-radius: 6px;
-  box-sizing: border-box;
-}
-
-.i-alert .i-alert-header {
-  margin-bottom: .5em;
-  font-weight: 700;
-}
-
 button.i-button {
   min-width: 150px;
   font-weight: 800;
@@ -246,6 +232,20 @@ button.i-button:active {
 
 .i-row button.i-button {
   margin-top: 20px;
+}
+
+.i-alert {
+  margin: 1em;
+  padding: 1.2em;
+  color: red;
+  border: red solid 3px;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+.i-alert .i-alert-header {
+  margin-bottom: .5em;
+  font-weight: 700;
 }
 
 .i-field {
@@ -514,8 +514,7 @@ button.i-button:active {
   margin-right: 0%;
   *zoom: 1;
   position: relative;
-  margin-top: 20px;
-  height: 50px;
+  height: auto;
   box-sizing: border-box;
 }
 
@@ -527,6 +526,58 @@ button.i-button:active {
 }
 
 .i-select:after {
+  clear: both;
+}
+
+.i-select.nolabel {
+  margin-top: 20px;
+}
+
+.i-select.inline {
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 80%;
+  margin-left: 0%;
+  margin-right: 0%;
+  margin-top: 20px;
+}
+
+.i-select.inline:before,
+.i-select.inline:after {
+  content: '';
+  display: table;
+}
+
+.i-select.inline:after {
+  clear: both;
+}
+
+.i-select .i-field-label {
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 100%;
+  box-sizing: border-box;
+  height: 20px;
+  line-height: 13px;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 0;
+  margin: 0;
+  color: #5a5a5a;
+}
+
+.i-select .i-field-label:before {
+  content: '';
+  display: table;
+}
+
+.i-select .i-field-label:after {
+  content: '';
+  display: table;
   clear: both;
 }
 
@@ -596,7 +647,6 @@ button.i-button:active {
   text-align: inherit;
   width: 100%;
   box-sizing: border-box;
-  border: 3px solid #dbdbdb;
   height: 50px;
   line-height: 50px;
   margin: 0;
@@ -643,15 +693,20 @@ button.i-button:active {
   background-color: #fff;
   z-index: 99999;
   min-height: 0;
-  margin-top: 10px;
+  max-height: 200px;
   box-shadow: 0 0 10px -3px silver;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.i-select .i-select-list.nolabel {
+  margin-top: 0;
 }
 
 .i-select .i-select-list .is-array,
 .i-select .i-select-list .is-object {
   position: relative;
   min-height: 0;
-  overflow-y: scroll;
 }
 
 .i-select .i-select-list .is-array .i-select-item,
