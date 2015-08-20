@@ -6,7 +6,6 @@
 // TODO: show/hide arrow
 // TODO: show/hide label
 // TODO: inline label
-// TODO: better (auto) type conversion
 
 
 (function(){
@@ -79,9 +78,11 @@
       function toggleList() {
         var width = $element[0].children[0].clientWidth;
         var height = $element[0].children[0].clientHeight;
-        var target = $element[0].getElementsByClassName('i-select-list');
-        target[0].style.width = width + 'px';
-        target[0].style.top = height + 'px';
+        var list = $element[0].getElementsByClassName('i-select-list');
+
+        list[0].style.minWidth = width + 'px';
+        list[0].style.top = height + 'px';
+        list[0].style.minHeight= height + 'px';
         iSelect.listToggle = !iSelect.listToggle;
       }
 

@@ -625,6 +625,7 @@ button.i-button:active {
   cursor: pointer;
   padding: 0;
   margin: -50px 0 0;
+  background-color: #fff;
 }
 
 .i-select .i-select-toggle:hover {
@@ -644,12 +645,11 @@ button.i-button:active {
   min-height: 0;
   margin-top: 10px;
   box-shadow: 0 0 10px -3px silver;
-  overflow-x: hidden;
-  overflow-y: auto;
 }
 
 .i-select .i-select-list .is-array,
 .i-select .i-select-list .is-object {
+  position: relative;
   min-height: 0;
   overflow-y: scroll;
 }
