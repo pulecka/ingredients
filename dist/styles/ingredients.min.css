@@ -387,6 +387,11 @@ button.i-button:active {
   opacity: 0;
 }
 
+.i-field .read-only {
+  display: block;
+  line-height: 50px;
+}
+
 .ng-submitted .i-field-input.ng-invalid,
 .ng-submitted .i-field-input.ng-invalid-required,
 .ng-submitted .i-field-input.ng-invalid-pattern {
@@ -579,6 +584,11 @@ button.i-button:active {
   content: '';
   display: table;
   clear: both;
+}
+
+.i-select .read-only {
+  line-height: 50px;
+  padding: 0 20px;
 }
 
 .i-select .current-value {
