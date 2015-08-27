@@ -1,4 +1,4 @@
-(function(){
+(function () {
   'use strict';
   angular.module('angular-ingredients.js')
     .controller('sampleCtrl', sampleCtrl);
@@ -26,8 +26,6 @@
     ctrl.handleSubmit = function (form) {
       console.log(form);
     };
-
-
 
 
     //ctrl.sampleData = ['test', 'blabla', 'somesung']
@@ -61,26 +59,27 @@
     ctrl.brutalModel = 11;
 
 
-    //$timeout(function () {
-    //  //ctrl.sampleData = {
-    //  //  22: {
-    //  //    text: 'uplne nove nieco',
-    //  //    value: 22
-    //  //  },
-    //  //  11: {
-    //  //    text: 'to iste tu',
-    //  //    value: 11
-    //  //  },
-    //  //  122: {
-    //  //    text: 'aaaaa tu',
-    //  //    value: 122
-    //  //  }
-    //  //};
-    //
-    //
-    //  ctrl.brutalModel = 22;
-    //
-    //}, 5000)
+    $timeout(function () {
+      //  //ctrl.sampleData = {
+      //  //  22: {
+      //  //    text: 'uplne nove nieco',
+      //  //    value: 22
+      //  //  },
+      //  //  11: {
+      //  //    text: 'to iste tu',
+      //  //    value: 11
+      //  //  },
+      //  //  122: {
+      //  //    text: 'aaaaa tu',
+      //  //    value: 122
+      //  //  }
+      //  //};
+      //
+      //
+      //  ctrl.brutalModel = 22;
+      //
+      ctrl.readonlyvec = true;
+    }, 5000)
 
   }
 })();

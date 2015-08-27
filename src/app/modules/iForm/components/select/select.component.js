@@ -29,7 +29,8 @@
         label: '@?',
         inline: '@?',
         model: '=',
-        change: '=?'
+        change: '=?',
+        readOnly: '=?'
       },
       controller: iSelectController,
       controllerAs: 'iSelect'

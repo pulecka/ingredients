@@ -48,7 +48,7 @@
             var html =
               '<div' + size + fieldClasses + '>' +
                 label +
-                '<input' +
+                '<input ng-hide="' + a.readOnly + '" ' +
                   inputClasses +
                   id +
                   kind +
@@ -64,10 +64,11 @@
                   iValid +
                   required +
                 '/>' +
+                '<div class="read-only" ng-show="'+ a.readOnly+'" ng-bind="'+ a.model +'"></div>' +
                 '<div class="fieldErrorMessages" ng-if="!form.$globalErrors" ng-show="form.$submitted">' +
                     '<div class="fieldErrorMessage" ng-repeat="(key,error) in errors track by $index">{{ overrideMessage || getErrorMessage(key) }}</div>'+
                 '</div>'+
-              '</div>';
+              '</div>' ;
 
             var elementToInject = angular.element(html);
             iElement.replaceWith(elementToInject);
