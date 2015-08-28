@@ -31,7 +31,8 @@
     "angular-ui-router": "~0.2.15",
     "ionicons": "~2.0.1",
     "angular-animate": "~1.4.1",
-    "angular-ui-utils": "~0.2.3"
+    "angular-ui-utils": "~0.2.3",
+    "object-path": "~0.9.3"
   },
   "devDependencies": {
     "angular-mocks": "^1.4.1"

@@ -47,11 +47,17 @@
 
     ctrl.sampleData = [
       {
-        text: 'some vveeeery looong text',
+        texts: {
+          en: 'english',
+          cs: 'cesky'
+        },
         value: 22
       },
       {
-        text: 'another vveeeery looong text but even longer',
+        texts: {
+          en: 'english',
+          cs: 'cesky'
+        },
         value: 11
       }
     ];

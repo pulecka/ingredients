@@ -45,6 +45,7 @@
       // methods
       iSelect.select = handleSelect;
       iSelect.toggleList = toggleList;
+      iSelect.retrieveProperty = retrieveProperty;
 
       // convert source data
       dataTypeConverse();
@@ -92,7 +93,7 @@
       function handleSelect(index) {
           iSelect.selected = s.data[index];
           s.model = (s.returnAs === '$index') ? index : iSelect.selected[s.returnAs];
-          iSelect.searchQuery = (s.searchable) ? iSelect.selected[s.viewAs] : '';
+          iSelect.searchQuery = (s.searchable) ? retrieveProperty(iSelect.selected, a.viewAs) : '';
           iSelect.listToggle = false;
       }
 
@@ -105,6 +106,11 @@
             handleSelect(index);
           }
         });
+      }
+
+
+      function retrieveProperty(obj, path) {
+        return objectPath.get(obj, path);
       }
 
       function dataTypeConverse() {

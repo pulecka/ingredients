@@ -1,8 +1,8 @@
 <div  class="i-select" style="width:{{size || 100}}%" ng-if="!native" ng-class="{inline: inline, nolabel: !label}">
   <label class="i-field-label" ng-if="label" ng-bind="label"></label>
-  <div class="read-only" ng-show="readOnly" ng-bind="iSelect.selected[viewAs]"></div>
+  <div class="read-only" ng-show="readOnly" ng-bind="iSelect.retrieveProperty(iSelect.selected, viewAs)"></div>
   <div ng-hide="readOnly">
-    <div ng-hide="searchable" class="current-value" ng-click="iSelect.toggleList()"><span>{{iSelect.selected[viewAs]}}</span></div>
+    <div ng-hide="searchable" class="current-value" ng-click="iSelect.toggleList()"><span>{{ iSelect.retrieveProperty(iSelect.selected, viewAs) }}</span></div>
     <div ng-show="searchable" class="i-select-search">
       <input type="text" ng-model="iSelect.searchQuery" ng-change="iSelect.toggleList()" placeholder="{{placeholder}}"/>
     </div>
@@ -17,7 +17,7 @@
       <!-- isArray-->
         <div class="is-array" ng-if="isArray">
           <div  ng-if="template"  ng-include="template" class="i-select-item" ng-repeat="item in data | filter: iSelect.searchQuery track by $index" ng-click="iSelect.select($index)"></div>
-          <div  ng-if="!template" class="i-select-item" ng-repeat="item in data | filter: iSelect.searchQuery track by $index" ng-click="iSelect.select($index)" ng-bind="item[viewAs]"></div>
+          <div  ng-if="!template" class="i-select-item" ng-repeat="item in data | filter: iSelect.searchQuery track by $index" ng-click="iSelect.select($index)" ng-bind="iSelect.retrieveProperty(item, viewAs)"></div>
         </div>
 
       <!-- isObject-->
@@ -26,7 +26,7 @@
             <div ng-include="template" class="i-select-item" ng-repeat="(key, item) in data" ng-click="iSelect.select(key)"></div>
           </div>
           <div ng-if="!template">
-            <div class="i-select-item" ng-repeat="(key, item) in data" ng-click="iSelect.select(key)">{{item[viewAs]}}</div>
+            <div class="i-select-item" ng-repeat="(key, item) in data" ng-click="iSelect.select(key)"> {{ iSelect.retrieveProperty(item, viewAs) }}</div>
           </div>
         </div>
       </div>
