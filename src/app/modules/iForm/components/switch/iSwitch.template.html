@@ -1,9 +1,9 @@
-<div ng-init="vm.model = vm.model || vm.options[vm.default][vm.returnAs] || vm.options[vm.default] || null" class="i-switch" style="width:{{ (vm.size || 100) }}%">
+<div class="i-switch" style="width:{{ (vm.size || 100) }}%">
   <div ng-repeat="option in vm.options track by $index"
        class="i-switch-option"
        ng-bind="option[vm.viewAs] || option || $index"
        ng-click="vm.handleClick(option, $index)"
        ng-class="{active: vm.model == (option[vm.returnAs] || option || $index)}"
-       style="width: {{100/vm.options.length}}%">
+       style="width: {{100/vm.getDataLength()}}%">
   </div>
 </div>

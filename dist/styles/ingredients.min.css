@@ -195,6 +195,20 @@
   background-color: #ff0;
 }
 
+.i-alert {
+  margin: 1em;
+  padding: 1.2em;
+  color: red;
+  border: red solid 3px;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+.i-alert .i-alert-header {
+  margin-bottom: .5em;
+  font-weight: 700;
+}
+
 button.i-button {
   min-width: 150px;
   font-weight: 800;
@@ -232,20 +246,6 @@ button.i-button:active {
 
 .i-row button.i-button {
   margin-top: 20px;
-}
-
-.i-alert {
-  margin: 1em;
-  padding: 1.2em;
-  color: red;
-  border: red solid 3px;
-  border-radius: 6px;
-  box-sizing: border-box;
-}
-
-.i-alert .i-alert-header {
-  margin-bottom: .5em;
-  font-weight: 700;
 }
 
 .i-field {
@@ -396,6 +396,118 @@ button.i-button:active {
 .ng-submitted .i-field-input.ng-invalid-required,
 .ng-submitted .i-field-input.ng-invalid-pattern {
   border-color: #ff594d;
+}
+
+.i-row {
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 100%;
+  *zoom: 1;
+  min-height: 70px;
+  margin: 10px 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.i-row:before,
+.i-row:after {
+  display: table;
+}
+
+.i-row:last-child {
+  margin-right: 0%;
+}
+
+.i-row:before,
+.i-row:after {
+  content: '';
+  display: table;
+}
+
+.i-row:after {
+  clear: both;
+}
+
+.i-row .i-row-label {
+  *zoom: 1;
+  float: left;
+  clear: none;
+  width: 17.6%;
+  margin-left: 0%;
+  margin-right: 3%;
+  line-height: 90px;
+  text-align: center;
+}
+
+.i-row .i-row-label:before {
+  content: '';
+  display: table;
+}
+
+.i-row .i-row-label:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.i-row .i-row-label:last-child {
+  margin-right: 0%;
+}
+
+.i-row .i-row-content {
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 100%;
+  margin-left: 0%;
+  margin-right: 3%;
+  *zoom: 1;
+}
+
+.i-row .i-row-content:before,
+.i-row .i-row-content:after {
+  display: table;
+}
+
+.i-row .i-row-content:last-child {
+  margin-right: 0%;
+}
+
+.i-row .i-row-content:before {
+  content: '';
+  display: table;
+}
+
+.i-row .i-row-content:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.i-row .i-row-content.labeled {
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 79.4%;
+  margin-left: 0%;
+  margin-right: 3%;
+}
+
+.i-row .i-row-content.labeled:before {
+  content: '';
+  display: table;
+}
+
+.i-row .i-row-content.labeled:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.i-row .i-row-content.labeled:last-child {
+  margin-right: 0%;
 }
 
 .i-select {
@@ -620,118 +732,6 @@ button.i-button:active {
 .i-select .i-select-list .is-object .i-select-item:hover {
   background-color: #ccc;
   cursor: pointer;
-}
-
-.i-row {
-  float: left;
-  clear: none;
-  text-align: inherit;
-  width: 100%;
-  *zoom: 1;
-  min-height: 70px;
-  margin: 10px 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-.i-row:before,
-.i-row:after {
-  display: table;
-}
-
-.i-row:last-child {
-  margin-right: 0%;
-}
-
-.i-row:before,
-.i-row:after {
-  content: '';
-  display: table;
-}
-
-.i-row:after {
-  clear: both;
-}
-
-.i-row .i-row-label {
-  *zoom: 1;
-  float: left;
-  clear: none;
-  width: 17.6%;
-  margin-left: 0%;
-  margin-right: 3%;
-  line-height: 90px;
-  text-align: center;
-}
-
-.i-row .i-row-label:before {
-  content: '';
-  display: table;
-}
-
-.i-row .i-row-label:after {
-  content: '';
-  display: table;
-  clear: both;
-}
-
-.i-row .i-row-label:last-child {
-  margin-right: 0%;
-}
-
-.i-row .i-row-content {
-  float: left;
-  clear: none;
-  text-align: inherit;
-  width: 100%;
-  margin-left: 0%;
-  margin-right: 3%;
-  *zoom: 1;
-}
-
-.i-row .i-row-content:before,
-.i-row .i-row-content:after {
-  display: table;
-}
-
-.i-row .i-row-content:last-child {
-  margin-right: 0%;
-}
-
-.i-row .i-row-content:before {
-  content: '';
-  display: table;
-}
-
-.i-row .i-row-content:after {
-  content: '';
-  display: table;
-  clear: both;
-}
-
-.i-row .i-row-content.labeled {
-  *zoom: 1;
-  float: left;
-  clear: none;
-  text-align: inherit;
-  width: 79.4%;
-  margin-left: 0%;
-  margin-right: 3%;
-}
-
-.i-row .i-row-content.labeled:before {
-  content: '';
-  display: table;
-}
-
-.i-row .i-row-content.labeled:after {
-  content: '';
-  display: table;
-  clear: both;
-}
-
-.i-row .i-row-content.labeled:last-child {
-  margin-right: 0%;
 }
 
 .i-switch {

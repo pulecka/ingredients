@@ -2,7 +2,7 @@
   <label class="i-field-label" ng-if="label" ng-bind="label"></label>
   <div class="read-only" ng-show="readOnly" ng-bind="iSelect.retrieveProperty(iSelect.selected, viewAs)"></div>
   <div ng-hide="readOnly">
-    <div ng-hide="searchable" class="current-value" ng-click="iSelect.toggleList()"><span>{{ iSelect.retrieveProperty(iSelect.selected, viewAs) }}</span></div>
+    <div ng-hide="searchable" class="current-value" ng-click="iSelect.toggleList()"><span>{{ iSelect.retrieveProperty(iSelect.selected, viewAs) || placeholder }}</span></div>
     <div ng-show="searchable" class="i-select-search">
       <input type="text" ng-model="iSelect.searchQuery" ng-change="iSelect.toggleList()" placeholder="{{placeholder}}"/>
     </div>

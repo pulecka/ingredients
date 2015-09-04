@@ -24,26 +24,11 @@
     //];
 
     ctrl.handleSubmit = function (form) {
-      console.log(form);
+      alert('submitted');
     };
 
+    ctrl.cardTypes = [{label: 'Stávající kartě', value: false}, {label: 'Obnovené kartě', value: true}];
 
-    //ctrl.sampleData = ['test', 'blabla', 'somesung']
-
-    //ctrl.sampleData = {
-    //  CZK: {
-    //    text: 'uplne nove nieco',
-    //    value: 22
-    //  },
-    //  EUR: {
-    //    text: 'to iste tu',
-    //    value: 11
-    //  },
-    //  LIB: {
-    //    text: 'aaaaa tu',
-    //    value: 122
-    //  }
-    //};
 
     ctrl.sampleData = [
       {
@@ -51,40 +36,55 @@
           en: 'english',
           cs: 'cesky'
         },
-        value: 22
+        value: 1
       },
       {
         texts: {
           en: 'english',
           cs: 'cesky'
         },
-        value: 11
+        value: 2
       }
     ];
 
-    ctrl.brutalModel = 11;
+
+    ctrl.sampleData3 = {
+      CZK: {
+        text: 'uplne nove nieco',
+        value: 1
+      },
+      EUR: {
+        text: 'to iste tu',
+        value: 2
+      },
+      LIB: {
+        text: 'aaaaa tu',
+        value: 3
+      }
+    };
+
+
+    ctrl.sampleData4 = [
+      {
+        label: 'Some label 1',
+        value: 1
+      },
+      {
+        label: 'Some label 2',
+        value: 2
+      }
+    ];
+
+    ctrl.sampleData2 = ['Item 1', 'Item 2'];
 
 
     $timeout(function () {
-      //  //ctrl.sampleData = {
-      //  //  22: {
-      //  //    text: 'uplne nove nieco',
-      //  //    value: 22
-      //  //  },
-      //  //  11: {
-      //  //    text: 'to iste tu',
-      //  //    value: 11
-      //  //  },
-      //  //  122: {
-      //  //    text: 'aaaaa tu',
-      //  //    value: 122
-      //  //  }
-      //  //};
-      //
-      //
-      //  ctrl.brutalModel = 22;
-      //
-      ctrl.readonlyvec = true;
+
+      //ctrl.m1 = 1;
+      //ctrl.m2 = 1;
+      //ctrl.m3 = 1;
+
+
     }, 5000)
 
   }

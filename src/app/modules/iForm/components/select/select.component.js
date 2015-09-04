@@ -110,6 +110,7 @@
 
 
       function retrieveProperty(obj, path) {
+        if (!obj) return void 0;
         return objectPath.get(obj, path);
       }
 
