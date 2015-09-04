@@ -32,13 +32,11 @@
     // methods
     vm.handleClick = handleClick;
     vm.getDataLength = getDataLength;
+    vm.isActive = isActive;
 
-    // make sure that default will return number not string
-    //vm.default = (vm.default) ? parseInt(vm.default) : null;
-
-    var _obj = vm.options[vm.default] || void 0;
-    vm.model = vm.model || ((_obj) ? _obj[vm.returnAs] : false) || vm.options[vm.default] || null;
-    //debugger;
+    if (vm.default){
+      handleClick(vm.options[vm.default], vm.default);
+    }
 
     /////////////////////////////////////////////////////////
 
@@ -57,6 +55,11 @@
       } else if (angular.isObject(vm.options)) {
         return Object.keys(vm.options).length;
       }
+    }
+
+
+    function isActive(option, index) {
+      return ( vm.model == ( JSON.stringify(option[vm.returnAs]) || JSON.stringify(option) || index) );
     }
 
   }
