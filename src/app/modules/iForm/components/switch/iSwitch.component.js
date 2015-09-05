@@ -34,19 +34,14 @@
     vm.getDataLength = getDataLength;
     vm.isActive = isActive;
 
-    if (vm.default){
+    if (vm.default) {
       handleClick(vm.options[vm.default], vm.default);
     }
 
     /////////////////////////////////////////////////////////
 
     function handleClick(option, index) {
-      var _bool = (typeof option === "boolean" || typeof  option[vm.returnAs] === "boolean");
-      vm.model =
-        (vm.returnAs === '$index') ?
-          option : _bool ?
-            JSON.stringify(option[vm.returnAs]) || JSON.stringify(option) :
-            option[vm.returnAs] || option || index || null;
+      vm.model = resolveFn(option, index)
     }
 
     function getDataLength() {
@@ -58,8 +53,16 @@
     }
 
 
+    function resolveFn(option, index) {
+      var _bool = (typeof option === "boolean" || typeof  option[vm.returnAs] === "boolean");
+      return (vm.returnAs === '$index') ?
+        option : _bool ?
+          JSON.stringify(option[vm.returnAs]) || JSON.stringify(option) :
+          option[vm.returnAs] || option || index || null;
+    }
+
     function isActive(option, index) {
-      return ( vm.model == ( JSON.stringify(option[vm.returnAs]) || JSON.stringify(option) || index) );
+      return vm.model == resolveFn(option, index);
     }
 
   }
