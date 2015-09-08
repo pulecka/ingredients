@@ -35,6 +35,7 @@
             var id = (a.id) ? ' id="'+ a.id || a.name +'"' : '';
             var placeholder = (a.placeholder) ? ' placeholder="'+ a.placeholder +'"' : '';
             var regex = (a.regex) ? ' pattern="'+ a.regex +'"' : '';
+            var focus = (a.focus) ? ' autofocus' : '';
 
             var required = (a.required) ? ' required="true"' : '';
 
@@ -63,6 +64,7 @@
                   iFormat +
                   iValid +
                   required +
+                  focus +
                 '/>' +
                 '<div class="read-only" ng-show="'+ a.readOnly+'" ng-bind="'+ a.model +'"></div>' +
                 '<div class="fieldErrorMessages" ng-if="!form.$globalErrors" ng-show="form.$submitted">' +
