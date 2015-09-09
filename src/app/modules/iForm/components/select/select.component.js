@@ -109,7 +109,7 @@
 
       function handleModelChange(nVal, oVal) {
         angular.forEach(s.data, function (value, index) {
-          if (value[s.returnAs] === nVal) {
+          if (value[s.returnAs] == nVal) {
             if (typeof s.change !== 'undefined' && (nVal !== oVal) && (typeof oVal !== 'undefined')) {
               s.change(nVal);
             }

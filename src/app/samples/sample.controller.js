@@ -33,16 +33,25 @@
 
 
     ctrl.sampleData3 = {
-      CZK: {
-        text: 'uplne nove nieco',
+      1: {
+        texts: {
+          en: 'english',
+          cs: 'cesky'
+        },
         value: 1
       },
-      EUR: {
-        text: 'to iste tu',
+      2: {
+        texts: {
+          en: 'english',
+          cs: 'cesky'
+        },
         value: 2
       },
-      LIB: {
-        text: 'aaaaa tu',
+      3: {
+        texts: {
+          en: 'english',
+          cs: 'cesky'
+        },
         value: 3
       }
     };

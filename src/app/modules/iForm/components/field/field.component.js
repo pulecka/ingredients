@@ -36,6 +36,7 @@
             var placeholder = (a.placeholder) ? ' placeholder="'+ a.placeholder +'"' : '';
             var regex = (a.regex) ? ' pattern="'+ a.regex +'"' : '';
             var focus = (a.focus) ? ' autofocus' : '';
+            var tooltip = (a.tooltip) ? ' <rb-helper tooltip="'+ a.tooltip +'"></rb-helper>' : '';
 
             var required = (a.required) ? ' required="true"' : '';
 
@@ -48,7 +49,7 @@
 
             var html =
               '<div' + size + fieldClasses + '>' +
-                label +
+                label + tooltip +
                 '<input ng-hide="' + a.readOnly + '" ' +
                   inputClasses +
                   id +
