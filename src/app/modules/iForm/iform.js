@@ -18,8 +18,9 @@
     function linkFn(s,e,a,c, $transcludeFn) {
       var submit = (a.submit) ? ' ng-submit="'+ a.submit +'"' : '';
       var name = a.name || a.id;
+      var classes = ' class="i-form ' + (a.classes || '') + ' "';
       var formElement =
-        '<form class="i-form"' +
+        '<form ' + classes +
           'name="' + name + '"' +
           'id="' + name + '" novalidate' +
                submit +
