@@ -12,7 +12,9 @@
       replace: true,
       scope:{
         rowLabel: '@?label',
-        classes: '@?'
+        classes: '@?',
+        optional: '@?',
+        required: '@?'
       },
       controller: iRowController,
       controllerAs: 'iRow'

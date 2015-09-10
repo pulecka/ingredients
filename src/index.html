@@ -32,7 +32,7 @@
   <i-form name="demoForm" submit="ctrl.handleSubmit(demoForm)">
     <!--<i-error form="demoForm"></i-error>-->
 
-    <!--<i-row label="Errors">-->
+    <i-row label="Errors" optional="optional" required="true">
       <!--<i-field name="firstField"-->
                <!--model="ctrl.firstField"-->
                <!--size="20"-->
@@ -48,7 +48,7 @@
                <!--format="maxLength:10"-->
                <!--placeholder="This is required (only numbers)">-->
       <!--</i-field>-->
-    <!--</i-row>-->
+    </i-row>
 
     <!--<i-row label="submit">-->
       <!--<i-button name="submit" title="Submit" type="submit" i-disabled="!demoForm.$valid"></i-button>-->

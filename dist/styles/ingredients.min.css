@@ -436,8 +436,8 @@ button.i-button:active {
   width: 17.6%;
   margin-left: 0%;
   margin-right: 3%;
-  line-height: 90px;
   text-align: center;
+  display: inline;
 }
 
 .i-row .i-row-label:before {
@@ -453,6 +453,11 @@ button.i-button:active {
 
 .i-row .i-row-label:last-child {
   margin-right: 0%;
+}
+
+.i-row .i-row-label .required-mark:after {
+  content: "*";
+  color: red;
 }
 
 .i-row .i-row-content {
