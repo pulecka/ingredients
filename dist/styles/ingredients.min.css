@@ -747,6 +747,75 @@ button.i-button:active {
   cursor: pointer;
 }
 
+.i-switch {
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 100%;
+  margin-left: 0%;
+  margin-right: 0%;
+  *zoom: 1;
+  height: 70px;
+}
+
+.i-switch:before,
+.i-switch:after {
+  display: table;
+  content: '';
+  display: table;
+}
+
+.i-switch:after {
+  clear: both;
+}
+
+.i-switch .i-switch-option {
+  *zoom: 1;
+  clear: none;
+  width: 100%;
+  margin-left: 0%;
+  relative: top left;
+  box-sizing: border-box;
+  float: left;
+  height: 50px;
+  margin-top: 20px;
+  box-shadow: 0 0 2px 0 silver;
+  text-align: center;
+  line-height: 50px;
+  border: 3px solid #dbdbdb;
+  margin-right: -1px;
+}
+
+.i-switch .i-switch-option:before {
+  content: '';
+  display: table;
+}
+
+.i-switch .i-switch-option:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.i-switch .i-switch-option:hover {
+  background-color: #fcff00;
+  border: 3px solid #fcff00;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.i-switch .i-switch-option:active {
+  background-color: #fcff00;
+  color: #000;
+  border: 3px solid #cacc00;
+}
+
+.i-switch .i-switch-option.active {
+  background-color: #fcff00;
+  color: #000;
+  border: 3px solid #fdff33;
+}
+
 .i-text {
   float: left;
   clear: none;
@@ -878,75 +947,6 @@ button.i-button:active {
 
 .i-text .i-text-output.inline:last-child {
   margin-right: 0%;
-}
-
-.i-switch {
-  float: left;
-  clear: none;
-  text-align: inherit;
-  width: 100%;
-  margin-left: 0%;
-  margin-right: 0%;
-  *zoom: 1;
-  height: 70px;
-}
-
-.i-switch:before,
-.i-switch:after {
-  display: table;
-  content: '';
-  display: table;
-}
-
-.i-switch:after {
-  clear: both;
-}
-
-.i-switch .i-switch-option {
-  *zoom: 1;
-  clear: none;
-  width: 100%;
-  margin-left: 0%;
-  relative: top left;
-  box-sizing: border-box;
-  float: left;
-  height: 50px;
-  margin-top: 20px;
-  box-shadow: 0 0 2px 0 silver;
-  text-align: center;
-  line-height: 50px;
-  border: 3px solid #dbdbdb;
-  margin-right: -1px;
-}
-
-.i-switch .i-switch-option:before {
-  content: '';
-  display: table;
-}
-
-.i-switch .i-switch-option:after {
-  content: '';
-  display: table;
-  clear: both;
-}
-
-.i-switch .i-switch-option:hover {
-  background-color: #fcff00;
-  border: 3px solid #fcff00;
-  cursor: pointer;
-  transition: .3s;
-}
-
-.i-switch .i-switch-option:active {
-  background-color: #fcff00;
-  color: #000;
-  border: 3px solid #cacc00;
-}
-
-.i-switch .i-switch-option.active {
-  background-color: #fcff00;
-  color: #000;
-  border: 3px solid #fdff33;
 }
 @charset "UTF-8";
 

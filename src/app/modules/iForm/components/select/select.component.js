@@ -30,6 +30,7 @@
         inline: '@?',
         model: '=',
         change: '=?',
+        tooltip: '@?',
         readOnly: '=?'
       },
       controller: iSelectController,

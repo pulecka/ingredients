@@ -20,8 +20,7 @@
 
             var a = attrs;
 
-            var fieldClasses = ' ng-class="{error: checkErrors()}"';
-            var inputName = (a.name) ? ' name="' + a.name + '"': '';
+            var inputName = (a.name) ? ' name="' + (a.name || a.id) + '"': '';
             var disabled = (a.disabled) ? ' ng-disabled="'+ a.disabled + '"' : '';
             var model = (a.model) ? ' ng-model="'+ a.model +'"' : '';
             var id = (a.id) ? ' id="'+ a.id +'"' : ' id="' +  a.name + '"';
@@ -29,7 +28,7 @@
             var label = '<label class="checkboxlabel" for="'+ (a.id || a.name) +'">' + (a.label || '') + '</label>';
 
             var html =
-              '<div' + fieldClasses + '>' +
+              '<div' + '>' +
                 label +
                 '<input' +
                   id +
