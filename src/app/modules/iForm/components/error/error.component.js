@@ -26,8 +26,10 @@
           show(submitted, scope.errors);
         });
 
-        scope.$watchCollection('form.$error', function (err) {
-          if (!err) return;
+        scope.$watch('form.$error', function (err) {
+          if (!err) {
+            return;
+          }
           var errorObjects = Object.keys(err).reduce(function(previous, key) {
             var errors = err[key]
               .map(function(arr) {
@@ -46,7 +48,7 @@
           scope.errors = messages;
 
           show(form.$submitted, messages);
-        });
+        }, true);
       }
     };
   }
