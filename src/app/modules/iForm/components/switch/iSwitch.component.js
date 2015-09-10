@@ -56,9 +56,10 @@
     function resolveFn(option, index) {
       var _bool = (typeof option === "boolean" || typeof  option[vm.returnAs] === "boolean");
       return (vm.returnAs === '$index') ?
-        option : _bool ?
-          JSON.stringify(option[vm.returnAs]) || JSON.stringify(option) :
-          option[vm.returnAs] || option || index || null;
+          option :_bool ?
+            JSON.stringify(option[vm.returnAs]) || JSON.stringify(option) :
+            ( angular.isArray(vm.options) ) ? index || vm.options.indexOf(option) : option[vm.returnAs] || option || index || null;
+
     }
 
     function isActive(option, index) {

@@ -74,7 +74,7 @@
     $timeout(function () {
 
       //ctrl.m1 = 1;
-      //ctrl.m2 = 1;
+      ctrl.m2 = 1;
       //ctrl.m3 = 1;
 
 
