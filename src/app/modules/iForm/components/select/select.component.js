@@ -34,8 +34,16 @@
         readOnly: '=?'
       },
       controller: iSelectController,
-      controllerAs: 'iSelect'
+      controllerAs: 'iSelect',
+      link: linkFn
     };
+
+
+    function linkFn(s,e,a) {
+      e.on('click', function (ev) {
+        ev.stopPropagation();
+      })
+    }
 
     iSelectController.$inject = ['$scope', '$timeout', '$element'];
     function iSelectController($scope, $timeout, $element) {
@@ -63,6 +71,10 @@
 
       // watch model
       s.$watch('model', handleModelChange);
+
+      s.$on('closeContextual', function () {
+        iSelect.listToggle = false;
+      });
 
       function handleRefresh(nVal, oVal) {
         if (nVal === oVal) return;
