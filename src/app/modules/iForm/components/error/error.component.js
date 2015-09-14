@@ -13,8 +13,10 @@
       controller: iErrorController,
       controllerAs: 'error',
       bindToController: true,
-      link: function(scope, attrs, element, form) {
+      link: function(scope, element, attrs, form) {
         //FIXME: this is horrible
+
+        scope.title = (attrs.title) ? attrs.title : '';
 
         form.$globalErrors = true;
 
@@ -43,7 +45,7 @@
           }, []);
 
           var messages = errorObjects.map(function(errorObject) {
-            return errorObject.name + ': ' + errorObject.error;
+            return errorObject.error + ': ' + errorObject.name;
           });
           scope.errors = messages;
 

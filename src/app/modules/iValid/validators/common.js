@@ -15,13 +15,17 @@
     //iValidProvider.newValidator('required', required, 'This field is required!');
 
     function maxLength(value, max) {
-      if (!value) return void 0;
+      if (!value) {
+        return true;
+      }
       value = value.toString();
       return value.length <= max;
     }
 
     function minLength(value, min) {
-      if (!value) return void 0;
+      if (!value) {
+        return false;
+      }
       value = value.toString();
       return value.length >= min;
     }
