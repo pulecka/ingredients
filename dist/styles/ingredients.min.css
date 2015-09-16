@@ -195,20 +195,6 @@
   background-color: #ff0;
 }
 
-.i-alert {
-  margin: 1em;
-  padding: 1.2em;
-  color: red;
-  border: red solid 3px;
-  border-radius: 6px;
-  box-sizing: border-box;
-}
-
-.i-alert .i-alert-header {
-  margin-bottom: .5em;
-  font-weight: 700;
-}
-
 button.i-button {
   min-width: 150px;
   font-weight: 800;
@@ -246,6 +232,20 @@ button.i-button:active {
 
 .i-row button.i-button {
   margin-top: 20px;
+}
+
+.i-alert {
+  margin: 1em;
+  padding: 1.2em;
+  color: red;
+  border: red solid 3px;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+.i-alert .i-alert-header {
+  margin-bottom: .5em;
+  font-weight: 700;
 }
 
 .i-field {
