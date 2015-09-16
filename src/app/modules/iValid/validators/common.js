@@ -24,7 +24,7 @@
 
     function minLength(value, min) {
       if (!value) {
-        return false;
+        return true;
       }
       value = value.toString();
       return value.length >= min;
