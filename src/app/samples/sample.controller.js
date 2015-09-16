@@ -56,7 +56,6 @@
       }
     };
 
-
     ctrl.sampleData4 = [
       {
         label: 'Some label 1',
@@ -65,6 +64,17 @@
       {
         label: 'Some label 2',
         value: 2
+      }
+    ];
+
+    ctrl.sampleCarsData = [
+      {
+        label: 'Škoda Auto - simple clever',
+        value: 'skoda'
+      },
+      {
+        label: 'BMW - as fast as you',
+        value: 'bmw'
       }
     ];
 

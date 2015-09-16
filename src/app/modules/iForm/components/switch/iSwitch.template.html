@@ -3,7 +3,7 @@
        class="i-switch-option"
        ng-bind="option[vm.viewAs] || option || $index"
        ng-click="vm.handleClick(option, $index)"
-       ng-class="{active: vm.isActive(option, index)}"
+       ng-class="{active: vm.isActive(option, $index)}"
        style="width: {{100/vm.getDataLength()}}%">
   </div>
 </div>
