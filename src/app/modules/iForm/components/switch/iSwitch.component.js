@@ -52,14 +52,11 @@
       }
     }
 
-
     function resolveFn(option, index) {
-      var _bool = (typeof option === "boolean" || typeof  option[vm.returnAs] === "boolean");
-      return (vm.returnAs === '$index') ?
-          option :_bool ?
-            JSON.stringify(option[vm.returnAs]) || JSON.stringify(option) :
-            ( angular.isArray(vm.options) ) ? index || vm.options.indexOf(option) : option[vm.returnAs] || option || index || null;
-
+      if (vm.returnAs) {
+        return option[vm.returnAs];
+      }
+      return index;
     }
 
     function isActive(option, index) {
