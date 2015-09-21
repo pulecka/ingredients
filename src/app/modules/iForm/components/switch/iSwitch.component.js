@@ -18,7 +18,8 @@
         viewAs: '@?',
         returnAs: '@?',
         model: '=?',
-        default: '@?'
+        default: '@?',
+        onChange: '=?'
       },
       controller: iSwitchController,
       controllerAs: 'vm',
@@ -41,7 +42,10 @@
     /////////////////////////////////////////////////////////
 
     function handleClick(option, index) {
-      vm.model = resolveFn(option, index)
+      vm.model = resolveFn(option, index);
+      if (vm.onChange) {
+        vm.onChange(vm.model);
+      }
     }
 
     function getDataLength() {
