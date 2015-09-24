@@ -1,37 +1,40 @@
-<div  class="i-select" style="width:{{size || 100}}%" ng-if="!native" ng-class="{inline: inline, nolabel: !label}">
-  <label class="i-field-label" ng-if="label" ng-bind="label"></label><rb-helper ng-if="tooltip" tooltip="{{tooltip}}"></rb-helper>
+<div class="i-select" style="width:{{size || 100}}%" ng-if="!native" ng-class="{inline: inline, nolabel: !label}" ng-model="model" i-valid="{{validate}}" name="{{name}}" name="{{label}}">
+  <label class="i-field-label" ng-if="label" ng-bind="label"></label>
+  <rb-helper ng-if="tooltip" tooltip="{{tooltip}}"></rb-helper>
   <div class="read-only" ng-show="readOnly" ng-bind="iSelect.retrieveProperty(iSelect.selected, viewAs)"></div>
   <div ng-hide="readOnly">
-    <div ng-hide="searchable" class="current-value" ng-click="iSelect.toggleList()"><span>{{ iSelect.retrieveProperty(iSelect.selected, viewAs) || placeholder }}</span></div>
+    <div ng-hide="searchable" class="current-value" ng-click="iSelect.toggleList()">
+      <span>{{ iSelect.retrieveProperty(iSelect.selected, viewAs) || placeholder }}</span>
+    </div>
     <div ng-show="searchable" class="i-select-search">
-      <input type="text" ng-model="iSelect.searchQuery" ng-change="iSelect.openList()" placeholder="{{placeholder}}"/>
+      <input type="text" ng-model="iSelect.searchQuery" ng-change="iSelect.openList()" placeholder="{{placeholder}}" />
       <div class="reset-button" ng-if="searchable && iSelect.searchQuery" ng-click="iSelect.reset()">
         <i class="ion-ios-close-empty"></i>
       </div>
     </div>
 
-      <div class="i-select-toggle" ng-click="iSelect.toggleList()">
-          <div ng-if="!searchable" class="ion-arrow-down-b i-select-toggle-icon"></div>
-          <div ng-if="searchable" class="ion-search i-select-toggle-icon"></div>
-      </div>
+    <div class="i-select-toggle" ng-click="iSelect.toggleList()">
+      <div ng-if="!searchable" class="ion-arrow-down-b i-select-toggle-icon"></div>
+      <div ng-if="searchable" class="ion-search i-select-toggle-icon"></div>
+    </div>
 
-      <div class="i-select-list" ng-show="iSelect.listToggle" ng-class="{nolabel: !label}">
+    <div class="i-select-list" ng-show="iSelect.listToggle" ng-class="{nolabel: !label}">
 
       <!-- isArray-->
-        <div class="is-array" ng-if="isArray">
-          <div  ng-if="template"  ng-include="template" class="i-select-item" data-index="{{ item[returnAs] || $index}}"  ng-repeat="item in data | filter: iSelect.searchQuery track by $index" ng-click="iSelect.select($index)"></div>
-          <div  ng-if="!template" class="i-select-item" data-index="{{ item[returnAs] || $index}}"  ng-repeat="item in data | filter: iSelect.searchQuery track by $index" ng-click="iSelect.select($index)" ng-bind="iSelect.retrieveProperty(item, viewAs)"></div>
-        </div>
+      <div class="is-array" ng-if="isArray">
+        <div ng-if="template" ng-include="template" class="i-select-item" data-index="{{ item[returnAs] || $index}}" ng-repeat="item in data | filter: iSelect.searchQuery track by $index" ng-click="iSelect.select($index)"></div>
+        <div ng-if="!template" class="i-select-item" data-index="{{ item[returnAs] || $index}}" ng-repeat="item in data | filter: iSelect.searchQuery track by $index" ng-click="iSelect.select($index)" ng-bind="iSelect.retrieveProperty(item, viewAs)"></div>
+      </div>
 
       <!-- isObject-->
-        <div class="is-object" ng-if="isObject">
-          <div ng-if="template">
-            <div ng-include="template" class="i-select-item" data-index="{{ item[returnAs] || $index}}"  ng-repeat="(key, item) in data" ng-click="iSelect.select(key)"></div>
-          </div>
-          <div ng-if="!template">
-            <div class="i-select-item" data-index="{{ item[returnAs] || $index}}"  ng-repeat="(key, item) in data" ng-click="iSelect.select(key)"> {{ iSelect.retrieveProperty(item, viewAs) }}</div>
-          </div>
+      <div class="is-object" ng-if="isObject">
+        <div ng-if="template">
+          <div ng-include="template" class="i-select-item" data-index="{{ item[returnAs] || $index}}" ng-repeat="(key, item) in data" ng-click="iSelect.select(key)"></div>
+        </div>
+        <div ng-if="!template">
+          <div class="i-select-item" data-index="{{ item[returnAs] || $index}}" ng-repeat="(key, item) in data" ng-click="iSelect.select(key)"> {{ iSelect.retrieveProperty(item, viewAs) }}</div>
         </div>
       </div>
+    </div>
   </div>
 </div>

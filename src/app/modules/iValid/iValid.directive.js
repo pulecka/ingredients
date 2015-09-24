@@ -13,7 +13,6 @@
     };
 
     function LinkFn(scope, element, attrs, ngModel) {
-
       if (attrs.iValid.length > 0) {
         attrs.iValid = attrs.iValid.replace(/\s+/g, '');
 

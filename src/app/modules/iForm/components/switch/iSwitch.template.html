@@ -1,9 +1,11 @@
-<div class="i-switch" style="width:{{ (vm.size || 100) }}%">
-  <div ng-repeat="option in vm.options track by $index"
-       class="i-switch-option"
-       ng-bind="option[vm.viewAs] || option || $index"
-       ng-click="vm.handleClick(option, $index)"
-       ng-class="{active: vm.isActive(option, $index)}"
-       style="width: {{100/vm.getDataLength()}}%">
+<div class="i-switch" style="width:{{ (vm.size || 100) }}%" ng-model="vm.model" i-valid="{{vm.validate}}" name="{{vm.name}}">
+  <div class="read-only" ng-show="vm.readOnly" ng-bind="vm.viewValue()"></div>
+  <div class="i-switch-option"
+    ng-show="!vm.readOnly"
+    ng-repeat="option in vm.options track by $index"
+    ng-bind="option[vm.viewAs] || option || $index"
+    ng-click="vm.handleClick(option, $index)"
+    ng-class="{active: vm.isActive(option, $index)}"
+    style="width: {{100/vm.getDataLength()}}%">
   </div>
 </div>

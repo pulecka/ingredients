@@ -26,12 +26,14 @@
         size: '@?',
         template: '@?',
         default: '@?',
+        name: '@?',
         label: '@?',
         inline: '@?',
         model: '=',
         change: '=?',
         tooltip: '@?',
-        readOnly: '=?'
+        readOnly: '=?',
+        validate: '@?'
       },
       controller: iSelectController,
       controllerAs: 'iSelect',

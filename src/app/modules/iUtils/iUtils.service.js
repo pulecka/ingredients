@@ -7,7 +7,8 @@
     return{
       string2Object: string2Object,
       deepFind: deepFind,
-      objectByString: objectByString
+      objectByString: objectByString,
+      arrayify: arrayify
     };
   }
 
@@ -48,6 +49,16 @@
       }
     }
     return o;
+  }
+
+  function arrayify(object) {
+    if (angular.isArray(object)) {
+      return object;
+    } else if (angular.isObject(object)) {
+      return Object.keys(object).map(function(key) {
+        return object[key];
+      });
+    }
   }
 
 })();
