@@ -19,7 +19,10 @@
         returnAs: '@?',
         model: '=?',
         default: '@?',
-        onChange: '=?'
+        onChange: '=?',
+        readOnly: '=?',
+        name: '@?',
+        validate: '@?'
       },
       controller: iSwitchController,
       controllerAs: 'vm',
@@ -27,13 +30,17 @@
     };
   }
 
-  function iSwitchController() {
+  iSwitchController.$inject = [
+    'iUtils'
+  ];
+  function iSwitchController(iUtils) {
     var vm = this;
 
     // methods
     vm.handleClick = handleClick;
     vm.getDataLength = getDataLength;
     vm.isActive = isActive;
+    vm.viewValue = resolveView;
 
     if (vm.default) {
       handleClick(vm.options[vm.default], vm.default);
@@ -67,6 +74,16 @@
       return vm.model == resolveFn(option, index);
     }
 
+    function selectedOption() {
+      var array = iUtils.arrayify(vm.options);
+      var filtered = array ? array.filter(isActive) : [];
+      return filtered[0];
+    }
+
+    function resolveView() {
+      var option = selectedOption();
+      return option ? option[vm.viewAs] || option : null;
+    }
   }
 
 })();

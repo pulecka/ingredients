@@ -37,7 +37,6 @@
       });
 
       function submitIfValid(event) {
-        console.log(event);
         event.preventDefault();
         c.submitted = true;
         if (form.$valid) {
