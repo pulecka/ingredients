@@ -4,8 +4,12 @@
     .directive('iValid', iValidate)
     .directive('iFormat', iFormat);
 
-  iValidate.$inject = ['iValid', 'iUtils'];
-  function iValidate(iValid, iUtils) {
+  iValidate.$inject = [
+    '$parse',
+    'iValid',
+    'iUtils'
+  ];
+  function iValidate($parse, iValid, iUtils) {
     return{
       restrict: 'A',
       require: '?ngModel',
@@ -18,10 +22,19 @@
 
         var validationObject = iUtils.string2Object(attrs.iValid);
 
-        angular.forEach(validationObject, function (rule, key) {
-          ngModel.$validators[key] = function (value) {
-            return iValid.validators[key].definition(value, rule);
-          };
+        angular.forEach(validationObject, function(rule, key) {
+          var validator = iValid.validators[key];
+
+          if (validator.dynamic) {
+            ngModel.$validators[key] = function(value) {
+              return validator.definition(value, $parse(rule), scope);
+            };
+            scope.$watch(rule, ngModel.$validate);
+          } else {
+            ngModel.$validators[key] = function(value) {
+              return validator.definition(value, rule);
+            };
+          }
         });
 
         ngModel.$label = attrs.label;
@@ -57,9 +70,12 @@
     }
   }
 
-  iFormat.$inject = ['iValid', 'iUtils'];
+  iFormat.$inject = [
+    'iValid',
+    'iUtils'
+  ];
   function iFormat(iValid, iUtils) {
-    return{
+    return {
       restrict: 'A',
       require: '?ngModel',
       link: LinkFn

@@ -37,14 +37,13 @@
                model="ctrl.firstField"
                size="20"
                read-only="ctrl.readonlyvec"
-               validate="maxLength:5"
+               validate="required"
                label="Masked input">
       </i-field>
       <i-field name="secondField"
                model="ctrl.secondField"
                size="20"
-               validate="required|minLength:3"
-               format="maxLength:10"
+               validate="required|unique:ctrl.firstField"
                placeholder="This is required (only numbers)">
       </i-field>
 
@@ -54,7 +53,18 @@
                 return-as="value"
                 view-as="label"
                 size="40"
-                validate="required|minLength:3">
+                searchable="true"
+                validate="required">
+      </i-select>
+
+      <i-select name="secondSelect"
+                data="ctrl.sampleCarsData2"
+                model="ctrl.secondSelect"
+                return-as="$index"
+                view-as="label"
+                size="40"
+                searchable="true"
+                validate="required">
       </i-select>
     </i-row>
 

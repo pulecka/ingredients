@@ -3,8 +3,11 @@
  */
 
 (function(){
+
   'use strict';
-  angular.module('iValid.module', [])
+
+  angular
+    .module('iValid.module', [])
     .provider('iValid', iValid);
 
   iValid.$inject = [];
@@ -14,10 +17,11 @@
     var formatters = {};
 
     return {
-      newValidator: function (name, validator, errorMessage) {
+      newValidator: function (name, validator, errorMessage, dynamic) {
         validators[name] = {
           definition: validator,
-          message: errorMessage
+          message: errorMessage,
+          dynamic: !!dynamic
         }
       },
       newFormatter: function (name, formatter) {
@@ -26,7 +30,7 @@
         }
       },
 
-      $get:[function () {
+      $get: [function() {
         return {
           validators: validators,
           formatters: formatters
