@@ -37,14 +37,13 @@
                model="ctrl.firstField"
                size="20"
                read-only="ctrl.readonlyvec"
-               validate="maxLength:5"
+               validate="required"
                label="Masked input">
       </i-field>
       <i-field name="secondField"
                model="ctrl.secondField"
                size="20"
-               validate="required|minLength:3"
-               format="maxLength:10"
+               validate="required|unique:ctrl.firstField"
                placeholder="This is required (only numbers)">
       </i-field>
 
