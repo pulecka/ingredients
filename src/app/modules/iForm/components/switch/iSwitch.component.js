@@ -40,6 +40,7 @@
     vm.handleClick = handleClick;
     vm.getDataLength = getDataLength;
     vm.isActive = isActive;
+    vm.resolveFn = resolveFn;
     vm.viewValue = resolveView;
 
     if (vm.default) {
