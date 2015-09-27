@@ -78,6 +78,16 @@
       }
     ];
 
+    ctrl.sampleCarsData2 = {
+      skoda: {
+        label: 'Škoda Auto - simple clever'
+      },
+      bmw: {
+        label: 'BMW - as fast as you'
+      }
+    };
+
+
     ctrl.sampleData2 = ['Item 1', 'Item 2'];
 
 

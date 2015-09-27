@@ -8,7 +8,9 @@
       string2Object: string2Object,
       deepFind: deepFind,
       objectByString: objectByString,
-      arrayify: arrayify
+      arrayify: arrayify,
+      objectify: objectify,
+      getIndex: getIndex
     };
   }
 
@@ -51,14 +53,41 @@
     return o;
   }
 
-  function arrayify(object) {
-    if (angular.isArray(object)) {
-      return object;
-    } else if (angular.isObject(object)) {
-      return Object.keys(object).map(function(key) {
-        return object[key];
+  function arrayify(collection) {
+    if (angular.isArray(collection)) {
+      return collection;
+    } else if (angular.isObject(collection)) {
+      return Object.keys(collection).map(function(key) {
+        var item = collection[key];
+        item.$key = key;
+        return item;
       });
     }
   }
+
+  function objectify(collection) {
+    if (angular.isArray(collection)) {
+      return collection.reduce(function(object, item) {
+        var key = item.$key;
+        delete item.$key;
+        object[key] = item;
+        return object;
+      }, {});
+    } else if (angular.isObject(collection)) {
+      return collection;
+    }
+  }
+
+  function getIndex(item, collection) {
+    if (angular.isArray(collection)) {
+      return collection.indexOf(item);
+    } else if (angular.isObject(collection)) {
+      return Object.keys(collection)
+        .filter(function(key){
+          return collection[key] === item;
+        })[0];
+    }
+  }
+
 
 })();

@@ -47,8 +47,13 @@
       })
     }
 
-    iSelectController.$inject = ['$scope', '$timeout', '$element'];
-    function iSelectController($scope, $timeout, $element) {
+    iSelectController.$inject = [
+      '$scope',
+      '$timeout',
+      '$element',
+      'iUtils'
+    ];
+    function iSelectController($scope, $timeout, $element, iUtils) {
 
       var iSelect = this;
       var s = $scope;
@@ -88,12 +93,11 @@
       function setDefault() {
         if (s.default) {
           if (s.data && s.isArray) {
-            handleSelect(s.default);
+            handleSelect(s.data[s.default]);
           }
           if (s.data && s.isObject) {
-            handleSelect(s.default);
+            handleSelect(s.data[s.default]);
           }
-
         }
       }
 
@@ -116,20 +120,24 @@
         iSelect.listToggle = !iSelect.listToggle;
       }
 
-      function handleSelect(index) {
-        iSelect.selected = s.data[index];
+      function handleSelect(item) {
+        var index = iUtils.getIndex(item, s.data);
+        iSelect.selected = item;
         s.model = (s.returnAs === '$index') ? index : iSelect.selected[s.returnAs];
         iSelect.searchQuery = (s.searchable) ? retrieveProperty(iSelect.selected, s.viewAs) : '';
         iSelect.listToggle = false;
       }
 
       function handleModelChange(nVal, oVal) {
-        angular.forEach(s.data, function (value, index) {
-          if (value[s.returnAs] == nVal) {
+        if (!nVal) {
+          return;
+        }
+        angular.forEach(s.data, function(value, index) {
+          if (value[s.returnAs] === nVal) {
             if (typeof s.change !== 'undefined' && (nVal !== oVal) && (typeof oVal !== 'undefined')) {
               s.change(nVal);
             }
-            handleSelect(index);
+            handleSelect(value);
           }
         });
       }
