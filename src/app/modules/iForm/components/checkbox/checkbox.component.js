@@ -1,9 +1,14 @@
 (function(){
+
   'use strict';
-  angular.module('checkbox.component', [])
+
+  angular
+    .module('checkbox.component', [])
     .directive('iCheckbox', iCheckbox);
 
-  iCheckbox.$inject=['$compile'];
+  iCheckbox.$inject = [
+    '$compile'
+  ];
   function iCheckbox($compile) {
     return{
       restrict: 'E',
@@ -11,7 +16,6 @@
       scope: true,
       compile: compileFn
     };
-
 
     function compileFn() {
       return {
@@ -29,7 +33,6 @@
 
             var html =
               '<div' + '>' +
-                label +
                 '<input' +
                   id +
                   ' type="checkbox"' +
@@ -37,6 +40,7 @@
                   inputName +
                   disabled +
                 '/>' +
+                label +
               '</div>';
 
             var elementToInject = angular.element(html);
