@@ -1,9 +1,14 @@
 (function(){
+
   'use strict';
-  angular.module('radio.component', [])
+
+  angular
+    .module('radio.component', [])
     .directive('iRadio', iRadio);
 
-  iRadio.$inject=['$compile'];
+  iRadio.$inject = [
+    '$compile'
+  ];
   function iRadio($compile) {
     return{
       restrict: 'E',
@@ -11,7 +16,6 @@
       scope: true,
       compile: compileFn
     };
-
 
     function compileFn() {
       return {
@@ -26,11 +30,10 @@
             var model = (a.model) ? ' ng-model="'+ a.model +'"' : '';
             var id = (a.id) ? ' id="'+ a.id || a.name +'"' : '';
 
-            var label = (a.label) ? '<label class="radiolabel" for="'+ id +'">'+a.label+'</label>' : '';
+            var label = '<label class="radiolabel" for="'+ id +'">'+a.label+'</label>';
 
             var html =
               '<div' + fieldClasses + '>' +
-                label +
                 '<input' +
                   id +
                   ' type="radio"' +
@@ -38,6 +41,7 @@
                   inputName +
                   disabled +
                 '/>' +
+                label +
               '</div>';
 
             var elementToInject = angular.element(html);
