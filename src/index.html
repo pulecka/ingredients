@@ -37,6 +37,7 @@
                model="ctrl.firstField"
                size="20"
                read-only="ctrl.readonlyvec"
+               on-enter="ctrl.action()"
                validate="required"
                label="Masked input">
       </i-field>
@@ -68,29 +69,26 @@
       </i-select>
     </i-row>
 
-    <i-switch options="ctrl.sampleData4" model="ctrl.m3" return-as="value" view-as="label" name="firstSwitch" validate="required"></i-switch>
+    <i-switch options="ctrl.sampleData4" model="ctrl.m3" return-as="value" view-as="label" name="firstSwitch"
+              validate="required"></i-switch>
 
-    <i-row label="submit">-->
-      <i-button name="submit" title="Submit" type="submit" i-disabled="!demoForm.$valid"></i-button>
-      <i-button name="someButton" title="New"></i-button>
-    </i-row>
+    <i-button name="submit" title="Submit" type="submit" i-disabled="!demoForm.$valid"></i-button>
+    <i-button name="someButton" title="New"></i-button>
 
     <i-checkbox name="janci"></i-checkbox>
 
     <!--<i-row>-->
-      <i-select data="ctrl.sampleData"
-                placeholder="Some placeholder"
-                return-as="$index"
-                view-as="texts.en"
-                model="ctrl.brutalModel">
-      </i-select>
+    <i-select data="ctrl.sampleData"
+              placeholder="Some placeholder"
+              return-as="$index"
+              view-as="texts.en"
+              model="ctrl.brutalModel">
+    </i-select>
     <!--</i-row>-->
     <!--<i-step dots="true">-->
-      <!--<i-step-template src="app/samples/step1.sample.html"></i-step-template>-->
-      <!--<i-step-template src="app/samples/step2.sample.html"></i-step-template>-->
+    <!--<i-step-template src="app/samples/step1.sample.html"></i-step-template>-->
+    <!--<i-step-template src="app/samples/step2.sample.html"></i-step-template>-->
     <!--</i-step>-->
-
-
 
 
     <i-switch options="ctrl.sampleData3" model="ctrl.m1" return-as="value" view-as="value" default="1"></i-switch>
@@ -99,13 +97,15 @@
     <i-switch options="ctrl.sampleData2" model="ctrl.m2"></i-switch>
     <h3>{{ctrl.m2}}</h3>
 
-    <i-switch options="ctrl.cardTypes" model="ctrl.changeRenewal" view-as="label" return-as="value" default=1 ></i-switch>
+    <i-switch options="ctrl.cardTypes" model="ctrl.changeRenewal" view-as="label" return-as="value"
+              default=1></i-switch>
     <h3>{{ctrl.changeRenewal}}</h3>
 
     <i-switch options="ctrl.sampleData4" model="ctrl.m3" return-as="value" view-as="label"></i-switch>
     <h3>{{ctrl.m3}}</h3>
 
-    <i-switch options="ctrl.sampleCarsData" model="ctrl.car" return-as="value" view-as="label" default=1 read-only="true"></i-switch>
+    <i-switch options="ctrl.sampleCarsData" model="ctrl.car" return-as="value" view-as="label" default=1
+              read-only="true"></i-switch>
     <h3>{{ctrl.car}}</h3>
 
   </i-form>

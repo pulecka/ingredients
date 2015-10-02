@@ -14,6 +14,10 @@
     ctrl.cardTypes = [{label: 'Stávající kartě', value: false}, {label: 'Obnovené kartě', value: true}];
 
 
+    ctrl.action = function () {
+      alert('action');
+    };
+
     ctrl.sampleData = [
       {
         texts: {

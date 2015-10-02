@@ -15,6 +15,7 @@
       'iSwitch.component',
       'button.component',
       'alert.component',
-      'error.component'
+      'error.component',
+      'onEnter.component'
     ]);
 })();

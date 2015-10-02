@@ -37,6 +37,7 @@
             var regex = (a.regex) ? ' pattern="'+ a.regex +'"' : '';
             var focus = (a.focus) ? ' autofocus' : '';
             var tooltip = (a.tooltip) ? ' <rb-helper tooltip="'+ a.tooltip +'"></rb-helper>' : '';
+            var onEnter = (a.onEnter) ? ' on-enter="'+ a.onEnter +'"' : '';
 
             var required = (a.required) ? ' required="true"' : '';
 
@@ -51,6 +52,7 @@
               '<div' + size + fieldClasses + '>' +
                 label + tooltip +
                 '<input ng-hide="' + a.readOnly + '" ' +
+                  onEnter +
                   inputClasses +
                   id +
                   kind +
