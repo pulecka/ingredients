@@ -97,11 +97,11 @@
     <i-switch options="ctrl.sampleData2" model="ctrl.m2"></i-switch>
     <h3>{{ctrl.m2}}</h3>
 
-    <i-switch options="ctrl.cardTypes" model="ctrl.changeRenewal" view-as="label" return-as="value"
+    <i-switch options="ctrl.cardTypes" model="ctrl.changeRenewal" view-as="label" return-as="value" read-only="ctrl.readonly"
               default=1></i-switch>
     <h3>{{ctrl.changeRenewal}}</h3>
 
-    <i-switch options="ctrl.sampleData4" model="ctrl.m3" return-as="value" view-as="label"></i-switch>
+    <i-switch options="ctrl.sampleData4" model="ctrl.m3" return-as="value" view-as="label" ></i-switch>
     <h3>{{ctrl.m3}}</h3>
 
     <i-switch options="ctrl.sampleCarsData" model="ctrl.car" return-as="value" view-as="label" default=1

@@ -39,7 +39,7 @@
             var tooltip = (a.tooltip) ? ' <rb-helper tooltip="'+ a.tooltip +'"></rb-helper>' : '';
             var onEnter = (a.onEnter) ? ' on-enter="'+ a.onEnter +'"' : '';
 
-            var required = (a.required) ? ' required="true"' : '';
+            var required = (a.required) ? ' ng-required="'+a.required+'"' : '';
 
             var label = (a.label) ? '<label ' + labelClasses + ' for="'+ id +'">'+a.label+'</label>' : '';
 
