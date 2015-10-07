@@ -1,6 +1,6 @@
 <div class="i-row {{ classes }}">
   <div ng-if="rowLabel" class="i-row-label">
-    <div ng-class="{'required-mark': required}" class="label" ng-bind="rowLabel" ></div>
+    <div ng-class="{'required-mark': (required !== 'false')}" class="label" ng-bind="rowLabel" ></div>
     <small ng-if="optional" class="optional">({{optional}})</small>
   </div>
   <div class="i-row-content" ng-class="{labeled: rowLabel}" ng-transclude></div>
