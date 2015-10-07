@@ -1,4 +1,4 @@
-<div class="i-select" style="width:{{size || 100}}%" ng-if="!native" ng-class="{inline: inline, nolabel: !label}" ng-model="model" i-valid="{{validate}}" name="{{name}}" name="{{label}}">
+<div class="i-select" style="width:{{size || 100}}%" ng-if="!native" ng-class="{inline: inline, nolabel: !label}" ng-model="model" i-valid="{{validate}}" name="{{name}}" label="{{label}}">
   <label class="i-field-label" ng-if="label" ng-bind="label"></label>
   <rb-helper ng-if="tooltip" tooltip="{{tooltip}}"></rb-helper>
   <div class="read-only" ng-show="readOnly" ng-bind="iSelect.retrieveProperty(iSelect.selected, viewAs)"></div>
@@ -7,7 +7,7 @@
       <span>{{ iSelect.retrieveProperty(iSelect.selected, viewAs) || placeholder }}</span>
     </div>
     <div ng-show="searchable" class="i-select-search">
-      <input ng-class="{notInListWarning: iSelect.notInListWarning}" type="text" ng-model="iSelect.searchQuery" ng-change="iSelect.openList()" placeholder="{{placeholder}}" on-enter="iSelect.handleInputEvents()" ng-blur="iSelect.handleInputEvents()"/>
+      <input ng-class="{notInListWarning: iSelect.notInListWarning}" type="text" ng-model="iSelect.searchQuery" ng-change="iSelect.openList()" placeholder="{{placeholder}}" on-enter="iSelect.handleInputEvents()" ng-blur="iSelect.handleInputEvents()" i-format="{{format}}" />
       <div class="reset-button" ng-if="searchable && iSelect.searchQuery" ng-click="iSelect.reset()">
         <i class="ion-ios-close-empty"></i>
       </div>
