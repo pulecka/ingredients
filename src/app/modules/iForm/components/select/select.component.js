@@ -42,7 +42,7 @@
     };
 
 
-    function linkFn(s,e,a) {
+    function linkFn(s, e, a) {
       e.on('click', function (ev) {
         ev.stopPropagation();
       })
@@ -127,6 +127,7 @@
         iSelect.selected = item;
         s.model = (s.returnAs === '$index') ? index : iSelect.selected[s.returnAs];
         iSelect.searchQuery = (s.searchable) ? retrieveProperty(iSelect.selected, s.viewAs) : '';
+        iSelect.match = true;
         iSelect.listToggle = false;
       }
 
@@ -134,7 +135,7 @@
         if (!nVal) {
           return;
         }
-        angular.forEach(s.data, function(value, index) {
+        angular.forEach(s.data, function (value, index) {
           if (value[s.returnAs] === nVal) {
             if (typeof s.change !== 'undefined' && (nVal !== oVal) && (typeof oVal !== 'undefined')) {
               s.change(nVal);
@@ -170,14 +171,23 @@
       }
 
       function handleInputEvents() {
+        var _lng = (s.isObject) ? Object.keys(s.data).length : s.data.length;
+        var _count = 0;
+        iSelect.match = false;
+        iSelect.notInListWarning = false;
+
         angular.forEach(s.data, function (item) {
-          if (item[s.viewAs].toLowerCase() === iSelect.searchQuery.toLowerCase()){
+          if (iSelect.searchQuery && item[s.viewAs].toString().toLowerCase() === iSelect.searchQuery.toString().toLowerCase()) {
+            iSelect.match = true;
             handleSelect(item);
           }
+
+          if (++_count === _lng && !iSelect.match) {
+            iSelect.notInListWarning = true;
+          }
+
         });
       }
-
-
     }
 
     return directive;
