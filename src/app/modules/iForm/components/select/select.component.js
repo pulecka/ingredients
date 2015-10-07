@@ -105,6 +105,7 @@
       }
 
       function openList() {
+        if (!iSelect.searchQuery) return void 0;
         generateList();
         iSelect.listToggle = true;
       }
