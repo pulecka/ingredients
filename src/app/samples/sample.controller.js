@@ -14,8 +14,8 @@
     ctrl.cardTypes = [{label: 'Stávající kartě', value: false}, {label: 'Obnovené kartě', value: true}];
 
 
-    ctrl.action = function () {
-      alert('action');
+    ctrl.action = function (a) {
+      alert(a);
     };
 
     ctrl.sampleData = [
@@ -84,10 +84,13 @@
 
     ctrl.sampleCarsData2 = {
       skoda: {
-        label: 'Škoda Auto - simple clever'
+        label: 'Skoda'
       },
       bmw: {
-        label: 'BMW - as fast as you'
+        label: 'bmw'
+      },
+      merc: {
+        label: 'MERC'
       }
     };
 

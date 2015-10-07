@@ -6,6 +6,7 @@
 // TODO: show/hide arrow
 // TODO: show/hide label
 // TODO: inline label
+// TODO: bindToController
 
 
 (function () {
@@ -64,6 +65,7 @@
       iSelect.retrieveProperty = retrieveProperty;
       iSelect.reset = reset;
       iSelect.openList = openList;
+      iSelect.handleInputEvents = handleInputEvents;
 
       // convert source data
       dataTypeConverse();
@@ -166,6 +168,15 @@
         iSelect.searchQuery = null;
         iSelect.listToggle = false;
       }
+
+      function handleInputEvents() {
+        angular.forEach(s.data, function (item) {
+          if (item[s.viewAs].toLowerCase() === iSelect.searchQuery.toLowerCase()){
+            handleSelect(item);
+          }
+        });
+      }
+
 
     }
 

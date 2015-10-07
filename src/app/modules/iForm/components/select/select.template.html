@@ -7,7 +7,7 @@
       <span>{{ iSelect.retrieveProperty(iSelect.selected, viewAs) || placeholder }}</span>
     </div>
     <div ng-show="searchable" class="i-select-search">
-      <input type="text" ng-model="iSelect.searchQuery" ng-change="iSelect.openList()" placeholder="{{placeholder}}" />
+      <input type="text" ng-model="iSelect.searchQuery" ng-change="iSelect.openList()" placeholder="{{placeholder}}" on-enter="iSelect.handleInputEvents()" ng-blur="iSelect.handleInputEvents()"/>
       <div class="reset-button" ng-if="searchable && iSelect.searchQuery" ng-click="iSelect.reset()">
         <i class="ion-ios-close-empty"></i>
       </div>
