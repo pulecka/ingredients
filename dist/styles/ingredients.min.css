@@ -809,6 +809,10 @@ button.i-button:active {
   transition: .3s;
 }
 
+.i-switch .i-switch-option.inactive {
+  background-color: #d3d3d3;
+}
+
 .i-switch .i-switch-option:active {
   background-color: #fcff00;
   color: #000;

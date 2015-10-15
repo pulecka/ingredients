@@ -94,6 +94,7 @@
       }
     };
 
+    ctrl.inactive = [0,2];
 
     ctrl.sampleData2 = ['Item 1', 'Item 2'];
 

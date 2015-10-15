@@ -22,7 +22,8 @@
         onChange: '=?',
         readOnly: '=?',
         name: '@?',
-        validate: '@?'
+        validate: '@?',
+        inactive: '=?'
       },
       controller: iSwitchController,
       controllerAs: 'vm',
@@ -40,6 +41,7 @@
     vm.handleClick = handleClick;
     vm.getDataLength = getDataLength;
     vm.isActive = isActive;
+    vm.isInactive = isInactive;
     vm.resolveFn = resolveFn;
     vm.viewValue = resolveView;
 
@@ -50,6 +52,7 @@
     /////////////////////////////////////////////////////////
 
     function handleClick(option, index) {
+      if (isInactive(index)) return void 0;
       vm.model = resolveFn(option, index);
       if (vm.onChange) {
         vm.onChange(vm.model);
@@ -73,6 +76,12 @@
 
     function isActive(option, index) {
       return vm.model == resolveFn(option, index);
+    }
+
+    function isInactive(index) {
+      if (vm.inactive && vm.inactive.length > 0) {
+        return vm.inactive.indexOf(index) > -1;
+      }
     }
 
     function selectedOption() {
