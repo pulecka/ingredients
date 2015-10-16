@@ -23,7 +23,8 @@
         readOnly: '=?',
         name: '@?',
         validate: '@?',
-        inactive: '=?'
+        inactive: '=?',
+        counts: '=?'
       },
       controller: iSwitchController,
       controllerAs: 'vm',

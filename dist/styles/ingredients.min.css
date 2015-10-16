@@ -779,7 +779,7 @@ button.i-button:active {
   clear: none;
   width: 100%;
   margin-left: 0%;
-  relative: top left;
+  position: relative;
   box-sizing: border-box;
   float: left;
   height: 50px;
@@ -823,6 +823,13 @@ button.i-button:active {
   background-color: #fcff00;
   color: #000;
   border: 3px solid #fdff33;
+}
+
+.i-switch .i-switch-option .count {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0 10px;
 }
 
 .i-text {
