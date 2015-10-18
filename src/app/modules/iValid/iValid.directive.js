@@ -20,19 +20,24 @@
       if (attrs.iValid.length > 0) {
         attrs.iValid = attrs.iValid.replace(/\s+/g, '');
 
-        var validationObject = iUtils.string2Object(attrs.iValid);
+        var validationObject = iUtils.parseValidators(attrs.iValid);
 
-        angular.forEach(validationObject, function(rule, key) {
+        angular.forEach(validationObject, function(rules, key) {
           var validator = iValid.validators[key];
 
           if (validator.dynamic) {
             ngModel.$validators[key] = function(value) {
-              return validator.definition(value, $parse(rule), scope);
+              var parsedRules = rules.map(function(rule) {
+                return $parse(rule);
+              });
+              var args = [value, scope].concat(parsedRules);
+              return validator.definition.apply(this, args);
             };
-            scope.$watch(rule, ngModel.$validate);
+            scope.$watchGroup(rules, ngModel.$validate, true);
           } else {
             ngModel.$validators[key] = function(value) {
-              return validator.definition(value, rule);
+              var args = [value].concat(rules);
+              return validator.definition.apply(this, args);
             };
           }
         });
