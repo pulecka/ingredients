@@ -45,7 +45,7 @@
       }
     }
 
-    function match(value, model, scope) {
+    function match(value, scope, model) {
       var matchingValue = model(scope)
       if (value && matchingValue) {
         return value === matchingValue;
@@ -54,7 +54,7 @@
       }
     }
 
-    function unique(value, model, scope) {
+    function unique(value, scope, model) {
       var uniqueValue = model(scope);
       if (value && uniqueValue) {
         return value !== uniqueValue;

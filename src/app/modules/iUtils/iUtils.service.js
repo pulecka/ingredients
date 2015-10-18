@@ -6,6 +6,7 @@
   function iUtils() {
     return{
       string2Object: string2Object,
+      parseValidators: parseValidators,
       deepFind: deepFind,
       objectByString: objectByString,
       arrayify: arrayify,
@@ -20,8 +21,19 @@
       accumulator[pair[0]] = pair[1] || null;
       return accumulator;
     }, {});
+  }
+
+  function parseValidators(validators) {
+    return validators.split('|').reduce(function(accumulator, validator) {
+      var tuple = validator.trim().split(':');
+      var name = tuple[0];
+      var rules = tuple.slice(1, tuple.length);
+      accumulator[name] = rules && rules.length > 0 ? rules : null;
+      return accumulator;
+    }, {});
 
   }
+
     // use string to find
     function deepFind(obj, path) {
       var paths = path.split('.');
