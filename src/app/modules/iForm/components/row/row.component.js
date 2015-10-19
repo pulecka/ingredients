@@ -14,6 +14,7 @@
         rowLabel: '@?label',
         classes: '@?',
         optional: '@?',
+        tooltip: '@?',
         required: '@?'
       },
       controller: iRowController,
