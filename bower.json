@@ -1,6 +1,6 @@
 {
   "name": "angular-ingredients",
-  "version": "0.2.68",
+  "version": "0.2.69",
   "main": [
     "./dist/scripts/ingredients.min.js",
     "./dist/styles/ingredients.min.css"
